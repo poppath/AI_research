@@ -72,6 +72,17 @@
 
 ---
 
+## ลิงก์เวอร์ชันมือถือ/อ่านนอก repo
+
+| ที่ | ลิงก์ |
+|---|---|
+| **Google Docs (Notes)** | [Meta Ads × AI Playbook 2026 — Notes (TH)](https://docs.google.com/document/d/1Gz2zKZZ5svZ0jjaVxYEZc9_Yb2AY22-HoFPxwm84A28/edit) |
+| **Notion** | [Meta Ads × AI Playbook 2026](https://app.notion.com/p/Meta-Ads-AI-Playbook-2026-Facebook-IG-Reels-Threads-41076ada3488814c953eccd33af83ca3) |
+
+> Google Docs เป็นฉบับย่อสำหรับอ่าน/แชร์ (13 ส่วน) ส่วน repo และ Notion มีตารางและไฟล์เทมเพลตครบที่สุด
+
+---
+
 ## วิธีใช้กับ AI (สำคัญ)
 
 1. **โหลดบริบท**: ให้ AI อ่าน `README.md` → `docs/02` → `docs/04` → `playbook/README.md` → `playbook/agent-rules.yaml`
