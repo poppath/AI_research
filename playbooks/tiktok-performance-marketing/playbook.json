@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "playbook": "tiktok-performance-marketing",
+  "version": "1.0.0",
+  "updated": "2026-11-06",
+  "market_priority": ["TH", "SEA", "global"],
+  "currency_primary": "THB",
+  "intent": "Executable decision rules for an AI agent producing TikTok performance-marketing plans. Pair with benchmarks.json (numbers) and the prose chapters (reasoning).",
+  "invocation": {
+    "required_context": ["business_model", "aov", "gross_margin_pct", "monthly_budget", "category", "market", "has_tiktok_shop", "has_live"],
+    "if_missing": "state_assumption_explicitly_and_continue",
+    "output_must_include": ["assumptions", "primary_kpi", "guardrail_kpis", "campaign_structure", "creative_plan", "measurement_plan", "kill_criteria"]
+  },
+  "stages": {
+    "launch": {
+      "trigger": "no historical CPA/ROAS, or new account, or new product",
+      "chapters": ["01", "02", "03", "07", "08", "10"],
+      "structure": "manual_abo_lowest_cost",
+      "rules": ["R-001", "R-002", "R-005", "R-010", "R-020"]
+    },
+    "scale": {
+      "trigger": "CPA/ROAS at target for >=3 consecutive days and >=50 conversions in 7 days",
+      "chapters": ["02", "03", "07", "12"],
+      "structure": "smart_plus_with_manual_control",
+      "rules": ["R-003", "R-004", "R-006", "R-011"]
+    },
+    "fix": {
+      "trigger": "CPA up >25% for 3 days, or ROAS below target for 2 weeks",
+      "chapters": ["13", "03", "08"],
+      "structure": "diagnostic_ladder",
+      "rules": ["R-030", "R-031", "R-032", "R-033"]
+    },
+    "shop": {
+      "trigger": "has_tiktok_shop == true",
+      "chapters": ["04", "05", "07"],
+      "structure": "catalog_then_affiliate_then_gmv_max_then_live",
+      "rules": ["R-040", "R-041", "R-042", "R-043"]
+    },
+    "live": {
+      "trigger": "has_live == true and shop_gmv_monthly >= 50000_usd_equivalent",
+      "chapters": ["05"],
+      "structure": "weekly_live_plus_live_gmv_max",
+      "rules": ["R-044", "R-045"]
+    },
+    "regulated": {
+      "trigger": "category in [health_supplement, beauty_claims, finance, otc, alcohol]",
+      "chapters": ["10"],
+      "structure": "pre_approval_plus_claim_preclearance",
+      "rules": ["R-050", "R-051", "R-052"]
+    }
+  },
+  "rules": [
+    {
+      "id": "R-001",
+      "name": "signal_before_spend",
+      "when": "always",
+      "do": "Verify Pixel + Events API with shared event_id dedup, EMQ >= 8.0, value+currency on Purchase, and a test purchase before any budget decision.",
+      "because": "Pixel-only captures ~65% of conversions; under-instrumented accounts mis-optimize and mis-report.",
+      "chapter": "08"
+    },
+    {
+      "id": "R-002",
+      "name": "no_edits_in_learning",
+      "when": "campaign age < 7 days (Smart+/GMV Max) or < 3-5 days (manual), and conversions < 50",
+      "do": "Do not change bid, budget, audience, or creative unless the campaign is not spending or the wrong event is set.",
+      "because": "Every significant edit resets the learning phase.",
+      "chapter": "02"
+    },
+    {
+      "id": "R-003",
+      "name": "creative_before_audience",
+      "when": "performance degrades",
+      "do": "Diagnose in order: tracking -> creative fatigue -> offer/landing page -> structure/bid -> audience. Add 5-8 new creatives before touching targeting.",
+      "because": "On automation-era TikTok, creative is the dominant controllable lever.",
+      "chapter": "13"
+    },
+    {
+      "id": "R-004",
+      "name": "scale_increments",
+      "when": "scaling a performing campaign",
+      "do": "Post-learning: increase <= 30% per adjustment, every 3-5 days. Still in learning: <= 40% per adjustment, >= 2 days apart. Smart+: +20-30% every 3-5 days.",
+      "because": "Larger jumps re-enter learning and destabilise CPA.",
+      "chapter": "07"
+    },
+    {
+      "id": "R-005",
+      "name": "budget_floor",
+      "when": "setting ad group budget",
+      "do": "Ad group daily budget >= 10 x expected CPA. If total budget cannot support 2 groups at that level, use 1 group instead of fragmenting.",
+      "because": "Below this, campaigns stay learning-limited and 'it doesn't work' is an invalid conclusion.",
+      "chapter": "07"
+    },
+    {
+      "id": "R-006",
+      "name": "smart_plus_default_with_control",
+      "when": "CPA/ROAS known and stable",
+      "do": "Run Smart+ for scale and keep one manual/ABO campaign at 10-15% of budget for clean creative read-outs and cannibalization checks.",
+      "because": "Automation blends signals; you still need a clean measurement lane.",
+      "chapter": "02"
+    },
+    {
+      "id": "R-010",
+      "name": "hook_first_brief",
+      "when": "producing any creative",
+      "do": "Write the hook line (<= 7 words) before the concept. Hook must land in 1-3s with no logo/slogan open. Produce 3-5 hook variants on one body.",
+      "because": "Hook rate is the leading indicator of every downstream metric on TikTok.",
+      "chapter": "03"
+    },
+    {
+      "id": "R-011",
+      "name": "creative_refresh_cadence",
+      "when": "always-on campaigns",
+      "do": "Launch >= 2-3 new creatives per week. Treat concept lifetime as 10-14 days. For GMV Max, feed 10-15 new assets per week and maintain 50+ active for scale.",
+      "because": "TikTok creative fatigues faster than Meta (10-14 vs 14-21 days).",
+      "chapter": "03"
+    },
+    {
+      "id": "R-020",
+      "name": "bid_strategy_progression",
+      "when": "new campaign",
+      "do": "Start Lowest Cost to discover the natural CPA floor (7-14 days), then move to Cost Cap at discovered CPA +10-20%, then tighten 5-10% every 1-2 weeks. Avoid Bid Cap during learning.",
+      "because": "A cap set below reality starves delivery and prevents learning.",
+      "chapter": "07"
+    },
+    {
+      "id": "R-030",
+      "name": "kill_at_creative_level",
+      "when": "weekly creative review",
+      "do": "Kill creative with CPA > 1.3x target over 2 weeks AND >= 5,000 impressions. Scale creative at CPA <= 0.85x target for 3 consecutive days. Never kill at campaign level for a creative problem.",
+      "because": "Campaign-level killing destroys the learning you already paid for.",
+      "chapter": "12"
+    },
+    {
+      "id": "R-031",
+      "name": "no_single_day_decisions",
+      "when": "reviewing performance",
+      "do": "Require >= 3 days or >= 1,000 impressions per creative before concluding. Never act on one day of data.",
+      "because": "Daily variance on TikTok is large; acting daily guarantees noise-driven decisions.",
+      "chapter": "12"
+    },
+    {
+      "id": "R-032",
+      "name": "ctr_good_cvr_bad",
+      "when": "CTR above benchmark but CVR below benchmark",
+      "do": "Fix the landing page, price consistency, shipping cost display, or review proof. Do not change bids or targeting.",
+      "because": "The ad worked; the destination did not.",
+      "chapter": "13"
+    },
+    {
+      "id": "R-033",
+      "name": "profit_over_roas",
+      "when": "evaluating success",
+      "do": "Compute contribution margin after ads (revenue - COGS - fees - affiliate commission - shipping - returns - ad spend). Treat CM < 0 as failure regardless of ROAS.",
+      "because": "TikTok Shop ROAS can look healthy while commission + returns erase margin.",
+      "chapter": "04"
+    },
+    {
+      "id": "R-040",
+      "name": "shop_sequence",
+      "when": "has_tiktok_shop",
+      "do": "Sequence: catalog/offer -> affiliate creator volume (15-25 creators cold start) -> proof of life (20-50 orders/week for 2-4 weeks, 10-15 authorized videos per SKU) -> GMV Max -> LIVE.",
+      "because": "GMV Max amplifies existing traction; it cannot create it.",
+      "chapter": "04"
+    },
+    {
+      "id": "R-041",
+      "name": "gmv_max_launch_settings",
+      "when": "launching Product GMV Max",
+      "do": "Target ROI 2.0-3.0x for days 1-14 then step to 3.0-4.0x by day 30. Budget from TikTok formula (2 x historical non-LIVE GMV / ROI target). Keep consumption under 80%. Hold each ROI target 3 full days. Judge after >= 7 days.",
+      "because": "5x on day one produces no spend; 1x burns cash on low-quality volume.",
+      "chapter": "04"
+    },
+    {
+      "id": "R-042",
+      "name": "authorize_before_launch",
+      "when": "running GMV Max",
+      "do": "Collect and authorize all affiliate/organic videos at least 48 hours before launch. Do not add high-performing assets mid-learning.",
+      "because": "Adding assets after launch forces the system to re-learn from a different starting point.",
+      "chapter": "04"
+    },
+    {
+      "id": "R-043",
+      "name": "feed_hygiene",
+      "when": "running any catalog-based campaign",
+      "do": "Clean titles, >= 5 images, accurate category, complete variants, live stock, price matching ads, clear return policy.",
+      "because": "GMV Max optimizes against the catalog; a dirty feed sends the AI after the wrong buyers.",
+      "chapter": "04"
+    },
+    {
+      "id": "R-044",
+      "name": "live_prerequisites",
+      "when": "considering LIVE",
+      "do": "Do not start LIVE before baseline GMV exists (~USD 50k/month from affiliate + ads) and 3-5 live-ready hero products with deep stock and good margin.",
+      "because": "LIVE multiplies an existing base; it does not replace it.",
+      "chapter": "05"
+    },
+    {
+      "id": "R-045",
+      "name": "live_gmv_max_lead_time",
+      "when": "using LIVE GMV Max",
+      "do": "Launch the campaign at least 3 days before the stream and keep a consistent streaming schedule of >= 3 hours per session; sessions reset learning each time.",
+      "because": "LIVE GMV Max builds delivery data only while live.",
+      "chapter": "05"
+    },
+    {
+      "id": "R-050",
+      "name": "claim_preclearance",
+      "when": "category is health, supplement, beauty with treatment claims, finance, OTC",
+      "do": "Require pre-approved claim language before any creative is produced. Shift from outcome claims to mechanism/ingredient/usage claims. Keep substantiation on file.",
+      "because": "Thai FDA ran a nationwide supplement ad sweep in March 2026 covering influencer and reseller content; the brand can be liable for creator content.",
+      "chapter": "10"
+    },
+    {
+      "id": "R-051",
+      "name": "creator_brief_guardrails",
+      "when": "briefing creators or affiliates",
+      "do": "Include an explicit 'do not say' list in every brief. Review every creator video before boosting as a Spark Ad. Require Paid Partnership labels.",
+      "because": "A boosted creator video inherits the creator's claims and the brand's liability.",
+      "chapter": "10"
+    },
+    {
+      "id": "R-052",
+      "name": "policy_2026_deltas",
+      "when": "always",
+      "do": "Assume all campaigns must originate from a verified TikTok Business account (Custom Identity retired), no AI-generated endorsements, AI content disclosed, review windows 6-48h, and periodic re-review of live campaigns.",
+      "because": "2026 policy changes invalidate older launch checklists.",
+      "chapter": "10"
+    },
+    {
+      "id": "R-060",
+      "name": "measurement_ladder",
+      "when": "deciding budget allocation across channels",
+      "do": "Report blended ROAS and CM after ads as primary. Use platform ROAS only for in-platform optimization. Add MTA above ~USD 50k/month, MMM above ~USD 100k/month, geo incrementality above ~USD 500k/month or when the decision is material.",
+      "because": "TikTok's native dashboard overstates ROAS by roughly 30-60% and GMV Max credits all orders from promoted products.",
+      "chapter": "08"
+    },
+    {
+      "id": "R-061",
+      "name": "attribution_window_discipline",
+      "when": "reporting over time",
+      "do": "Keep 7-day click / 1-day view for optimization. Audit monthly on a 28-day window. Never compare numbers across a window change.",
+      "because": "Changing the window changes every number in the report.",
+      "chapter": "08"
+    },
+    {
+      "id": "R-070",
+      "name": "organic_feeds_paid",
+      "when": "always",
+      "do": "Maintain 4-7 organic posts per week for brand accounts; prioritize saves and shares over likes; boost top organic and affiliate posts via Spark Ads; one video = one search phrase spoken + on-screen + in caption.",
+      "because": "Spark Ads and organic lift each other and supply cheap, proven creative.",
+      "chapter": "09"
+    },
+    {
+      "id": "R-071",
+      "name": "commercial_music_only",
+      "when": "producing ads",
+      "do": "Use only tracks cleared for advertising (Commercial Music Library or licensed). Never use trending consumer sounds in paid ads.",
+      "because": "Unlicensed audio causes rejections and takedowns.",
+      "chapter": "10"
+    },
+    {
+      "id": "R-080",
+      "name": "kill_criteria_required",
+      "when": "producing any plan",
+      "do": "Define, before launch: the evaluation date, the primary metric threshold, and the guardrail thresholds that trigger pausing.",
+      "because": "Decisions made when calm are better than decisions made during a bad week.",
+      "chapter": "12"
+    }
+  ],
+  "diagnostics": {
+    "order": ["tracking", "creative", "offer_landing", "structure_bid", "audience"],
+    "symptom_map": [
+      { "symptom": "no_spend", "first_check": "ad status and bid/cost cap", "action": "switch to Lowest Cost temporarily, raise budget to >=10x CPA, broaden audience" },
+      { "symptom": "cpa_high_from_start", "first_check": "hook rate and offer competitiveness", "action": "add 5-8 creatives, revisit offer" },
+      { "symptom": "cpa_degrades_after_day_3", "first_check": "frequency and learning completion", "action": "add creatives, expand horizontally" },
+      { "symptom": "ctr_good_cvr_bad", "first_check": "landing page speed, price match, reviews", "action": "fix landing page, not bids" },
+      { "symptom": "roas_ok_profit_negative", "first_check": "unit economics incl. commission and returns", "action": "fix offer/margin, cut low-margin SKUs" },
+      { "symptom": "learning_limited", "first_check": "budget vs 10x CPA and event volume", "action": "consolidate groups, use a higher-volume event temporarily" },
+      { "symptom": "creative_fatigue", "first_check": "hook rate decline, frequency >2.5-3, concept age >10-14 days", "action": "new hooks on proven body, 3-5 new assets" },
+      { "symptom": "gmv_max_no_spend", "first_check": "target ROI and authorized creative count", "action": "lower ROI to 2x, authorize videos, clean feed" },
+      { "symptom": "pixel_overreports", "first_check": "attribution window and view-through", "action": "report blended, add incrementality test" }
+    ]
+  },
+  "anti_patterns": [
+    "setting target ROAS from hope rather than unit economics",
+    "judging a campaign on day 2-3",
+    "editing bids or budgets daily",
+    "changing audience before changing creative",
+    "shipping fewer than 3 new creatives per month",
+    "using trending consumer audio in paid ads",
+    "opening on a logo in the first second",
+    "reporting platform ROAS as business truth",
+    "running without Events API",
+    "skipping event_id dedup",
+    "launching GMV Max before affiliate content exists",
+    "setting GMV Max target ROI at 5x on day one",
+    "measuring TikTok Shop on GMV alone",
+    "putting multiple countries in one ad group",
+    "splitting budget across 15 ad groups",
+    "using interest targeting to scale",
+    "skipping Thai claim review",
+    "using AI avatars in health or finance",
+    "having no change log",
+    "never running an incrementality test"
+  ]
+}

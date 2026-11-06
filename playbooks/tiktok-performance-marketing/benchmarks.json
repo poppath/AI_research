@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "updated": "2026-11-06",
+    "freshness_rule": "Any benchmark older than 90 days must be re-verified before it drives a budget decision. Fields carry as_of and source_type.",
+    "source_types": {
+      "tiktok": "TikTok Help Center or TikTok official documentation",
+      "vendor": "agency/SaaS blog; directional only, treat as hypothesis",
+      "est": "triangulated estimate across sources",
+      "primary": "measured in an operated account (highest trust)"
+    },
+    "warning": "Most figures are vendor-reported ranges from multiple sources, not controlled benchmarks. Use as guardrails to detect anomalies, not as targets."
+  },
+  "creative_specs": {
+    "aspect_ratio": "9:16",
+    "resolution": "1080x1920",
+    "min_resolution": "540x960",
+    "bitrate_kbps_min": 516,
+    "recommended_bitrate_mbps": "8-12",
+    "max_file_size_mb": 500,
+    "recommended_file_size_mb": "<200",
+    "formats": ["mp4", "mov"],
+    "safe_zone": { "top_px": 130, "bottom_px": 480, "right_px": 140, "note": "keep key content in central 80%" },
+    "caption_chars_max": 100,
+    "length_optimal_s": [9, 15],
+    "length_story_s": [21, 34],
+    "length_allowed_s": [5, 60]
+  },
+  "creative_benchmarks": {
+    "hook_rate_pct": { "weak": 20, "ok": [20, 30], "strong": 30, "source_type": "vendor", "as_of": "2026-11" },
+    "completion_rate_pct_viral_threshold": { "value": 70, "source_type": "vendor", "as_of": "2026-11" },
+    "concept_lifetime_days": { "tiktok": [10, 14], "meta": [14, 21], "source_type": "vendor", "as_of": "2026-05" },
+    "new_creatives_per_week_min": 2,
+    "new_creatives_per_week_gmv_max_scale": [10, 15],
+    "creatives_min_manual_per_ad_group": [3, 5],
+    "creatives_min_smart_plus": 6,
+    "creatives_ideal_smart_plus": [5, 10],
+    "asset_groups_max_smart_plus": { "value": 50, "source_type": "tiktok-via-vendor", "as_of": "2026-08" }
+  },
+  "campaign_mechanics": {
+    "min_daily_budget": { "campaign_usd": 50, "ad_group_usd": 20, "campaign_thb": 500, "ad_group_thb": 50, "source_type": "tiktok", "as_of": "2026-08" },
+    "budget_multiple_of_cpa": {
+      "max_delivery": 10,
+      "cost_cap": 10,
+      "smart_plus_web_target_cpa_or_roas": 30,
+      "smart_plus_web_min": 10,
+      "smart_plus_app_cost_cap": 30,
+      "live_shopping_legacy": 40,
+      "source_type": "tiktok", "as_of": "2026-08"
+    },
+    "learning_exit": { "conversions_7d": 50, "days_without_edits": 7, "source_type": "vendor", "as_of": "2026-11" },
+    "scaling": {
+      "in_learning_max_increase_pct": 40,
+      "post_learning_max_increase_pct": 30,
+      "min_days_between_increases": 2,
+      "recommended_cadence_days": [3, 5],
+      "source_type": "tiktok-via-vendor", "as_of": "2026-11"
+    },
+    "attribution_window_default": { "click_days": 7, "view_days": 1, "click_options_days": [1, 7, 14, 28], "view_options_days": [0, 1, 7], "source_type": "tiktok", "as_of": "2026-10" }
+  },
+  "cost_benchmarks_thailand": {
+    "cpm_thb": { "in_feed": [50, 200], "spark": [40, 150], "shopping": [60, 180], "live": [50, 150], "source_type": "vendor", "as_of": "2026-04" },
+    "cpc_thb": { "in_feed": [1, 5], "spark": [1, 4], "shopping": [2, 6], "live": [1, 3], "source_type": "vendor", "as_of": "2026-04" },
+    "high_cpc_categories_thb": { "range": [4, 8], "categories": ["finance", "insurance", "real_estate", "auto", "b2b"], "source_type": "vendor", "as_of": "2026" },
+    "ctr_pct_good_in_feed": [1.5, 3.0],
+    "users_thailand_monthly_millions": { "range": [44, 46], "source_type": "vendor", "as_of": "2026-01", "caveat": "reach-based, not unique accounts" },
+    "tiktok_shop_gmv_thailand_h1_2025_usd_billions": 5.9,
+    "tiktok_ad_spend_thailand_2025_thb_million": 6776,
+    "tiktok_ad_spend_thailand_yoy_pct": 63,
+    "spark_vs_infeed": { "completion_lift_pct": 134, "cvr_lift_pct": 69, "source_type": "vendor", "as_of": "2026-04" },
+    "mega_sale_dates": ["6.6", "7.7", "8.8", "9.9", "10.10", "11.11", "12.12"],
+    "peak_hours": ["07:00-09:00", "12:00-13:00", "18:00-20:00", "21:00-23:00"]
+  },
+  "cost_benchmarks_global": {
+    "cpm_usd": { "range": [4.08, 14], "median_2025_2026": 4.08, "prior_year_median": 5.71, "source_type": "vendor", "as_of": "2026-10" },
+    "cpc_usd": { "range": [1.0, 2.0], "source_type": "vendor", "as_of": "2026-07" },
+    "ctr_pct_median": 0.61,
+    "cvr_pct": { "external_lp": 1.92, "tiktok_shop": 3.7 },
+    "cpa_usd": { "range": [12, 35], "median": 17.07 },
+    "roas": { "baseline": 2.5, "top_dtc_after_60d": [3.5, 5.0], "platform_median_2025_2026": 1.51 },
+    "aov_usd": 50.32
+  },
+  "smart_plus_claims": {
+    "note": "TikTok marketing claims re-cited by vendors. Directional only; not a forecast.",
+    "cpa_improvement_vs_manual_pct": { "tiktok_official_blog_2026_05": 29, "vendor_range": [32, 36] },
+    "roas_improvement_pct": { "vendor_range": [52, 64], "inconsistent": true },
+    "case_studies": [
+      { "brand": "PHLUR", "result": "+28% ROAS, -14% CPA" },
+      { "brand": "Dr. Squatch", "result": "1.6x ROAS" },
+      { "brand": "Fabletics", "result": "-11% CAC" }
+    ]
+  },
+  "shop_benchmarks": {
+    "gmv_split_pct": { "video": [50, 60], "shop_tab": [25, 35], "live": [10, 15], "source_type": "vendor", "as_of": "2026-06" },
+    "video_to_purchase_per_10k_views": [10, 30],
+    "cart_to_purchase_pct": [35, 55],
+    "repeat_purchase_60d_pct_top_quartile": [35, 45],
+    "return_rate_pct": { "fashion": [12, 18], "beauty": [3, 6] },
+    "effective_take_rate_pct_us": [25, 30],
+    "creator_affiliate_roi_net_min": 3.5,
+    "required_creators_cold_start": [15, 25],
+    "required_videos_per_sku": [10, 15],
+    "gmv_max": {
+      "target_roi_learning": [2.0, 3.0],
+      "target_roi_mature": [3.0, 4.0],
+      "daily_budget_per_sku_usd": [50, 150],
+      "budget_formula": "2 x historical non-LIVE GMV / ROI target",
+      "max_budget_consumption_pct": 80,
+      "hold_target_days": 3,
+      "min_eval_days": 7,
+      "min_creatives_launch": [15, 20],
+      "creatives_for_scale": 50,
+      "authorize_lead_time_hours": 48,
+      "source_type": "tiktok-via-vendor", "as_of": "2026-10"
+    },
+    "prohibited_supplement_categories": ["weight_loss", "fasting", "prescription_drugs", "cbd", "meal_replacements", "tanning_boosters", "anabolic_steroids", "dhea", "ephedra", "hgh"]
+  },
+  "live_benchmarks": {
+    "avg_watch_time_min": { "good": [3, 5], "excellent": 8 },
+    "cvr_pct": { "good": [1.5, 3.0], "excellent": [8, 12] },
+    "engagement_pct": { "good": [5, 10], "excellent": 15 },
+    "gmv_per_session_usd": { "normal": [500, 2000], "excellent": 5000 },
+    "session_length_hours": [3, 4],
+    "sessions_per_week_start": [1, 2],
+    "live_gmv_max_lead_days": 3,
+    "live_shopping_learning_conversions": 40,
+    "source_type": "vendor", "as_of": "2026-02"
+  },
+  "organic_benchmarks": {
+    "posts_per_week_brand_optimal": [4, 7],
+    "posts_3_5_per_week_view_lift_pct": [17, 29],
+    "posts_11_plus_per_week_view_lift_pct": 34,
+    "diminishing_returns_above_posts_per_day": [3, 4],
+    "watch_time_weight_pct": [40, 50],
+    "saves_shares_weight_pct": [25, 35],
+    "comments_weight_pct": [15, 20],
+    "spark_plus_organic_reach_lift_pct": 28,
+    "source_type": "vendor", "as_of": "2026-06"
+  },
+  "measurement_benchmarks": {
+    "pixel_only_capture_pct": 65,
+    "pixel_plus_events_api_capture_pct": 95,
+    "emq": { "floor_for_value_based": 5.0, "pixel_only_ceiling": 6.5, "target": 8.0, "scale": [0, 10] },
+    "pixel_plus_api_conversion_lift_pct": [20, 30],
+    "platform_overreport_pct": [30, 60],
+    "tiktok_vs_mmp_discrepancy_pct": [10, 30],
+    "28day_window_recovery_pct": [63, 79],
+    "stack_thresholds_monthly_usd": { "mta": 50000, "post_purchase_survey_high_aov": null, "mmm": 100000, "incrementality": 500000 },
+    "source_type": "vendor", "as_of": "2026-09"
+  },
+  "unit_economics_formula": {
+    "cm": "AOV - COGS - platform_fee - payment_fee - affiliate_commission - fulfillment_shipping - return_provision",
+    "roas_floor": "AOV / CM",
+    "note": "Compute before setting any target ROAS. If the floor exceeds what the category can deliver, the problem is offer/margin, not ads."
+  },
+  "thailand_legal_context": {
+    "thai_fda_sweep": { "date": "2026-03", "focus": ["disease_claims", "weight_loss", "sexual_enhancement", "adulteration"], "covers": ["brand", "influencer", "reseller"], "source_type": "vendor", "as_of": "2026-03" },
+    "high_risk_categories": ["weight_management", "immune_support", "sexual_health"],
+    "pdpa_requirements": ["legal_basis", "consent_banner_covers_pixels", "privacy_policy_discloses_tiktok", "hashed_identifiers", "dpa_with_vendors", "no_sensitive_data_in_audiences"],
+    "disclaimer": "Practical marketing guidance, not legal advice. Have a qualified lawyer or RA review before publishing."
+  },
+  "policy_2026": {
+    "custom_identity": "retired; all campaigns must originate from a verified TikTok Business account",
+    "ai_endorsement": "prohibited",
+    "ai_content_disclosure": "required",
+    "review_window_hours": [6, 48],
+    "livestream_follower_requirement": 1000,
+    "pre_approval_categories": ["financial_products", "health_supplements", "political", "pharma", "gambling"],
+    "restricted_industries": ["alcohol", "dating_apps", "financial_services", "otc_medications", "gambling", "tobacco", "weapons"],
+    "ongoing_re_review": true,
+    "source_type": "vendor", "as_of": "2026-08",
+    "verify_at": "TikTok Ads Policy Center"
+  }
+}
