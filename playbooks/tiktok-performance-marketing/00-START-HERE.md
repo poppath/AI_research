@@ -83,6 +83,8 @@
 
 | ที่ | ลิงก์ | เนื้อหา |
 |---|---|---|
-| Git (source of truth) | `github.com/poppath/AI_research` → `playbooks/tiktok-performance-marketing/` | ครบทุกบท + JSON |
-| Notion | เพจ "TikTok Performance Playbook 2026" (ใต้ Pop's Second Brain) | สรุปทุกบท + ตาราง decision |
-| Google Docs | "TikTok Performance Playbook 2026 — Notes (TH)" | ฉบับอ่าน/แชร์ |
+| Git (source of truth) | [github.com/poppath/AI_research](https://github.com/poppath/AI_research) → `playbooks/tiktok-performance-marketing/` | ครบทุกบท + `playbook.json` + `benchmarks.json` |
+| Notion | [TikTok Performance Playbook 2026 (TH) — Paid × Shop × GMV Max × Affiliate × LIVE](https://app.notion.com/p/TikTok-Performance-Playbook-2026-TH-Paid-Shop-GMV-Max-Affiliate-LIVE-41076ada3488811082f3ff29bc2a1dd5) | สรุปทุกบท + ตาราง decision 2 ตาราง + anti-patterns |
+| Google Docs | [TikTok Performance Playbook 2026 — Notes (TH)](https://docs.google.com/document/d/1c3ZzV3mA-6XtgLSJuB-pL_5MFIjMkKzfFzI2Po4GoPo) | ฉบับอ่าน/แชร์ 17 หัวข้อ (notes) |
+
+อัปเดตล่าสุด: 2026-11-06 · ตัวเลขทั้งหมดอ้างอิง ณ วันนี้ (ดู freshness rule ใน `benchmarks.json`)
