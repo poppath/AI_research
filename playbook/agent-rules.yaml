@@ -1,0 +1,337 @@
+# ============================================================================
+# agent-rules.yaml — กติกากลางสำหรับ AI agent / automation ที่ดูแล Meta Ads
+# เวอร์ชัน: 1.0.0 (2026-11-06) · ใช้คู่กับ playbook/README.md
+#
+# หลักการ: ทุก rule ต้อง (1) วัดได้ (2) มี threshold ชัด (3) มี guardrail
+#          (4) เขียนผลลง experiment_log ทุกครั้ง
+# ============================================================================
+
+meta:
+  version: "1.0.0"
+  updated: "2026-11-06"
+  market: "TH"
+  currency: "THB"
+  timezone: "Asia/Bangkok"
+  source_of_truth:
+    spend: "ads_manager"
+    revenue: "backend_orders"
+    truth_check: "lift_or_geo_test"
+  notes: >
+    Threshold ทั้งหมดเป็นค่าเริ่มต้น ต้อง calibrate จากข้อมูลจริง 60 วันแรก
+    ห้ามใช้ rule เหล่านี้กับบัญชีที่ยังไม่มี CAPI/EMQ >= 6.0
+
+# ---------------------------------------------------------------------------
+# 0) Preconditions — ถ้าไม่ผ่าน ห้าม automation ทำงาน
+# ---------------------------------------------------------------------------
+preconditions:
+  - id: PRE-01
+    name: signal_quality
+    require: event_match_quality >= 6.0
+    on_fail: freeze_scaling
+    message: "EMQ ต่ำกว่า 6.0 — หยุดสเกลและแก้ signal ก่อน"
+
+  - id: PRE-02
+    name: event_volume
+    require: conversions_7d >= 50
+    scope: ad_set
+    on_fail: consolidate_ad_sets
+    message: "ต่ำกว่า 50 conversions/สัปดาห์ — รวม ad set หรือเปลี่ยน optimization event"
+
+  - id: PRE-03
+    name: dedup_health
+    require: dedup_rate >= 0.95
+    on_fail: alert_human
+    message: "ตรวจ event_id dedup ระหว่าง Pixel และ CAPI"
+
+  - id: PRE-04
+    name: tracking_alive
+    require: purchase_events_last_24h > 0
+    on_fail: alert_human
+    message: "ไม่พบ event ใน 24 ชม. — ตรวจสอบ tracking ก่อนสรุปว่า performance ตก"
+
+# ---------------------------------------------------------------------------
+# 1) Scale rules
+# ---------------------------------------------------------------------------
+rules:
+  - id: SCL-01
+    name: scale_winner
+    when:
+      all:
+        - cpa_ratio_lte: 0.90          # CPA <= 90% ของเป้า
+        - consecutive_days: 3
+        - spend_gte: "2 * target_cpa"
+        - learning_phase: exited
+    then:
+      action: increase_budget
+      percent: 20
+      cadence_days: 2
+      max_total_increase_per_week: 60
+    guardrails:
+      - daily_spend_cap
+      - max_single_change_pct: 20
+    log: experiment_log
+
+  - id: SCL-02
+    name: scale_stop
+    when:
+      any:
+        - cpa_ratio_gt: 1.15
+        - frequency_7d_gt: 3.0
+    then:
+      action: stop_increase
+      hold_days: 3
+    log: experiment_log
+
+  - id: SCL-03
+    name: budget_reallocate
+    when:
+      schedule: "weekly_monday"
+      all:
+        - donor_cpa_ratio_gte: 1.30
+        - receiver_cpa_ratio_lte: 0.90
+    then:
+      action: shift_budget
+      max_shift_pct_of_campaign: 20
+    guardrails:
+      - keep_min_daily_budget: true
+    log: experiment_log
+
+# ---------------------------------------------------------------------------
+# 2) Hold / Kill rules
+# ---------------------------------------------------------------------------
+  - id: HLD-01
+    name: hold_learning
+    when:
+      any:
+        - cpa_ratio_between: [0.90, 1.20]
+        - recently_edited_within_hours: 24
+    then:
+      action: no_change
+      hold_days: 3
+    message: "อย่าแก้อะไรใน 3 วัน — ระบบกำลังเรียนรู้"
+
+  - id: KIL-01
+    name: kill_underperformer
+    when:
+      all:
+        - cpa_ratio_gt: 1.50
+        - consecutive_days: 5
+        - spend_gte: "3 * target_cpa"
+    then:
+      action: pause_ad_or_adset
+      notify: human
+    log: experiment_log
+
+  - id: KIL-02
+    name: diagnose_creative_vs_audience
+    when:
+      all:
+        - ctr_lt: 0.005
+        - frequency_7d_gt: 2.5
+    then:
+      action: refresh_creative
+      hypothesis: "ปัญหา creative ไม่ใช่ audience"
+    log: experiment_log
+
+# ---------------------------------------------------------------------------
+# 3) Creative rules
+# ---------------------------------------------------------------------------
+  - id: CRT-01
+    name: refresh_on_fatigue
+    when:
+      any:
+        - frequency_7d_gt: 3.0
+        - ctr_drop_week_over_week_pct_gt: 25
+        - cpa_increase_pct_gt: 20
+    then:
+      action: rotate_creative
+      order: ["new_hook", "new_proof", "new_angle", "new_persona"]
+      min_new_variants: 3
+    log: experiment_log
+
+  - id: CRT-02
+    name: minimum_creative_diversity
+    when:
+      creative_count_per_adset_lt: 6
+    then:
+      action: warn_human
+      message: "ควรมีอย่างน้อย 6–15 ชิ้น/ad set และต้องต่างกันอย่างน้อย 2 มิติ (persona/awareness/angle/format)"
+
+  - id: CRT-03
+    name: suspicious_performance
+    when:
+      any:
+        - ctr_gt: 0.05
+        - cvr_gt: 0.30
+    then:
+      action: audit_for_fraud_or_tracking_error
+      notify: human
+
+# ---------------------------------------------------------------------------
+# 4) Placement rules
+# ---------------------------------------------------------------------------
+  - id: PLC-01
+    name: low_intent_placement
+    when:
+      all:
+        - placement_in: ["threads", "audience_network"]
+        - placement_spend_pct_gte: 15
+        - placement_cpa_ratio_gte: 1.30
+    then:
+      action: set_placement_value
+      multiplier: 0.30
+      wait_days: 7
+    log: experiment_log
+
+  - id: PLC-02
+    name: high_intent_placement
+    when:
+      all:
+        - placement_cpa_ratio_lte: 0.80
+        - placement_spend_pct_gte: 10
+    then:
+      action: set_placement_value
+      multiplier: 1.30
+      wait_days: 7
+    log: experiment_log
+
+# ---------------------------------------------------------------------------
+# 5) Measurement & truth rules
+# ---------------------------------------------------------------------------
+  - id: MEA-01
+    name: emq_degradation
+    when:
+      emq_drop_gte: 1.0
+      window_hours: 48
+    then:
+      action: freeze_scaling
+      notify: human
+
+  - id: MEA-02
+    name: platform_backend_gap
+    when:
+      platform_purchases_vs_backend_pct_gt: 30
+      window_days: 7
+    then:
+      action: reconcile
+      notify: human
+      message: "ตรวจ dedup, timezone, currency, การนับ refund"
+
+  - id: MEA-03
+    name: breakeven_guard
+    when:
+      roas_lt: "1 / gross_margin"
+    then:
+      action: alert_and_review
+      notify: ["owner", "finance"]
+    message: "ROAS ต่ำกว่า breakeven — อย่าสเกล"
+
+  - id: MEA-04
+    name: quarterly_truth
+    when:
+      schedule: "quarterly"
+    then:
+      action: run_lift_or_geo_test
+      scope: "largest_uncertainty"
+
+# ---------------------------------------------------------------------------
+# 6) Escalation
+# ---------------------------------------------------------------------------
+escalation:
+  channels:
+    - human_approval_queue
+    - slack_or_line_notify
+  levels:
+    - level: 1
+      trigger: "rule triggered once"
+      action: log_only
+    - level: 2
+      trigger: "same rule triggered 2x in 7 days"
+      action: notify_owner
+    - level: 3
+      trigger: "spend anomaly > 120% of cap OR tracking failure"
+      action: kill_switch
+      requires_human_restart: true
+
+# ---------------------------------------------------------------------------
+# 7) Guardrails (hard limits — ห้ามฝ่าฝืน)
+# ---------------------------------------------------------------------------
+guardrails:
+  spend:
+    daily_cap_multiplier: 1.10
+    max_single_budget_change_pct: 20
+    max_weekly_increase_pct: 60
+  change_control:
+    freeze_hours_after_launch: 24
+    freeze_during_active_test: true
+    require_approval:
+      - "increase_budget > 20%"
+      - "pause_campaign"
+      - "change_audience"
+      - "change_optimization_event"
+  content:
+    banned_claims: ["ดีที่สุด", "อันดับ 1", "รับประกันผล", "รักษาโรค"]
+    require_legal_review_for: ["health", "finance", "education_claims"]
+    ai_disclosure_required: true
+  data:
+    pii_outbound: false
+    hash_required: true
+    no_deletion: ["experiment_log", "creative_registry"]
+  rollback:
+    snapshot_before_change: true
+    keep_snapshots_days: 30
+  kill_switch:
+    always_available: true
+    stops: ["budget_changes", "pauses", "launch"]
+
+# ---------------------------------------------------------------------------
+# 8) Memory schema — AI ต้องเขียนผลทุกครั้ง
+# ---------------------------------------------------------------------------
+memory:
+  experiment_record:
+    fields:
+      - id: string
+      - date: isodate
+      - campaign: string
+      - adset: string
+      - hypothesis: string
+      - variable: string
+      - control: string
+      - treatment: string
+      - metric_primary: string
+      - result_value: number
+      - result_verdict: ["win", "lose", "inconclusive"]
+      - confidence: ["high", "medium", "low"]
+      - decision: string
+      - owner: string
+      - notes: string
+
+  creative_record:
+    fields:
+      - creative_id: string
+      - concept: string
+      - persona: string
+      - awareness: ["unaware", "problem", "solution", "product", "most"]
+      - angle: string
+      - format: ["reels_9x16", "feed_4x5", "feed_1x1", "carousel", "threads_copy"]
+      - hook_text: string
+      - launch_date: isodate
+      - status: ["testing", "winner", "loser", "retired"]
+      - lifetime_cpa: number
+      - lifetime_ctr: number
+
+# ---------------------------------------------------------------------------
+# 9) Human-in-the-loop
+# ---------------------------------------------------------------------------
+human_in_the_loop:
+  default_mode: "L1_assist"          # L0 manual · L1 assist · L2 supervised · L3 autonomous
+  promote_to_L2_after_days: 60
+  promote_to_L3_requires:
+    - "audit_log_review_passed"
+    - "spend_cap_enforced"
+    - "rollback_tested"
+  always_human:
+    - "creative_claims"
+    - "legal_compliance"
+    - "new_market_entry"
+    - "special_ad_category"
