@@ -99,7 +99,7 @@ TikTok playbook บอกว่า "creative คือคันเร่ง" —
 
 - ตัวเลขหลายตัวเป็น **vendor-reported** (โดยเฉพาะ chat commerce conversion 85–98% และ CPM ฿15) — ใช้เป็นกรอบ ไม่ใช่เป้า
 - LINE เปลี่ยน pricing และฟีเจอร์บ่อย (ปรับแพ็กเกจ ส.ค. 2567, เพิ่ม MyCustomer, Target Reach) → **re-verify ทุกไตรมาส**
-- Benchmark retention ส่วนใหญ่มาจาก DTC ตะวันตก — โครงสร้างตลาดไทยต่าง (marketplace比重สูง, COD สูง, return rate สูงใน fashion) → ปรับก่อนใช้
+- Benchmark retention ส่วนใหญ่มาจาก DTC ตะวันตก — โครงสร้างตลาดไทยต่าง (marketplace สัดส่วนสูง, COD สูง, return rate สูงใน fashion) → ปรับก่อนใช้
 - playbook นี้ไม่ใช่ที่ปรึกษากฎหมาย ส่วน PDPA/พ.ร.บ.ขายตรงต้องให้ที่ปรึกษาตรวจอีกครั้ง
 
 ---
@@ -109,7 +109,7 @@ TikTok playbook บอกว่า "creative คือคันเร่ง" —
 | ที่ | ลิงก์ | เนื้อหา |
 |---|---|---|
 | Git (source of truth) | `github.com/poppath/AI_research` → `playbooks/line-crm-retention-2026/` | ครบทุกบท + JSON |
-| Notion | _pending_ | สรุปทุกบท + ตาราง decision |
-| Google Docs | _pending_ | ฉบับอ่าน/แชร์ |
+| Notion | [LINE OA × CRM × Retention/LTV Playbook 2026 (TH)](https://app.notion.com/p/LINE-OA-CRM-Retention-LTV-Playbook-2026-TH-41176ada348881399a95e49da3842858) | สรุปทุกบท + ตาราง decision + flow + anti-patterns |
+| Google Docs | [ฉบับอ่าน/แชร์](https://docs.google.com/document/d/1NcTC3CIYyDC_i9hnhBKgu9jMX4FHBxfKk1pqAd4VnuM/edit) | สรุป 14 หัวข้อ ภาษาไทย อ่านบนมือถือได้ |
 
-อัปเดตล่าสุด: 2026-11-06
+อัปเดตล่าสุด: 2026-11-07
