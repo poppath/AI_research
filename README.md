@@ -15,6 +15,18 @@ Deep-research playbooks written so that **an AI agent can read, reason with, and
 | [`playbooks/customer-research-positioning-2026/`](playbooks/customer-research-positioning-2026/00-START-HERE.md) | Customer Research & Positioning — interviews, evidence, segmentation, positioning, validation, privacy (TH) | ✅ Live (2026-11) |
 | [`playbooks/ai-creative-production-2026/`](playbooks/ai-creative-production-2026/00-START-HERE.md) | AI Creative Production — concept, production, claim/rights QA, experimentation, operating system (TH) | ✅ Live (2026-11) |
 
+
+| [`playbooks/marketing-measurement-attribution-2026/`](playbooks/marketing-measurement-attribution-2026/00-START-HERE.md) | Measurement & Attribution | ✅ Research guide (2026-11) |
+| [`playbooks/conversion-rate-optimization-2026/`](playbooks/conversion-rate-optimization-2026/00-START-HERE.md) | CRO & Landing Pages | ✅ Research guide (2026-11) |
+| [`playbooks/ecommerce-operations-fulfillment-2026/`](playbooks/ecommerce-operations-fulfillment-2026/00-START-HERE.md) | E-commerce Operations & Fulfillment | ✅ Research guide (2026-11) |
+| [`playbooks/offer-merchandising-promotion-2026/`](playbooks/offer-merchandising-promotion-2026/00-START-HERE.md) | Offer, Merchandising & Promotion | ✅ Research guide (2026-11) |
+| [`playbooks/google-ads-search-demand-2026/`](playbooks/google-ads-search-demand-2026/00-START-HERE.md) | Google Ads & Search Demand | ✅ Research guide (2026-11) |
+| [`playbooks/customer-experience-service-reviews-2026/`](playbooks/customer-experience-service-reviews-2026/00-START-HERE.md) | Customer Experience, Service & Reviews | ✅ Research guide (2026-11) |
+| [`playbooks/brand-strategy-organic-content-2026/`](playbooks/brand-strategy-organic-content-2026/00-START-HERE.md) | Brand Strategy & Organic Content | ✅ Research guide (2026-11) |
+| [`playbooks/marketing-planning-budget-allocation-2026/`](playbooks/marketing-planning-budget-allocation-2026/00-START-HERE.md) | Marketing Planning & Budget Allocation | ✅ Research guide (2026-11) |
+
+[Marketing Loop — ลำดับและการเชื่อมต่อ](playbooks/MARKETING-LOOP.md)
+
 ## How to use a playbook
 
 1. **Humans** → read `00-START-HERE.md`, then the numbered chapters in order.

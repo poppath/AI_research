@@ -1,0 +1,31 @@
+{
+  "title": "Offer, Merchandising & Promotion Strategy",
+  "market": "TH",
+  "as_of": "2026-11-07",
+  "source_scope": "See SOURCES.md; no universal account-specific benchmark",
+  "rules": [
+    {
+      "id": "L4-01",
+      "trigger": "Margin floor or stock constraint breached",
+      "action": "Pause offer and recalculate basket economics"
+    },
+    {
+      "id": "L4-02",
+      "trigger": "Conditions inconsistent across channels",
+      "action": "Correct all touchpoints before restart"
+    }
+  ],
+  "output_requirements": [
+    "decision and assumptions",
+    "primary KPI and guardrails",
+    "evidence and uncertainty",
+    "budget/time cap",
+    "owner",
+    "stop and review criteria"
+  ],
+  "related": [
+    "../profit-unit-economics-2026/00-START-HERE.md",
+    "../ecommerce-operations-fulfillment-2026/00-START-HERE.md",
+    "../google-ads-search-demand-2026/00-START-HERE.md"
+  ]
+}

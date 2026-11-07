@@ -1,0 +1,31 @@
+{
+  "title": "Conversion Rate Optimization & Landing Pages",
+  "market": "TH",
+  "as_of": "2026-11-07",
+  "source_scope": "See SOURCES.md; no universal account-specific benchmark",
+  "rules": [
+    {
+      "id": "L2-01",
+      "trigger": "Payment or checkout breaks",
+      "action": "Pause change and restore checkout"
+    },
+    {
+      "id": "L2-02",
+      "trigger": "Traffic insufficient for planned power",
+      "action": "Report exploratory findings and do not claim uplift"
+    }
+  ],
+  "output_requirements": [
+    "decision and assumptions",
+    "primary KPI and guardrails",
+    "evidence and uncertainty",
+    "budget/time cap",
+    "owner",
+    "stop and review criteria"
+  ],
+  "related": [
+    "../profit-unit-economics-2026/00-START-HERE.md",
+    "../marketing-measurement-attribution-2026/00-START-HERE.md",
+    "../ecommerce-operations-fulfillment-2026/00-START-HERE.md"
+  ]
+}

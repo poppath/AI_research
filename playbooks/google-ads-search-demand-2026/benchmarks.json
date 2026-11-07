@@ -1,0 +1,7 @@
+{
+  "market": "TH",
+  "as_of": "2026-11-07",
+  "benchmarks": [],
+  "freshness_rule": "Reverify platform and market data before decisions; flag sources older than 90 days.",
+  "note": "No universal numeric benchmark asserted; collect business-specific baselines."
+}

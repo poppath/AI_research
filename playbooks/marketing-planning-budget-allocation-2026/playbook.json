@@ -1,0 +1,31 @@
+{
+  "title": "Marketing Planning & Budget Allocation",
+  "market": "TH",
+  "as_of": "2026-11-07",
+  "source_scope": "See SOURCES.md; no universal account-specific benchmark",
+  "rules": [
+    {
+      "id": "L8-01",
+      "trigger": "Budget cap exceeded or cash risk breached",
+      "action": "Pause discretionary spend and escalate"
+    },
+    {
+      "id": "L8-02",
+      "trigger": "Measurements unreliable",
+      "action": "Freeze scaling until tracking reconciles"
+    }
+  ],
+  "output_requirements": [
+    "decision and assumptions",
+    "primary KPI and guardrails",
+    "evidence and uncertainty",
+    "budget/time cap",
+    "owner",
+    "stop and review criteria"
+  ],
+  "related": [
+    "../profit-unit-economics-2026/00-START-HERE.md",
+    "../brand-strategy-organic-content-2026/00-START-HERE.md",
+    "../customer-research-positioning-2026/00-START-HERE.md"
+  ]
+}

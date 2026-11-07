@@ -1,0 +1,31 @@
+{
+  "title": "Brand Strategy & Organic Content",
+  "market": "TH",
+  "as_of": "2026-11-07",
+  "source_scope": "See SOURCES.md; no universal account-specific benchmark",
+  "rules": [
+    {
+      "id": "L7-01",
+      "trigger": "Claim unsupported or asset rights missing",
+      "action": "Block publication and obtain approval"
+    },
+    {
+      "id": "L7-02",
+      "trigger": "Organic engagement interpreted as sales lift",
+      "action": "Design controlled measurement before causal claims"
+    }
+  ],
+  "output_requirements": [
+    "decision and assumptions",
+    "primary KPI and guardrails",
+    "evidence and uncertainty",
+    "budget/time cap",
+    "owner",
+    "stop and review criteria"
+  ],
+  "related": [
+    "../profit-unit-economics-2026/00-START-HERE.md",
+    "../customer-experience-service-reviews-2026/00-START-HERE.md",
+    "../marketing-planning-budget-allocation-2026/00-START-HERE.md"
+  ]
+}

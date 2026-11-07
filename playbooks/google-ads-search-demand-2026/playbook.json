@@ -1,0 +1,31 @@
+{
+  "title": "Google Ads & Search Demand",
+  "market": "TH",
+  "as_of": "2026-11-07",
+  "source_scope": "See SOURCES.md; no universal account-specific benchmark",
+  "rules": [
+    {
+      "id": "L5-01",
+      "trigger": "Tracking duplicates or feed price wrong",
+      "action": "Pause affected campaigns and repair tracking/feed"
+    },
+    {
+      "id": "L5-02",
+      "trigger": "Spend exceeds approved cap",
+      "action": "Pause and investigate before further spend"
+    }
+  ],
+  "output_requirements": [
+    "decision and assumptions",
+    "primary KPI and guardrails",
+    "evidence and uncertainty",
+    "budget/time cap",
+    "owner",
+    "stop and review criteria"
+  ],
+  "related": [
+    "../profit-unit-economics-2026/00-START-HERE.md",
+    "../offer-merchandising-promotion-2026/00-START-HERE.md",
+    "../customer-experience-service-reviews-2026/00-START-HERE.md"
+  ]
+}
