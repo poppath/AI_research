@@ -6,17 +6,17 @@
       "statement": "GICS โครงสร้างรวม 11 sector, 25 groups, 74 industries, 163 sub-industries",
       "repo_path": "playbooks/sector-business-2026/gics-drilldown/00-START-HERE.md",
       "scope": "GICS methodology version cited; not S&P 500 constituent list",
-      "status": "needs_review",
+      "status": "verified",
       "source": {
         "title": "MSCI GICS methodology",
         "url": "https://www.msci.com/indexes/documents/methodology/1_MSCI_Global_Industry_Classification_Standard_GICS_Methodology_20250220.pdf",
         "type": "official",
-        "accessed_at": null,
+        "accessed_at": "2026-11-07",
         "effective_at": null
       },
-      "reviewer": null,
-      "reviewed_at": null,
-      "limitations": "ต้องตรวจ edition ล่าสุดและการเปลี่ยนแปลงก่อนเผยแพร่หรือ reuse taxonomy"
+      "reviewer": "AI agent, source-level review only; not legal or account verification",
+      "reviewed_at": "2026-11-07",
+      "limitations": "ต้องตรวจ edition ล่าสุดและการเปลี่ยนแปลงก่อนเผยแพร่หรือ reuse taxonomy; ตรวจเฉพาะข้อความและ scope ตาม SOURCE-VERIFICATION.md ณ 2026-11-07 ไม่ใช่ความเห็นผู้เชี่ยวชาญหรือยืนยันบัญชี"
     },
     {
       "id": "C-002",
@@ -142,17 +142,17 @@
       "statement": "YouTube มีนโยบายเกี่ยวกับ reused content และ monetization",
       "repo_path": "playbooks/7m-ai-content-affiliate-automation-2026/SOURCES.md",
       "scope": "YouTube monetization; account eligibility varies",
-      "status": "needs_review",
+      "status": "verified",
       "source": {
         "title": "YouTube monetization policies",
         "url": "https://support.google.com/youtube/answer/1311392?hl=en",
         "type": "official",
-        "accessed_at": null,
+        "accessed_at": "2026-11-07",
         "effective_at": null
       },
-      "reviewer": null,
-      "reviewed_at": null,
-      "limitations": "ตรวจ policy version และการมีสิทธิในบัญชี; ไม่รับประกันผล"
+      "reviewer": "AI agent, source-level review only; not legal or account verification",
+      "reviewed_at": "2026-11-07",
+      "limitations": "ตรวจ policy version และการมีสิทธิในบัญชี; ไม่รับประกันผล; ตรวจเฉพาะข้อความและ scope ตาม SOURCE-VERIFICATION.md ณ 2026-11-07 ไม่ใช่ความเห็นผู้เชี่ยวชาญหรือยืนยันบัญชี"
     },
     {
       "id": "C-010",
@@ -176,34 +176,34 @@
       "statement": "FTC influencer disclosure เป็นแนวทาง US ไม่ใช่กฎหมายไทยโดยอัตโนมัติ",
       "repo_path": "playbooks/7m-ai-content-affiliate-automation-2026/SOURCES.md",
       "scope": "US FTC; Thai requirements must be checked separately",
-      "status": "needs_review",
+      "status": "verified",
       "source": {
         "title": "FTC Disclosures 101",
         "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
         "type": "official",
-        "accessed_at": null,
+        "accessed_at": "2026-11-07",
         "effective_at": null
       },
-      "reviewer": null,
-      "reviewed_at": null,
-      "limitations": "ตรวจ jurisdiction และ status ปัจจุบันกับผู้เชี่ยวชาญ"
+      "reviewer": "AI agent, source-level review only; not legal or account verification",
+      "reviewed_at": "2026-11-07",
+      "limitations": "ตรวจ jurisdiction และ status ปัจจุบันกับผู้เชี่ยวชาญ; ตรวจเฉพาะข้อความและ scope ตาม SOURCE-VERIFICATION.md ณ 2026-11-07 ไม่ใช่ความเห็นผู้เชี่ยวชาญหรือยืนยันบัญชี"
     },
     {
       "id": "C-012",
       "statement": "Google Analytics manual tagging ใช้เพื่อ attribution ตามข้อกำหนด GA",
       "repo_path": "playbooks/7m-ai-content-affiliate-automation-2026/SOURCES.md",
       "scope": "Google Analytics / tagged links; no claim of incrementality",
-      "status": "needs_review",
+      "status": "verified",
       "source": {
         "title": "Google Analytics manual tagging",
         "url": "https://support.google.com/analytics/answer/11242870",
         "type": "official",
-        "accessed_at": null,
+        "accessed_at": "2026-11-07",
         "effective_at": null
       },
-      "reviewer": null,
-      "reviewed_at": null,
-      "limitations": "UTM ไม่ใช่ causal proof และ redirects อาจทำให้ parameter สูญหาย"
+      "reviewer": "AI agent, source-level review only; not legal or account verification",
+      "reviewed_at": "2026-11-07",
+      "limitations": "UTM ไม่ใช่ causal proof และ redirects อาจทำให้ parameter สูญหาย; ตรวจเฉพาะข้อความและ scope ตาม SOURCE-VERIFICATION.md ณ 2026-11-07 ไม่ใช่ความเห็นผู้เชี่ยวชาญหรือยืนยันบัญชี"
     },
     {
       "id": "C-013",

@@ -1,0 +1,3427 @@
+{
+  "documents": [
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "stop_and_request_evidence",
+            "trigger": "rights_or_claim_evidence_missing"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "stop_before_publish",
+            "trigger": "disclosure_or_platform_consent_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_intended_use_scope_audit_preview_and_explicit_consent",
+            "trigger": "tiktok_direct_post"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "use_permitted_native_flow_and_verify_account",
+            "trigger": "shopee_or_tiktok_product_tag_api_unverified"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "reconcile_before_retry",
+            "trigger": "publish_outcome_unknown"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate_to_owner",
+            "trigger": "budget_exceeded_or_account_restricted"
+          },
+          "pointer": "/rules/5",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "report_separately_from_approved_and_paid",
+            "trigger": "commission_pending"
+          },
+          "pointer": "/rules/6",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "reject_and_offer_original_or_licensed_content",
+            "trigger": "unauthorized_reupload"
+          },
+          "pointer": "/rules/7",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "stop_and_verify_program_terms",
+            "trigger": "affiliate_placement_or_product_eligibility_unknown"
+          },
+          "pointer": "/rules/8",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "mark_unknown_and_reconcile_do_not_infer",
+            "trigger": "tracking_attribution_or_settlement_unmatched"
+          },
+          "pointer": "/rules/9",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "stop_do_not_retry_and_escalate",
+            "trigger": "tiktok_spam_risk_error"
+          },
+          "pointer": "/rules/10",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/7m-ai-content-affiliate-automation-2026/playbook.json",
+      "sha256": "80772f8f818ef34e6320b71d05dd6d14a983fe75afc62230695d09718dcd023d"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "Block release and escalate",
+            "id": "AC-01",
+            "trigger": "No approved claim proof or rights"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Minimize data and use only approved provider and purpose",
+            "id": "AC-02",
+            "trigger": "Personal data in AI input"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Remove or verify before release",
+            "id": "AC-03",
+            "trigger": "AI output contains unsupported claim"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Treat comparison as exploratory, not causal",
+            "id": "AC-04",
+            "trigger": "Unbalanced platform delivery"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Report inconclusive, not no effect",
+            "id": "AC-05",
+            "trigger": "Randomized test underpowered"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Pause and investigate",
+            "id": "AC-06",
+            "trigger": "Tracking broken or safety cap reached"
+          },
+          "pointer": "/rules/5",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Apply current channel-specific requirements and review",
+            "id": "AC-07",
+            "trigger": "Platform AIGC disclosure applicable"
+          },
+          "pointer": "/rules/6",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Do not recommend scaling until measured",
+            "id": "AC-08",
+            "trigger": "CM2 or economics unknown"
+          },
+          "pointer": "/rules/7",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Block publication",
+            "id": "AC-09",
+            "trigger": "Synthetic testimonial or identity without rights"
+          },
+          "pointer": "/rules/8",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Retire affected assets and review related versions",
+            "id": "AC-10",
+            "trigger": "Claims or rights become invalid"
+          },
+          "pointer": "/rules/9",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/ai-creative-production-2026/playbook.json",
+      "sha256": "dc7c95033fdeed1e5ad128fea72589a59b5ace797d4b442f88eb0ac876cec10b"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "Block publication and obtain approval",
+            "id": "L7-01",
+            "trigger": "Claim unsupported or asset rights missing"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Design controlled measurement before causal claims",
+            "id": "L7-02",
+            "trigger": "Organic engagement interpreted as sales lift"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/brand-strategy-organic-content-2026/playbook.json",
+      "sha256": "00764c6d75abbbd77940454fb78de1333162376f6a5fbb7eb33b694751e481f5"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "Pause change and restore checkout",
+            "id": "L2-01",
+            "trigger": "Payment or checkout breaks"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Report exploratory findings and do not claim uplift",
+            "id": "L2-02",
+            "trigger": "Traffic insufficient for planned power"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/conversion-rate-optimization-2026/playbook.json",
+      "sha256": "398652403fdf5f5152499356611716c44bb6814b1883b8d5059cd335f01b489b"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "Escalate, pause affected claims and follow incident process",
+            "id": "L6-01",
+            "trigger": "Product harm or deceptive claim"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Do not publish until rights are confirmed",
+            "id": "L6-02",
+            "trigger": "Use of customer quote lacks permission"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/customer-experience-service-reviews-2026/playbook.json",
+      "sha256": "224aeefd0bec23200a460eabb7f8fe66dd2848ec1e9129896c9447e0a3c0f4ef"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "Define owner, decision, deadline and alternatives before research",
+            "id": "CR-01",
+            "trigger": "No decision question"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Recruit relevant non-buyers or record missing coverage",
+            "id": "CR-02",
+            "trigger": "Only positive customers recruited"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Treat as unverified; never fabricate participants",
+            "id": "CR-03",
+            "trigger": "Quote without provenance"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Block publication and obtain proof",
+            "id": "CR-04",
+            "trigger": "Claim lacks evidence or approval"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Assess lawful basis, minimize, restrict access and assess provider before AI use",
+            "id": "CR-05",
+            "trigger": "Research contains personal data"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Do not extrapolate qualitative counts to population",
+            "id": "CR-06",
+            "trigger": "Sample is nonrepresentative"
+          },
+          "pointer": "/rules/5",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Report inconclusive and plan next test",
+            "id": "CR-07",
+            "trigger": "Test underpowered or contaminated"
+          },
+          "pointer": "/rules/6",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Measure CM2 before budget decisions",
+            "id": "CR-08",
+            "trigger": "Offer economics unknown"
+          },
+          "pointer": "/rules/7",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/customer-research-positioning-2026/playbook.json",
+      "sha256": "e143d80a8eba217845d9cf22e655e4db24289811ada5d628806082a75a4128c1"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "Reconcile and pause promotions for affected SKU",
+            "id": "L3-01",
+            "trigger": "Inventory inaccurate or unavailable"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Stop misleading promise, notify customers, review capacity",
+            "id": "L3-02",
+            "trigger": "Delivery commitments cannot be met"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/ecommerce-operations-fulfillment-2026/playbook.json",
+      "sha256": "9c18ca123dce922979815df5ffcabccc1a2218e15ad045a4975be4b7a315529c"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "Pause affected campaigns and repair tracking/feed",
+            "id": "L5-01",
+            "trigger": "Tracking duplicates or feed price wrong"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Pause and investigate before further spend",
+            "id": "L5-02",
+            "trigger": "Spend exceeds approved cap"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/google-ads-search-demand-2026/playbook.json",
+      "sha256": "1b520144b402dfe0787ac476afd179cbd836d7f79198318980552c4ab12829ba"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "because": "ถ้าไม่มี tag ที่สม่ำเสมอ จะแบ่งกลุ่มไม่ได้ และ CRM จะกลายเป็นกล่องข้อความ",
+            "chapter": "02",
+            "do": "ประกาศ tag standard 3 มิติ (source / stage / value) เป็นรายการปิด ห้ามพิมพ์เอง",
+            "id": "R-101",
+            "stage": "foundation",
+            "when": "เริ่มทำ LINE OA หรือยังไม่มี tag standard"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "แพ็กเกจคิดต่อข้อความ การเลือกผิดทำให้จ่ายเกินหรือส่งไม่ได้กลางเดือน",
+            "chapter": "02",
+            "do": "คำนวณ messages/เดือน = เพื่อน × จำนวนส่ง แล้วเลือกแพ็กเกจ; ถ้า ≥20,000 → Pro; ถ้าจะซื้อ CRM อยู่แล้ว → Pro คุ้มตั้งแต่ ~16,310",
+            "id": "R-102",
+            "stage": "foundation",
+            "when": "เลือกแพ็กเกจ LINE OA"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ปุ่มที่มากขึ้นทำให้ทุกปุ่มแย่งความสนใจ และทำให้อ่านผลไม่ได้",
+            "chapter": "02",
+            "do": "≤4–6 ปุ่มตาม intent ไม่ใช่ตามแผนก และทุกปุ่มต้องวัด tap ได้",
+            "id": "R-103",
+            "stage": "foundation",
+            "when": "ออกแบบ rich menu"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "เพื่อนผีทำให้ต้นทุนข้อความในอนาคตสูงขึ้นโดยไม่สร้างรายได้",
+            "chapter": "03",
+            "do": "วัด CPF คู่กับ 90-day net friend value และ 60-day friend retention เสมอ",
+            "id": "R-104",
+            "stage": "grow",
+            "when": "หาเพื่อนใหม่"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "QR เดียวใช้ทุกที่ทำให้ไม่รู้ว่าช่องทางใดทำงาน",
+            "chapter": "03",
+            "do": "ทุก QR ต้องมี param เฉพาะจุด + incentive ที่ตรงบริบท + ข้อความบอกว่าได้อะไร",
+            "id": "R-105",
+            "stage": "grow",
+            "when": "แจก QR ทุกจุด"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ได้ผล 80% ด้วยความพยายาม 5% และอธิบายให้ทีมขายเข้าใจได้",
+            "chapter": "04",
+            "do": "เริ่มที่ RFM quintile (หรือ fixed threshold ถ้าฐาน <10,000) → 11 segment → action map",
+            "id": "R-106",
+            "stage": "segment",
+            "when": "เริ่มทำ segmentation"
+          },
+          "pointer": "/rules/5",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ทุกข้อความมีต้นทุนทั้งเงินและ block rate",
+            "chapter": "04",
+            "do": "กำหนด cap ต่อ segment และลดครึ่งหนึ่งทันทีถ้า segment นั้น block > 8%",
+            "id": "R-107",
+            "stage": "segment",
+            "when": "ตั้งความถี่ส่ง"
+          },
+          "pointer": "/rules/6",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "flow ที่ไม่มี exit จะส่งข้อความชวนซื้อให้คนที่ซื้อแล้ว",
+            "chapter": "05",
+            "do": "ทุก flow ต้องมี trigger, condition, message, delay, exit, measure ครบ 6 องค์ประกอบ",
+            "id": "R-108",
+            "stage": "automate",
+            "when": "สร้าง flow"
+          },
+          "pointer": "/rules/7",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ออเดอร์ที่ 2 คือจุดที่ unit economics พลิกจากขาดทุนเป็นกำไร",
+            "chapter": "05",
+            "do": "welcome → 2nd purchase → post-purchase care → replenishment → win-back (ทีละตัว ห่างกัน 2 สัปดาห์)",
+            "id": "R-109",
+            "stage": "automate",
+            "when": "จัดลำดับการสร้าง flow"
+          },
+          "pointer": "/rules/8",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "automation ที่ไม่มีทางออกไปหาคนทำให้ลูกค้าโกรธเร็วขึ้น",
+            "chapter": "02",
+            "do": "มี verified badge + Premium ID + เส้นทาง 'คุยกับเจ้าหน้าที่' + SLA การตอบ",
+            "id": "R-110",
+            "stage": "foundation",
+            "when": "เปิดใช้งาน OA ครั้งแรก"
+          },
+          "pointer": "/rules/9",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "LINE Ads แข็งที่ reach ราคาถูกและ CPF ไม่ใช่ interest targeting ละเอียด",
+            "chapter": "03",
+            "do": "ใช้ CPF เป็น objective หลักสำหรับหาเพื่อน, งบ ≥฿500/วัน/ad group, ห้ามแตะ 3 วันแรก, ขยาย +20–30%/3 วัน",
+            "id": "R-111",
+            "stage": "grow",
+            "when": "ใช้ LINE Ads"
+          },
+          "pointer": "/rules/10",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ความเร็วในการตอบคือตัวแปรที่ทรงพลังที่สุดของ chat commerce",
+            "chapter": "07",
+            "do": "ตั้ง SLA ตอบครั้งแรก ≤5 นาทีในเวลาทำการ และ ≤1 ชม.เสมอ; เกิน 3 ข้อความยังไม่จบ → escalate",
+            "id": "R-112",
+            "stage": "sell",
+            "when": "มีแชทเข้ามาขาย"
+          },
+          "pointer": "/rules/11",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "loyalty ที่กิน margin เกินจะทำให้ยอดขึ้นแต่กำไรหาย",
+            "chapter": "08",
+            "do": "คำนวณต้นทุน point เป็น % ของ AOV และเพดานตาม CM: CM>40% → 5–8%, CM 25–40% → 3–5%, CM<20% → 1–3%",
+            "id": "R-113",
+            "stage": "loyalty",
+            "when": "ออกแบบ point/tier"
+          },
+          "pointer": "/rules/12",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "การเริ่มแก้ที่ content หรือ audience ทำให้เสียเวลาและแก้ผิดจุด",
+            "chapter": "13",
+            "do": "ไล่ diagnostic ladder ตามลำดับ tracking → segment → flow → message → offer → acquisition",
+            "id": "R-114",
+            "stage": "fix",
+            "when": "ยอดหรือ engagement ตก"
+          },
+          "pointer": "/rules/13",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ลูกค้าที่ซื้อของลดหนักจะได้คะแนน M สูงเกินจริงถ้าใช้ revenue",
+            "chapter": "04",
+            "do": "ใช้ margin แทน revenue ถ้ามีข้อมูล และ recalibrate threshold ทุกไตรมาส",
+            "id": "R-120",
+            "stage": "segment",
+            "when": "คำนวณ RFM"
+          },
+          "pointer": "/rules/14",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "trigger ผิดเวลาทำให้ข้อความมาก่อนที่ลูกค้าจะต้องการ",
+            "chapter": "05",
+            "do": "คำนวณจากรอบใช้สินค้าจริงต่อ SKU (เช่น วันที่คาดหมด −7 วัน) ไม่ใช่ค่าเฉลี่ยทั้งฐาน",
+            "id": "R-121",
+            "stage": "automate",
+            "when": "ตั้ง trigger replenishment"
+          },
+          "pointer": "/rules/15",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ส่วนลดเป็นข้อความแรกฝึกให้ลูกค้ารอโปรและลด CM",
+            "chapter": "05",
+            "do": "อย่าใช้ส่วนลดเป็นข้อความแรก; ใช้ content/บริการ/สิทธิ์ก่อน",
+            "id": "R-122",
+            "stage": "automate",
+            "when": "สร้าง flow ที่มีข้อเสนอ"
+          },
+          "pointer": "/rules/16",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ราคาไม่ตรงและ checkout พังทำลายความเชื่อถือและสร้างข้อร้องเรียน",
+            "chapter": "07",
+            "do": "ทดสอบ checkout จริง + ตรวจว่าราคาตรงกับทุกช่องทาง + ผูก point กับ CRM",
+            "id": "R-123",
+            "stage": "sell",
+            "when": "เปิด MyShop"
+          },
+          "pointer": "/rules/17",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "การได้ลูกค้าแล้วทิ้งแย่กว่าการไม่ได้ลูกค้า",
+            "chapter": "07",
+            "do": "ต้องมีคนตอบรองรับ traffic และ tag source ทุกครั้ง; ถ้าตอบไม่ทันให้หยุดยิงก่อน",
+            "id": "R-124",
+            "stage": "sell",
+            "when": "ยิง paid ads เข้า LINE"
+          },
+          "pointer": "/rules/18",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "tier ที่มากเกินทำให้ลูกค้าไม่รู้ว่าตัวเองอยู่ไหนและไม่ motivate",
+            "chapter": "08",
+            "do": "ใช้ 3–4 ระดับ ไม่ใช่ 5 และต้องมีวันหมดอายุสถานะ 12 เดือน",
+            "id": "R-125",
+            "stage": "loyalty",
+            "when": "ออกแบบ tier"
+          },
+          "pointer": "/rules/19",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "จำนวนสมาชิกไม่ใช่หลักฐานว่า loyalty สร้างกำไร",
+            "chapter": "08",
+            "do": "วัด member repeat rate เทียบ non-member (หรือ holdout) และ point liability < 5% ของรายได้เดือน",
+            "id": "R-126",
+            "stage": "loyalty",
+            "when": "วัดผล loyalty"
+          },
+          "pointer": "/rules/20",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "block เป็นการสูญเสียถาวร ต้องแก้ทันทีไม่ใช่ปรับนิดหน่อย",
+            "chapter": "13",
+            "do": "หยุด broadcast ทั้งหมด ยกเว้น transactional; ส่งข้อความขอโทษ 1 ครั้ง; ฟื้นด้วย 1:1 และ targeted กับ Champions ก่อน",
+            "id": "R-130",
+            "stage": "fix",
+            "when": "block rate > 8%"
+          },
+          "pointer": "/rules/21",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "การเปลี่ยนหลายอย่างพร้อมกันทำให้ไม่รู้ว่าอะไรได้ผล",
+            "chapter": "13",
+            "do": "ทำ A/B 1 ตัวแปร, กลุ่มละ ≥1,000 คน, รอ ≥24 ชม., ตัดสินที่ RPM/conversion ไม่ใช่ open rate",
+            "id": "R-131",
+            "stage": "fix",
+            "when": "จะเปลี่ยนอะไรก็ตาม"
+          },
+          "pointer": "/rules/22",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ส่วนใหญ่ปัญหาไม่ใช่ช่องทาง แต่เป็นระบบที่ยังไม่ถูกสร้าง",
+            "chapter": "13",
+            "do": "ตอบ 7 คำถามตรวจสอบก่อน (tag ≥80%, flow ครบ, block rate, response time, คนตอบช่วงกลางคืน, แยก revenue, CM₁ บวก)",
+            "id": "R-132",
+            "stage": "fix",
+            "when": "สรุปว่า LINE ไม่ work"
+          },
+          "pointer": "/rules/23",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "PDPA กำหนดและ consent ที่พิสูจน์ไม่ได้ใช้ไม่ได้จริง",
+            "chapter": "10",
+            "do": "consent แยกจากบริการ ไม่ pre-tick ถอนได้ง่ายเท่าที่ให้ และเก็บหลักฐาน timestamp + ถ้อยคำ",
+            "id": "R-140",
+            "stage": "foundation",
+            "when": "เก็บข้อมูลใด ๆ เพื่อการตลาด"
+          },
+          "pointer": "/rules/24",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "สิทธิคัดค้านการตลาดตรงบังคับใช้และต้องทำงานข้ามช่องทาง",
+            "chapter": "10",
+            "do": "ใส่ opt-out ที่ใช้งานได้จริง และเมื่อมีคำขอให้หยุดทุกช่องทางภายใน 24–48 ชม.",
+            "id": "R-141",
+            "stage": "foundation",
+            "when": "ทุกข้อความการตลาด"
+          },
+          "pointer": "/rules/25",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ผิด PDPA มาตรา 26 และเสี่ยงต่อกฎหมายโฆษณา",
+            "chapter": "10",
+            "do": "ห้ามใช้ข้อมูลอ่อนไหว (สุขภาพ ศาสนา ชีวภาพ) แม้ลูกค้าจะพิมพ์เองในแชท",
+            "id": "R-142",
+            "stage": "foundation",
+            "when": "ออกแบบ tag/segment"
+          },
+          "pointer": "/rules/26",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "guidance ด้าน AI/profiling เพิ่มข้อกำหนด safeguards",
+            "chapter": "10",
+            "do": "แจ้งใน privacy notice, ให้มนุษย์ยืนยันก่อนตัดสินใจที่มีผลกับลูกค้า, มีช่องทางคัดค้าน profiling",
+            "id": "R-143",
+            "stage": "foundation",
+            "when": "ใช้ AI ในการตลาด"
+          },
+          "pointer": "/rules/27",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "native ครอบคลุม 80% ของ use case SME และการซื้อซ้อนทำให้ระบบพัง",
+            "chapter": "11",
+            "do": "เริ่มจาก native (OA Manager + MyCustomer) ก่อน; ระวัง 1 channel = 1 webhook",
+            "id": "R-150",
+            "stage": "foundation",
+            "when": "เลือกเครื่องมือ"
+          },
+          "pointer": "/rules/28",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "อย่าเพิ่มเพื่อนเร็วกว่าความสามารถในการดูแล",
+            "chapter": "03",
+            "do": "หยุด/ชะลอถ้า block > 7% สองสัปดาห์, to-friend 30d purchase < 5%, หรือ quota เต็มก่อนกลางเดือน",
+            "id": "R-151",
+            "stage": "grow",
+            "when": "พิจารณาเพิ่มเพื่อน"
+          },
+          "pointer": "/rules/29",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "30–40% ของฐานมักสร้างรายได้ <5% การส่งถึงกลุ่มนี้คือการจ่ายเงินเปล่า",
+            "chapter": "04",
+            "do": "ลดความถี่หรือ suppress (Lost = ไตรมาสละครั้ง) แทนการพยายามกระตุ้นทุกเดือน",
+            "id": "R-152",
+            "stage": "segment",
+            "when": "เห็น segment ที่ไม่ทำรายได้"
+          },
+          "pointer": "/rules/30",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ช่องที่ CPA แพงกว่าอาจให้ cohort ที่คุ้มกว่ามาก",
+            "chapter": "09",
+            "do": "ใช้ LTV₉₀ = CM₁ + (repeat% × CM₂) เทียบกับ CAC ต่อช่องทาง ไม่ใช่ CPA หรือ platform ROAS",
+            "id": "R-153",
+            "stage": "fix",
+            "when": "ตัดสินใจเรื่องงบ"
+          },
+          "pointer": "/rules/31",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ตัวชี้วัดเดียวหลอกได้เสมอ",
+            "chapter": "09",
+            "do": "ใช้ 12 ตัวเลข (เพื่อนใหม่, block, open, CTR, revenue LINE, revenue แยกช่อง, 90d repeat by source, time to 2nd, CAC, LTV:CAC, CM after ads, MER)",
+            "id": "R-160",
+            "stage": "segment",
+            "when": "วัดผลทั้งระบบ"
+          },
+          "pointer": "/rules/32",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "LTV แบบ revenue สูงเกินจริง 2–4 เท่า",
+            "chapter": "09",
+            "do": "ใช้ CM basis และกรอบ 12 เดือน ห้ามใช้ revenue หรือ 'ตลอดชีพ' เพื่อ justify CAC",
+            "id": "R-161",
+            "stage": "segment",
+            "when": "คำนวณ LTV"
+          },
+          "pointer": "/rules/33",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ยอดขายไทยกระจุกตัวรอบเงินเดือนและ mega sale",
+            "chapter": "12",
+            "do": "ฝังปฏิทินไทย (เงินเดือนออก 25–1, mega sale 9.9–12.12, เทศกาล) และเตรียมล่วงหน้า 3–4 สัปดาห์",
+            "id": "R-162",
+            "stage": "foundation",
+            "when": "วางแผนรายเดือน"
+          },
+          "pointer": "/rules/34",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "การปิดการขาย high-value และเรื่องอ่อนไหวต้องมีการตัดสินใจของมนุษย์",
+            "chapter": "05",
+            "do": "automation สำหรับคัดกรอง/ข้อมูล/ตอบซ้ำ; คนสำหรับปิด high-value, ข้อร้องเรียน, และเรื่องสุขภาพ",
+            "id": "R-163",
+            "stage": "automate",
+            "when": "ตัดสินใจ automate vs คน"
+          },
+          "pointer": "/rules/35",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "ถ้าไม่มีเกณฑ์ล่วงหน้า จะตัดสินด้วยอารมณ์หรือตัดสินช้าเกินไป",
+            "chapter": "13",
+            "do": "กำหนด kill criteria ล่วงหน้าเป็นตัวเลข + กรอบเวลา และบันทึกใน change log",
+            "id": "R-170",
+            "stage": "fix",
+            "when": "จะปิด/ลด flow หรือ campaign"
+          },
+          "pointer": "/rules/36",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "LINE เปลี่ยนราคาและฟีเจอร์บ่อย และ benchmark ตลาดเปลี่ยนเร็ว",
+            "chapter": "METRICS",
+            "do": "re-verify ก่อนใช้ตัดสินใจงบ และอัปเดต as_of",
+            "id": "R-180",
+            "stage": "foundation",
+            "when": "ทุกครั้งที่ตัวเลขใน benchmarks.json อายุเกิน 90 วัน"
+          },
+          "pointer": "/rules/37",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/line-crm-retention-2026/playbook.json",
+      "sha256": "fa6a8fd1953130fddbbb4127cd56872bed35246da642ec981f45a6ce92ba1e26"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "Pause experiments; fix event mapping and reconcile orders",
+            "id": "L1-01",
+            "trigger": "Tracking ไม่ผ่าน reconciliation"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Mark inconclusive; do not declare a causal winner",
+            "id": "L1-02",
+            "trigger": "Sample or power insufficient"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/marketing-measurement-attribution-2026/playbook.json",
+      "sha256": "4e8b7f1b2af7f5b352bde9cd85e9fbb160c1cc636c49d70881a6eba766db2664"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "Pause discretionary spend and escalate",
+            "id": "L8-01",
+            "trigger": "Budget cap exceeded or cash risk breached"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Freeze scaling until tracking reconciles",
+            "id": "L8-02",
+            "trigger": "Measurements unreliable"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/marketing-planning-budget-allocation-2026/playbook.json",
+      "sha256": "8cb4699a94e8600e8555c0e1dff553268db5f2fe5e518642bc506f391b6a8911"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "Pause offer and recalculate basket economics",
+            "id": "L4-01",
+            "trigger": "Margin floor or stock constraint breached"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Correct all touchpoints before restart",
+            "id": "L4-02",
+            "trigger": "Conditions inconsistent across channels"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/offer-merchandising-promotion-2026/playbook.json",
+      "sha256": "8f3159d47645098368ef0a7ae3aa1a5e728fed39887261f7620406460cf06825"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "หยุดการตัดสินใจเรื่องงบโฆษณาทั้งหมด และคำนวณ CM2 ต่อ SKU ต่อช่องทางด้วย Rough estimate ภายใน 7 วัน",
+            "chapter": "03",
+            "guardrail": "ใช้ landed cost ไม่ใช่ FOB",
+            "id": "R-301",
+            "stage": "measure",
+            "trigger": "ยังไม่ทราบ CM2 ต่อออเดอร์เป็นบาท",
+            "verify_within_days": 7,
+            "why": "ทุกการตัดสินใจเรื่องงบที่ไม่มี CM2 เป็นฐานคือการเดา"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "คำนวณ CM1 = net revenue − COGS(landed) − ค่าส่ง − บรรจุภัณฑ์ − COD fee − refusal provision; CM2 = CM1 − platform fees ทั้งหมด; CM3 = CM2 − ค่าโฆษณา",
+            "chapter": "03",
+            "guardrail": "คิดเป็นบาทต่อออเดอร์ก่อน แล้วค่อยแปลงเป็น % บน net revenue หลังส่วนลดร้าน",
+            "id": "R-302",
+            "stage": "measure",
+            "trigger": "คำนวณ CM2",
+            "why": "การรวม platform fee ไว้ใน CM1 ทำให้เทียบข้ามช่องทางไม่ได้"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "รวม commission + transaction fee + infra fee + service fee ที่เข้าร่วม + CGF + affiliate แล้วหารด้วย GMV จาก payout report 1 เดือนเต็ม",
+            "chapter": "04",
+            "guardrail": "ตรวจว่า ผลรวม (ยอดขาย − take rate − ค่าส่งที่ร้านจ่าย) ≈ payout total ±1%",
+            "id": "R-303",
+            "stage": "measure",
+            "trigger": "ต้องการ take rate จริง",
+            "why": "commission เดี่ยวไม่ใช่ take rate — ต่างกันได้ 5–8 pts"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ใช้สูตร จำนวนพัสดุที่ถูกปฏิเสธ ÷ จำนวนพัสดุที่ส่งออก และแยกตามขนส่ง พื้นที่ ช่องทาง และ SKU",
+            "chapter": "05",
+            "guardrail": "ห้ามใช้ จำนวนปฏิเสธ ÷ จำนวนออเดอร์",
+            "id": "R-304",
+            "stage": "measure",
+            "trigger": "วัด refusal rate",
+            "why": "ต้องมีอย่างน้อย 30 ออเดอร์ต่อกลุ่มก่อนสรุป"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ห้ามยิงแอด ให้เลือกหนึ่งใน: ขึ้นราคา, เปลี่ยนช่องทาง, เลิกขาย SKU, หรือเจรจา COGS ใหม่",
+            "chapter": "03",
+            "guardrail": "ห้ามแก้ด้วยการเพิ่มยอดขาย",
+            "id": "R-305",
+            "priority": "critical",
+            "stage": "fix_structure",
+            "trigger": "CM2 < 10%",
+            "why": "ไม่มีพื้นที่ให้ CAC เลย"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ตั้ง CAC ceiling = CM2 และพึ่ง repeat ในการทำกำไร ต้องมี 90-day repeat ≥ 25% จึงจะ scale ได้",
+            "chapter": "08",
+            "guardrail": "ต้องมี payback < 120 วัน",
+            "id": "R-306",
+            "stage": "fix_structure",
+            "trigger": "CM2 10–20%",
+            "why": "margin แคบเกินกว่าจะจ่าย CAC แบบ full"
+          },
+          "pointer": "/rules/5",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ตัดสินใจภายใน 1 สัปดาห์: ขึ้นราคา / เปลี่ยนช่องทาง / เลิกขาย — ห้ามปล่อยค้าง",
+            "chapter": "03",
+            "guardrail": "ถ้า SKU เป็น traffic driver ให้จำกัดสัดส่วนไม่เกิน 20% ของยอด",
+            "id": "R-307",
+            "stage": "fix_structure",
+            "trigger": "พบ SKU ที่ CM2 < 15%",
+            "why": "ปกติ 10–25% ของ SKU ติดลบและถูกซ่อนด้วยค่าเฉลี่ย"
+          },
+          "pointer": "/rules/6",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ห้ามสรุปจากค่าเฉลี่ย ให้ดู distribution CM2 ต่อ SKU และดู SKU concentration (top 10 SKU = กี่ % ของ CM2)",
+            "chapter": "03",
+            "id": "R-308",
+            "stage": "fix_structure",
+            "trigger": "ค่าเฉลี่ยทั้งร้านดูดี",
+            "why": "ค่าเฉลี่ยซ่อน SKU ที่ขาดทุน"
+          },
+          "pointer": "/rules/7",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "เพิ่มบรรทัด provision = refusal_rate × (ค่าส่งไป + ค่าส่งกลับ + repack + ต้นทุนสินค้า × % ที่ขายต่อไม่ได้) แยกตาม SKU",
+            "chapter": "05",
+            "guardrail": "ห้ามใช้ค่าเฉลี่ยเดียวทั้งร้าน",
+            "id": "R-309",
+            "stage": "fix_structure",
+            "trigger": "ยังไม่ใส่ provision refusal ใน CM",
+            "why": "refusal 12% = 5.4% ของยอด = เท่ากับ commission +5.4 pts"
+          },
+          "pointer": "/rules/8",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ใช้ landed cost = FOB + freight + duty + forwarder (+VAT นำเข้าถ้าขอคืนไม่ได้)",
+            "chapter": "02",
+            "guardrail": "ถ้าใช้ FOB จะทำให้ CM สูงเกินจริง 5–10 pts",
+            "id": "R-310",
+            "stage": "fix_structure",
+            "trigger": "คำนวณ COGS",
+            "why": "landed cost = 1.4–1.8× factory gate"
+          },
+          "pointer": "/rules/9",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ตัด VAT ออกจากทั้งฝั่งรายได้และฝั่งต้นทุน (ขอคืนได้) และห้ามคูณ VAT ซ้ำบน commission/transaction fee ที่ประกาศแบบรวม VAT แล้ว",
+            "chapter": "10",
+            "id": "R-311",
+            "stage": "fix_structure",
+            "trigger": "จดทะเบียน VAT แล้ว",
+            "why": "commission 17.12% = 16% + VAT; Tx 3.21% = 3% + VAT"
+          },
+          "pointer": "/rules/10",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "เปรียบเทียบด้วย take rate + TMV economics ไม่ใช่ commission เดี่ยว และคำนวณ breakeven CAC ต่อช่องทาง",
+            "chapter": "04",
+            "guardrail": "ห้ามเทียบ TikTok Shop กับ Shopee ด้วย commission อย่างเดียว",
+            "id": "R-312",
+            "stage": "fix_channel",
+            "trigger": "เลือกช่องทางขาย",
+            "why": "สินค้าเดียวกัน CM2 ต่างกันได้ 2–3 เท่าระหว่าง marketplace กับเว็บตัวเอง"
+          },
+          "pointer": "/rules/11",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ย้ายไปเว็บตัวเอง/LINE หรือเลิกขายบน marketplace",
+            "chapter": "04",
+            "id": "R-313",
+            "stage": "fix_channel",
+            "trigger": "สินค้า AOV < ฿300 และ CM2 บน marketplace < 15%",
+            "why": "marketplace กิน margin หมดแล้ว"
+          },
+          "pointer": "/rules/12",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ตรวจ product page และ size guide ก่อนปรับการตลาด เพราะ Tx fee + CGF ไม่คืนเมื่อ return",
+            "chapter": "04",
+            "id": "R-314",
+            "stage": "fix_channel",
+            "trigger": "สินค้า return rate > 15% (นอกแฟชั่น)",
+            "why": "ออเดอร์ return ทำให้ขาดทุน ~11% ของราคาสินค้าโดยไม่ชดเชย"
+          },
+          "pointer": "/rules/13",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ใช้ product differentiation (ต่าง SKU/ขนาด/ของแถมต่อช่อง) แทน perfect parity หรือ net-of-fee pricing",
+            "chapter": "11",
+            "id": "R-315",
+            "stage": "fix_channel",
+            "trigger": "ต้องการรักษา price parity หลายช่องทาง",
+            "why": "perfect parity ทำให้ CM บน marketplace ต่ำ; net-of-fee ทำให้ลูกค้าเห็นว่าแพงกว่า"
+          },
+          "pointer": "/rules/14",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "แก้ logistics และ product page ก่อนแก้การตลาด: เพิ่ม order confirmation, เปลี่ยนขนส่งที่เร็วกว่า, ระบุสินค้าให้ตรง",
+            "chapter": "05",
+            "guardrail": "ห้ามแก้ด้วยการห้ามเปิดกล่อง (ผิดมาตรการส่งดี)",
+            "id": "R-316",
+            "stage": "fix_channel",
+            "trigger": "refusal rate > 12%",
+            "why": "refusal 12% บน 1,000 ออเดอร์ = ~฿31,000/เดือน ต้นทุนตรง"
+          },
+          "pointer": "/rules/15",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ลดน้ำหนักบรรจุภัณฑ์หรือเปลี่ยนรูปแบบกล่องให้อยู่ในขั้นที่ถูกกว่า",
+            "chapter": "06",
+            "id": "R-317",
+            "stage": "fix_channel",
+            "trigger": "น้ำหนักสินค้าใกล้ขีด 1/2/5 กก.",
+            "why": "ลด 100 กรัมอาจประหยัด ฿15–20/ออเดอร์"
+          },
+          "pointer": "/rules/16",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ตรวจ volumetric weight = (ก×ย×ส) ÷ 6000 และลดขนาดกล่อง",
+            "chapter": "06",
+            "id": "R-318",
+            "stage": "fix_channel",
+            "trigger": "กล่องใหญ่แต่ของเบา",
+            "why": "ของเบาแต่กล่องใหญ่จ่ายค่าส่งขั้น 2–5 กก. โดยไม่รู้ตัว"
+          },
+          "pointer": "/rules/17",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ใช้ Blended MER เทียบ breakeven MER (1 ÷ CM2%) — ไม่ใช้ platform ROAS",
+            "chapter": "08",
+            "guardrail": "ถ้า sum(platform attributed revenue) > total revenue แสดงว่ามี double-counting",
+            "id": "R-319",
+            "stage": "optimize_media",
+            "trigger": "ต้องการตัดสินใจเรื่องงบโฆษณา",
+            "why": "platform ROAS มี double-counting 20–40%"
+          },
+          "pointer": "/rules/18",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ลดงบ 30–50% ทันที และวินิจฉัยตามลำดับบท 13",
+            "chapter": "08",
+            "id": "R-320",
+            "priority": "critical",
+            "stage": "optimize_media",
+            "trigger": "MER < breakeven MER",
+            "why": "ทุกบาทที่ใช้ไปคือการซื้อ revenue ที่ขาดทุน"
+          },
+          "pointer": "/rules/19",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "เพิ่มงบ 20–30% และรออย่างน้อย 7 วันก่อนวัด",
+            "chapter": "08",
+            "guardrail": "ห้ามเพิ่มเกิน 30% ต่อครั้ง",
+            "id": "R-321",
+            "stage": "optimize_media",
+            "trigger": "MER > target MER + 25%",
+            "why": "การเพิ่มแรงเกินทำให้ CPA พุ่งและ learning phase เสีย"
+          },
+          "pointer": "/rules/20",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Max CAC = CM2₁ + (90-day repeat% × CM2₂) — แต่ถ้า payback window ของธุรกิจสั้นกว่า ให้ใช้แค่ CM2₁",
+            "chapter": "09",
+            "guardrail": "ต้องตรวจว่า repeat rate มาจาก cohort จริง ไม่ใช่ความรู้สึก",
+            "id": "R-322",
+            "stage": "optimize_media",
+            "trigger": "คำนวณ max CAC",
+            "why": "การใช้ repeat โดยไม่จริงทำให้จ่ายเกิน"
+          },
+          "pointer": "/rules/21",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "Target CPA = breakeven CPA × (1 − target profit margin) — ห้ามใช้ breakeven เป็น target",
+            "chapter": "08",
+            "id": "R-323",
+            "stage": "optimize_media",
+            "trigger": "ตั้ง target CPA",
+            "why": "breakeven = ไม่มีกำไรเลย"
+          },
+          "pointer": "/rules/22",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ทำ incrementality test (geo holdout หรือ time-based holdout) ก่อน",
+            "chapter": "08",
+            "guardrail": "platform ROAS 4.2× อาจเป็น incremental จริงเพียง 1.8×",
+            "id": "R-324",
+            "stage": "optimize_media",
+            "trigger": "จะเพิ่มงบเกิน 2 เท่าของปัจจุบัน หรือจะเลิกช่องทางหนึ่ง",
+            "why": "MER บอกว่าคุ้มไหม แต่ไม่บอกว่าถ้าหยุดจะเกิดอะไร"
+          },
+          "pointer": "/rules/23",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ใช้ Contribution LTV = AOV × frequency × CM2% × (1 − return_rate) และแยกตาม acquisition cohort + channel",
+            "chapter": "09",
+            "guardrail": "ห้ามใช้ blended LTV",
+            "id": "R-325",
+            "stage": "optimize_media",
+            "trigger": "คำนวณ LTV",
+            "why": "revenue LTV ทำให้จ่ายเกินจริง 3–5 เท่า"
+          },
+          "pointer": "/rules/24",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "เกณฑ์: < 1.5 ห้ามเพิ่มงบ · 2.5–4.0 scale ได้ · > 6.0 ตรวจว่าขาดโอกาสโตหรือไม่",
+            "chapter": "09",
+            "id": "R-326",
+            "stage": "optimize_media",
+            "trigger": "LTV:CAC",
+            "why": "healthy 2.5–4.0× (CM basis 12 เดือน)"
+          },
+          "pointer": "/rules/25",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "หยุด scale จนกว่าจะมีแผนเงินหมุนที่ชัดเจน",
+            "chapter": "09",
+            "guardrail": "SME ส่วนใหญ่ตายเพราะเงินสด ไม่ใช่ขาดทุน",
+            "id": "R-327",
+            "stage": "optimize_media",
+            "trigger": "payback period > 120 วัน",
+            "why": "เงินที่ต้องสำรอง = CAC × ลูกค้าใหม่ × payback (เดือน)"
+          },
+          "pointer": "/rules/26",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ตรวจ overhead ก่อนปรับการตลาด เพราะปัญหาไม่ได้อยู่ที่ CPA",
+            "chapter": "03",
+            "id": "R-328",
+            "stage": "optimize_media",
+            "trigger": "CM3 < 20%",
+            "why": "CM3 ขั้นต่ำ healthy = 20%, ดีเยี่ยม 25–35%"
+          },
+          "pointer": "/rules/27",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "คำนวณ price floor = COGS + fulfil + platform fees + CM2 ขั้นต่ำ (18–25%) และปฏิเสธ SKU ที่ตลาดบังคับให้ขายต่ำกว่า floor",
+            "chapter": "11",
+            "id": "R-329",
+            "stage": "price",
+            "trigger": "ก่อนขึ้นสินค้าใหม่",
+            "why": "ถ้าขายต่ำกว่า floor จะไม่มีที่ให้ CAC เลย"
+          },
+          "pointer": "/rules/28",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "คำนวณ CM2 หลังส่วนลดบน net revenue ใหม่เทียบ floor ที่กิจการกำหนด; ตรวจ incremental vs shifting, stock, return และ media cost",
+            "chapter": "07",
+            "guardrail": "ดูบท 07; อย่าลบ margin เดิมกับ margin เป้าหมายเพื่อหา discount cap",
+            "id": "R-330",
+            "stage": "price",
+            "trigger": "จะเข้าร่วมแคมเปญแพลตฟอร์ม",
+            "why": "กำหนด floor ตาม business economics ไม่ใช่ universal threshold"
+          },
+          "pointer": "/rules/29",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ตั้ง max discount cap ต่อออเดอร์ และห้าม stack voucher ประเภทเดียวกัน",
+            "chapter": "07",
+            "id": "R-331",
+            "stage": "price",
+            "trigger": "ตั้ง voucher / ส่วนลด",
+            "why": "voucher stacking คือสาเหตุอันดับ 1 ของ CM ติดลบที่ไม่มีใครรู้ตัว"
+          },
+          "pointer": "/rules/30",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ใช้ gift with purchase ที่ COGS ต่ำ (ถูกกว่าส่วนลด 58% ใน perceived value ที่สูงกว่า 2.5 เท่า) หรือ bundle",
+            "chapter": "07",
+            "id": "R-332",
+            "stage": "price",
+            "trigger": "ต้องการเพิ่ม perceived value โดยไม่ลดราคา",
+            "why": "bundle เพิ่ม CM2 เป็นบาท 59% โดย CM2% ลดแค่ 1.3 pts"
+          },
+          "pointer": "/rules/31",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ตั้ง threshold = AOV × 1.25–1.40 และตรวจว่า CM2 ที่ AOV ใหม่ − ค่าส่ง ยัง ≥ CM2 เดิม",
+            "chapter": "06",
+            "id": "R-333",
+            "stage": "price",
+            "trigger": "จะให้ส่งฟรี",
+            "why": "ส่งฟรีทุกออเดอร์ = ลดราคา 7.6% → CM2 28% จะเหลือ 20.4%"
+          },
+          "pointer": "/rules/32",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ขึ้นพร้อม upgrade (ของแถม/ขนาด/บริการ) + แจ้งล่วงหน้า 2 สัปดาห์ + ตรวจ price parity ทุกช่องทาง",
+            "chapter": "11",
+            "guardrail": "ห้ามใช้ shrinkflation โดยไม่แจ้ง (ผิดกฎหมาย)",
+            "id": "R-334",
+            "stage": "price",
+            "trigger": "ต้องการขึ้นราคา",
+            "why": "วิธีที่ปลอดภัยที่สุดและไม่ทำลาย trust"
+          },
+          "pointer": "/rules/33",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "เก็บส่วนต่างจาก GP cut เป็น buffer ห้ามใช้เป็นเหตุผลลดราคา และคำนวณ breakeven ROAS สองชุด (ช่วง cut / หลัง cut)",
+            "chapter": "04",
+            "guardrail": "ใช้ชุดที่แย่กว่าเป็นเกณฑ์ตัดสินใจลงทุนระยะยาว (สต็อก, hire, สัญญา)",
+            "id": "R-335",
+            "priority": "critical",
+            "stage": "price",
+            "trigger": "ธ.ค. 2026 – พ.ค. 2027 (GP cut window)",
+            "why": "GP cut สิ้นสุด 31 พ.ค. 2027 → breakeven ROAS จะเด้งขึ้น ~19% ใน มิ.ย. 2027"
+          },
+          "pointer": "/rules/34",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ห้ามลดราคา — ใช้ราคากลม (฿1,500 ฿2,900) และลงทุนในความน่าเชื่อถือ/การรับประกันแทน",
+            "chapter": "11",
+            "id": "R-336",
+            "stage": "price",
+            "trigger": "โซน premium (>฿2,000)",
+            "why": "การลดราคาในโซน premium ทำลายยอด เพราะลูกค้าตีความว่าของมีปัญหา"
+          },
+          "pointer": "/rules/35",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ตั้ง dashboard 12 ตัวเลข 3 ชั้น (ผลลัพธ์/ประสิทธิภาพ/โครงสร้าง) พร้อมเกณฑ์เตือนและ trend 12 สัปดาห์",
+            "chapter": "12",
+            "id": "R-337",
+            "stage": "stabilize",
+            "trigger": "ต้องการดูสุขภาพกำไร",
+            "why": "ตัวเลขที่ไม่มีเกณฑ์เตือนคือตัวเลขที่ไม่มีคนดู"
+          },
+          "pointer": "/rules/36",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ใช้ 60 นาที: 12 ตัวเลข (10 นาที) → 3 คำถามวินิจฉัย (20) → 3 การตัดสินใจ (20) → บันทึก (10)",
+            "chapter": "12",
+            "id": "R-338",
+            "stage": "stabilize",
+            "trigger": "ประชุมรายสัปดาห์",
+            "why": "ต้องมีคนมีอำนาจอนุมัติในห้อง และต้องบันทึกทุกครั้ง"
+          },
+          "pointer": "/rules/37",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "reconcile payout platform vs บัญชี และปรับ provision refusal จริง vs ที่ตั้งไว้",
+            "chapter": "12",
+            "id": "R-339",
+            "stage": "stabilize",
+            "trigger": "ปิดบัญชีรายเดือน",
+            "why": "ถ้าไม่ reconcile ตัวเลข CM จะเพี้ยนทุกเดือน"
+          },
+          "pointer": "/rules/38",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "คำนวณ CCC = DIO + DSO − DPO และเงินที่ต้องสำรองเมื่อโต = ΔGMV × (CCC ÷ 365)",
+            "chapter": "10",
+            "guardrail": "ถ้า cash runway < 3 เดือน ห้าม scale",
+            "id": "R-340",
+            "stage": "stabilize",
+            "trigger": "คำนวณกระแสเงินสด",
+            "why": "CCC 35 วัน = ทุกยอด ฿1M ที่โตขึ้นต้องใช้เงินหมุนเพิ่ม ~฿96K"
+          },
+          "pointer": "/rules/39",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "เริ่มวางระบบบัญชีให้พร้อมจด VAT ที่ ฿1.2–1.6M และจดภายใน 30 วันเมื่อถึงเกณฑ์",
+            "chapter": "10",
+            "id": "R-341",
+            "stage": "stabilize",
+            "trigger": "รายรับใกล้ถึง ฿1.8M/ปี",
+            "why": "เบี้ยปรับ + ดอกเบี้ยย้อนหลังได้ถึง 5 ปี"
+          },
+          "pointer": "/rules/40",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "คำนวณว่าการจด VAT โดยสมัครใจคุ้มหรือไม่ (ได้คืน 7% ของ ad spend) เทียบกับภาระที่ต้องขึ้นราคา 7%",
+            "chapter": "10",
+            "guardrail": "ที่ค่าแอด >฿50,000/เดือน มักคุ้มที่จะจด",
+            "id": "R-342",
+            "stage": "stabilize",
+            "trigger": "ยิงแอดต่างประเทศและยังไม่จด VAT",
+            "why": "ภ.พ.36 = 7% ของค่าแอด ถ้าขอคืนไม่ได้ = ต้นทุนจริง"
+          },
+          "pointer": "/rules/41",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "หัก WHT ตามอัตรา (KOL/agency 3%, ค่าเช่า 5%, ขนส่ง 1%) และนำส่งภายในวันที่ 7 ของเดือนถัดไป",
+            "chapter": "10",
+            "id": "R-343",
+            "stage": "stabilize",
+            "trigger": "จ่ายค่า KOL / agency / ค่าเช่า",
+            "why": "ถ้าไม่หัก ร้านต้องรับผิดชอบเอง + เบี้ยปรับ"
+          },
+          "pointer": "/rules/42",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "ทบทวน 5 เรื่อง: re-price · ช่องทาง mix · SKU rationalization · incrementality · GP cut adjustment",
+            "chapter": "12",
+            "id": "R-344",
+            "stage": "stabilize",
+            "trigger": "ทุกไตรมาส",
+            "why": "การทบทวนโครงสร้างต้องมีจังหวะ ไม่ใช่ทำเมื่อมีปัญหา"
+          },
+          "pointer": "/rules/43",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "บันทึกใน change log 6 คอลัมน์ (วันที่ · สิ่งที่เปลี่ยน · เหตุผล · ผลที่คาด · ผลจริง · หมายเหตุ)",
+            "chapter": "12",
+            "id": "R-345",
+            "stage": "stabilize",
+            "trigger": "ทุกการเปลี่ยนแปลงราคา/แคมเปญ/งบ",
+            "why": "ถ้าไม่มี change log จะวิเคราะห์ไม่ได้ว่าอะไรได้ผล"
+          },
+          "pointer": "/rules/44",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/profit-unit-economics-2026/playbook.json",
+      "sha256": "87092f887965a3af73e5836a7bf1d7a39ad0f5e36d6d8c92bde01ca41575b86a"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/agriculture/playbook.json",
+      "sha256": "bba1131839e556bb33732b658673d4828bae4195f9392b17bc7bf511d4992b64"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/automotive/playbook.json",
+      "sha256": "c4a0670f97290d7c0e57800eaea7c49b21580277f4e7b7ebef863f3dafe4fea2"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/b2b-professional/playbook.json",
+      "sha256": "813ae3b6fe6a2debe84cb183fba71343a3324a423d40967582cd63929cd0335d"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/beauty-personal-care/playbook.json",
+      "sha256": "4f4be4fc2dc82d650e082e69100c263bffe5b5220b69bf4dea37cf6a16635f67"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/education-training/playbook.json",
+      "sha256": "a70a6378193371c98e5b31c63587c981fa461e69788727139a585064b11b54af"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/electronics/playbook.json",
+      "sha256": "8af6f449f81ddf50d2fd902d83db70e097931c23cd265024ad7dce16d2cebb7f"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/entertainment-media/playbook.json",
+      "sha256": "3f04700ae73b811bf58a9c62e2c5717ac5f21562fa519776c0bcc125ba03bdb2"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/fashion-accessories/playbook.json",
+      "sha256": "983fbfc830ba3955944c0b8b0536ad9d8889dee7d3030694ee2db4f1fa8777ed"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/finance-insurance/playbook.json",
+      "sha256": "4d18b83c0ce0a9169d607f9595eee69c268645654435433cb14cd1adb8162721"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/food-beverage/playbook.json",
+      "sha256": "5f8095d4cb22a1851e8cbe586ccd2b53dea50032fe071d523ca35e9003595f34"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/health-clinics/playbook.json",
+      "sha256": "7bb637463de40b3feca7ca9ae1a9cdd3f5adee8ea738adeda1f25173e8e39074"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/home-living/playbook.json",
+      "sha256": "87444b9a0766bd88fed3fb55cdb808a5261d60dfe1353e1475b69b8382726427"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/industrial-manufacturing/playbook.json",
+      "sha256": "a5b540872f3d716953f36c656bb769fee927abfa822ba6f678e1fba2f7d0d511"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/local-home-services/playbook.json",
+      "sha256": "4af83837a3524b6fe349e4c9cacd40d831712d2bdd9efd6e051fcde8d4cfaea0"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/pets/playbook.json",
+      "sha256": "a660d64dace25e5d218a4f5b083b5d11e347daa9b84c90bc5c0f9b69d7f944e5"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/real-estate/playbook.json",
+      "sha256": "30f09485a73881f95ffaba8f5c8e365a9a16317f27171295b41f803e09f192fe"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/restaurant-cafe/playbook.json",
+      "sha256": "20d5bce7db49f7e4e89121a5411081f8e9468e83ba077ea33c8342b7d79daf9f"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/retail-ecommerce/playbook.json",
+      "sha256": "83edb8339d1ca33ca563ddd0b5caa58073a56ed5c9a8c0acd2048f62877f5def"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/sustainability-energy/playbook.json",
+      "sha256": "b3960e2d6115af5ecbc9e0a4728865b7bf18a180d7665437f85c799c80c0124d"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "action": "hold_and_verify_before_launch",
+            "trigger": "sector_or_platform_eligibility_unknown"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "hold_for_human_review",
+            "trigger": "claims_or_rights_missing"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "verify_regulator_and_specialist_approval",
+            "trigger": "regulated_product_or_service"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "pause_and_escalate",
+            "trigger": "spend_or_safety_gate_breached"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "action": "human_review_and_permitted_publish_only",
+            "trigger": "ai_generated_draft"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/sector-business-2026/travel-hospitality/playbook.json",
+      "sha256": "a2d0f2cb7564366a49ca244b471f6457f503de0ae530ee59b52dcafb78fec7a0"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "because": "Pixel-only captures ~65% of conversions; under-instrumented accounts mis-optimize and mis-report.",
+            "chapter": "08",
+            "do": "Verify Pixel + Events API with shared event_id dedup, EMQ >= 8.0, value+currency on Purchase, and a test purchase before any budget decision.",
+            "id": "R-001",
+            "name": "signal_before_spend",
+            "when": "always"
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Every significant edit resets the learning phase.",
+            "chapter": "02",
+            "do": "Do not change bid, budget, audience, or creative unless the campaign is not spending or the wrong event is set.",
+            "id": "R-002",
+            "name": "no_edits_in_learning",
+            "when": "campaign age < 7 days (Smart+/GMV Max) or < 3-5 days (manual), and conversions < 50"
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "On automation-era TikTok, creative is the dominant controllable lever.",
+            "chapter": "13",
+            "do": "Diagnose in order: tracking -> creative fatigue -> offer/landing page -> structure/bid -> audience. Add 5-8 new creatives before touching targeting.",
+            "id": "R-003",
+            "name": "creative_before_audience",
+            "when": "performance degrades"
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Larger jumps re-enter learning and destabilise CPA.",
+            "chapter": "07",
+            "do": "Post-learning: increase <= 30% per adjustment, every 3-5 days. Still in learning: <= 40% per adjustment, >= 2 days apart. Smart+: +20-30% every 3-5 days.",
+            "id": "R-004",
+            "name": "scale_increments",
+            "when": "scaling a performing campaign"
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Below this, campaigns stay learning-limited and 'it doesn't work' is an invalid conclusion.",
+            "chapter": "07",
+            "do": "Ad group daily budget >= 10 x expected CPA. If total budget cannot support 2 groups at that level, use 1 group instead of fragmenting.",
+            "id": "R-005",
+            "name": "budget_floor",
+            "when": "setting ad group budget"
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Automation blends signals; you still need a clean measurement lane.",
+            "chapter": "02",
+            "do": "Run Smart+ for scale and keep one manual/ABO campaign at 10-15% of budget for clean creative read-outs and cannibalization checks.",
+            "id": "R-006",
+            "name": "smart_plus_default_with_control",
+            "when": "CPA/ROAS known and stable"
+          },
+          "pointer": "/rules/5",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Hook rate is the leading indicator of every downstream metric on TikTok.",
+            "chapter": "03",
+            "do": "Write the hook line (<= 7 words) before the concept. Hook must land in 1-3s with no logo/slogan open. Produce 3-5 hook variants on one body.",
+            "id": "R-010",
+            "name": "hook_first_brief",
+            "when": "producing any creative"
+          },
+          "pointer": "/rules/6",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "TikTok creative fatigues faster than Meta (10-14 vs 14-21 days).",
+            "chapter": "03",
+            "do": "Launch >= 2-3 new creatives per week. Treat concept lifetime as 10-14 days. For GMV Max, feed 10-15 new assets per week and maintain 50+ active for scale.",
+            "id": "R-011",
+            "name": "creative_refresh_cadence",
+            "when": "always-on campaigns"
+          },
+          "pointer": "/rules/7",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "A cap set below reality starves delivery and prevents learning.",
+            "chapter": "07",
+            "do": "Start Lowest Cost to discover the natural CPA floor (7-14 days), then move to Cost Cap at discovered CPA +10-20%, then tighten 5-10% every 1-2 weeks. Avoid Bid Cap during learning.",
+            "id": "R-020",
+            "name": "bid_strategy_progression",
+            "when": "new campaign"
+          },
+          "pointer": "/rules/8",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Campaign-level killing destroys the learning you already paid for.",
+            "chapter": "12",
+            "do": "Kill creative with CPA > 1.3x target over 2 weeks AND >= 5,000 impressions. Scale creative at CPA <= 0.85x target for 3 consecutive days. Never kill at campaign level for a creative problem.",
+            "id": "R-030",
+            "name": "kill_at_creative_level",
+            "when": "weekly creative review"
+          },
+          "pointer": "/rules/9",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Daily variance on TikTok is large; acting daily guarantees noise-driven decisions.",
+            "chapter": "12",
+            "do": "Require >= 3 days or >= 1,000 impressions per creative before concluding. Never act on one day of data.",
+            "id": "R-031",
+            "name": "no_single_day_decisions",
+            "when": "reviewing performance"
+          },
+          "pointer": "/rules/10",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "The ad worked; the destination did not.",
+            "chapter": "13",
+            "do": "Fix the landing page, price consistency, shipping cost display, or review proof. Do not change bids or targeting.",
+            "id": "R-032",
+            "name": "ctr_good_cvr_bad",
+            "when": "CTR above benchmark but CVR below benchmark"
+          },
+          "pointer": "/rules/11",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "TikTok Shop ROAS can look healthy while commission + returns erase margin.",
+            "chapter": "04",
+            "do": "Compute contribution margin after ads (revenue - COGS - fees - affiliate commission - shipping - returns - ad spend). Treat CM < 0 as failure regardless of ROAS.",
+            "id": "R-033",
+            "name": "profit_over_roas",
+            "when": "evaluating success"
+          },
+          "pointer": "/rules/12",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "GMV Max amplifies existing traction; it cannot create it.",
+            "chapter": "04",
+            "do": "Sequence: catalog/offer -> affiliate creator volume (15-25 creators cold start) -> proof of life (20-50 orders/week for 2-4 weeks, 10-15 authorized videos per SKU) -> GMV Max -> LIVE.",
+            "id": "R-040",
+            "name": "shop_sequence",
+            "when": "has_tiktok_shop"
+          },
+          "pointer": "/rules/13",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "5x on day one produces no spend; 1x burns cash on low-quality volume.",
+            "chapter": "04",
+            "do": "Target ROI 2.0-3.0x for days 1-14 then step to 3.0-4.0x by day 30. Budget from TikTok formula (2 x historical non-LIVE GMV / ROI target). Keep consumption under 80%. Hold each ROI target 3 full days. Judge after >= 7 days.",
+            "id": "R-041",
+            "name": "gmv_max_launch_settings",
+            "when": "launching Product GMV Max"
+          },
+          "pointer": "/rules/14",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Adding assets after launch forces the system to re-learn from a different starting point.",
+            "chapter": "04",
+            "do": "Collect and authorize all affiliate/organic videos at least 48 hours before launch. Do not add high-performing assets mid-learning.",
+            "id": "R-042",
+            "name": "authorize_before_launch",
+            "when": "running GMV Max"
+          },
+          "pointer": "/rules/15",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "GMV Max optimizes against the catalog; a dirty feed sends the AI after the wrong buyers.",
+            "chapter": "04",
+            "do": "Clean titles, >= 5 images, accurate category, complete variants, live stock, price matching ads, clear return policy.",
+            "id": "R-043",
+            "name": "feed_hygiene",
+            "when": "running any catalog-based campaign"
+          },
+          "pointer": "/rules/16",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "LIVE multiplies an existing base; it does not replace it.",
+            "chapter": "05",
+            "do": "Do not start LIVE before baseline GMV exists (~USD 50k/month from affiliate + ads) and 3-5 live-ready hero products with deep stock and good margin.",
+            "id": "R-044",
+            "name": "live_prerequisites",
+            "when": "considering LIVE"
+          },
+          "pointer": "/rules/17",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "LIVE GMV Max builds delivery data only while live.",
+            "chapter": "05",
+            "do": "Launch the campaign at least 3 days before the stream and keep a consistent streaming schedule of >= 3 hours per session; sessions reset learning each time.",
+            "id": "R-045",
+            "name": "live_gmv_max_lead_time",
+            "when": "using LIVE GMV Max"
+          },
+          "pointer": "/rules/18",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Thai FDA ran a nationwide supplement ad sweep in March 2026 covering influencer and reseller content; the brand can be liable for creator content.",
+            "chapter": "10",
+            "do": "Require pre-approved claim language before any creative is produced. Shift from outcome claims to mechanism/ingredient/usage claims. Keep substantiation on file.",
+            "id": "R-050",
+            "name": "claim_preclearance",
+            "when": "category is health, supplement, beauty with treatment claims, finance, OTC"
+          },
+          "pointer": "/rules/19",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "A boosted creator video inherits the creator's claims and the brand's liability.",
+            "chapter": "10",
+            "do": "Include an explicit 'do not say' list in every brief. Review every creator video before boosting as a Spark Ad. Require Paid Partnership labels.",
+            "id": "R-051",
+            "name": "creator_brief_guardrails",
+            "when": "briefing creators or affiliates"
+          },
+          "pointer": "/rules/20",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "2026 policy changes invalidate older launch checklists.",
+            "chapter": "10",
+            "do": "Assume all campaigns must originate from a verified TikTok Business account (Custom Identity retired), no AI-generated endorsements, AI content disclosed, review windows 6-48h, and periodic re-review of live campaigns.",
+            "id": "R-052",
+            "name": "policy_2026_deltas",
+            "when": "always"
+          },
+          "pointer": "/rules/21",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "TikTok's native dashboard overstates ROAS by roughly 30-60% and GMV Max credits all orders from promoted products.",
+            "chapter": "08",
+            "do": "Report blended ROAS and CM after ads as primary. Use platform ROAS only for in-platform optimization. Add MTA above ~USD 50k/month, MMM above ~USD 100k/month, geo incrementality above ~USD 500k/month or when the decision is material.",
+            "id": "R-060",
+            "name": "measurement_ladder",
+            "when": "deciding budget allocation across channels"
+          },
+          "pointer": "/rules/22",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Changing the window changes every number in the report.",
+            "chapter": "08",
+            "do": "Keep 7-day click / 1-day view for optimization. Audit monthly on a 28-day window. Never compare numbers across a window change.",
+            "id": "R-061",
+            "name": "attribution_window_discipline",
+            "when": "reporting over time"
+          },
+          "pointer": "/rules/23",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Spark Ads and organic lift each other and supply cheap, proven creative.",
+            "chapter": "09",
+            "do": "Maintain 4-7 organic posts per week for brand accounts; prioritize saves and shares over likes; boost top organic and affiliate posts via Spark Ads; one video = one search phrase spoken + on-screen + in caption.",
+            "id": "R-070",
+            "name": "organic_feeds_paid",
+            "when": "always"
+          },
+          "pointer": "/rules/24",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Unlicensed audio causes rejections and takedowns.",
+            "chapter": "10",
+            "do": "Use only tracks cleared for advertising (Commercial Music Library or licensed). Never use trending consumer sounds in paid ads.",
+            "id": "R-071",
+            "name": "commercial_music_only",
+            "when": "producing ads"
+          },
+          "pointer": "/rules/25",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "because": "Decisions made when calm are better than decisions made during a bad week.",
+            "chapter": "12",
+            "do": "Define, before launch: the evaluation date, the primary metric threshold, and the guardrail thresholds that trigger pausing.",
+            "id": "R-080",
+            "name": "kill_criteria_required",
+            "when": "producing any plan"
+          },
+          "pointer": "/rules/26",
+          "status": "needs_review"
+        }
+      ],
+      "format": "json",
+      "path": "playbooks/tiktok-performance-marketing/playbook.json",
+      "sha256": "bf0cbbdc52d95a3c8bd011ce30277366148930c5e03e8a2098f7515d3b2192df"
+    },
+    {
+      "entries": [
+        {
+          "original": {
+            "currency": "THB",
+            "market": "TH",
+            "notes": "Threshold ทั้งหมดเป็นค่าเริ่มต้น ต้อง calibrate จากข้อมูลจริง 60 วันแรก ห้ามใช้ rule เหล่านี้กับบัญชีที่ยังไม่มี CAPI/EMQ >= 6.0\n",
+            "source_of_truth": {
+              "revenue": "backend_orders",
+              "spend": "ads_manager",
+              "truth_check": "lift_or_geo_test"
+            },
+            "timezone": "Asia/Bangkok",
+            "updated": "2026-11-06",
+            "version": "1.0.0"
+          },
+          "pointer": "/meta",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "PRE-01",
+            "message": "EMQ ต่ำกว่า 6.0 — หยุดสเกลและแก้ signal ก่อน",
+            "name": "signal_quality",
+            "on_fail": "freeze_scaling",
+            "require": "event_match_quality >= 6.0"
+          },
+          "pointer": "/preconditions/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "PRE-02",
+            "message": "ต่ำกว่า 50 conversions/สัปดาห์ — รวม ad set หรือเปลี่ยน optimization event",
+            "name": "event_volume",
+            "on_fail": "consolidate_ad_sets",
+            "require": "conversions_7d >= 50",
+            "scope": "ad_set"
+          },
+          "pointer": "/preconditions/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "PRE-03",
+            "message": "ตรวจ event_id dedup ระหว่าง Pixel และ CAPI",
+            "name": "dedup_health",
+            "on_fail": "alert_human",
+            "require": "dedup_rate >= 0.95"
+          },
+          "pointer": "/preconditions/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "PRE-04",
+            "message": "ไม่พบ event ใน 24 ชม. — ตรวจสอบ tracking ก่อนสรุปว่า performance ตก",
+            "name": "tracking_alive",
+            "on_fail": "alert_human",
+            "require": "purchase_events_last_24h > 0"
+          },
+          "pointer": "/preconditions/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "guardrails": [
+              "daily_spend_cap",
+              {
+                "max_single_change_pct": 20
+              }
+            ],
+            "id": "SCL-01",
+            "log": "experiment_log",
+            "name": "scale_winner",
+            "then": {
+              "action": "increase_budget",
+              "cadence_days": 2,
+              "max_total_increase_per_week": 60,
+              "percent": 20
+            },
+            "when": {
+              "all": [
+                {
+                  "cpa_ratio_lte": 0.9
+                },
+                {
+                  "consecutive_days": 3
+                },
+                {
+                  "spend_gte": "2 * target_cpa"
+                },
+                {
+                  "learning_phase": "exited"
+                }
+              ]
+            }
+          },
+          "pointer": "/rules/0",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "SCL-02",
+            "log": "experiment_log",
+            "name": "scale_stop",
+            "then": {
+              "action": "stop_increase",
+              "hold_days": 3
+            },
+            "when": {
+              "any": [
+                {
+                  "cpa_ratio_gt": 1.15
+                },
+                {
+                  "frequency_7d_gt": 3.0
+                }
+              ]
+            }
+          },
+          "pointer": "/rules/1",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "guardrails": [
+              {
+                "keep_min_daily_budget": true
+              }
+            ],
+            "id": "SCL-03",
+            "log": "experiment_log",
+            "name": "budget_reallocate",
+            "then": {
+              "action": "shift_budget",
+              "max_shift_pct_of_campaign": 20
+            },
+            "when": {
+              "all": [
+                {
+                  "donor_cpa_ratio_gte": 1.3
+                },
+                {
+                  "receiver_cpa_ratio_lte": 0.9
+                }
+              ],
+              "schedule": "weekly_monday"
+            }
+          },
+          "pointer": "/rules/2",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "HLD-01",
+            "message": "อย่าแก้อะไรใน 3 วัน — ระบบกำลังเรียนรู้",
+            "name": "hold_learning",
+            "then": {
+              "action": "no_change",
+              "hold_days": 3
+            },
+            "when": {
+              "any": [
+                {
+                  "cpa_ratio_between": [
+                    0.9,
+                    1.2
+                  ]
+                },
+                {
+                  "recently_edited_within_hours": 24
+                }
+              ]
+            }
+          },
+          "pointer": "/rules/3",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "KIL-01",
+            "log": "experiment_log",
+            "name": "kill_underperformer",
+            "then": {
+              "action": "pause_ad_or_adset",
+              "notify": "human"
+            },
+            "when": {
+              "all": [
+                {
+                  "cpa_ratio_gt": 1.5
+                },
+                {
+                  "consecutive_days": 5
+                },
+                {
+                  "spend_gte": "3 * target_cpa"
+                }
+              ]
+            }
+          },
+          "pointer": "/rules/4",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "KIL-02",
+            "log": "experiment_log",
+            "name": "diagnose_creative_vs_audience",
+            "then": {
+              "action": "refresh_creative",
+              "hypothesis": "ปัญหา creative ไม่ใช่ audience"
+            },
+            "when": {
+              "all": [
+                {
+                  "ctr_lt": 0.005
+                },
+                {
+                  "frequency_7d_gt": 2.5
+                }
+              ]
+            }
+          },
+          "pointer": "/rules/5",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "CRT-01",
+            "log": "experiment_log",
+            "name": "refresh_on_fatigue",
+            "then": {
+              "action": "rotate_creative",
+              "min_new_variants": 3,
+              "order": [
+                "new_hook",
+                "new_proof",
+                "new_angle",
+                "new_persona"
+              ]
+            },
+            "when": {
+              "any": [
+                {
+                  "frequency_7d_gt": 3.0
+                },
+                {
+                  "ctr_drop_week_over_week_pct_gt": 25
+                },
+                {
+                  "cpa_increase_pct_gt": 20
+                }
+              ]
+            }
+          },
+          "pointer": "/rules/6",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "CRT-02",
+            "name": "minimum_creative_diversity",
+            "then": {
+              "action": "warn_human",
+              "message": "ควรมีอย่างน้อย 6–15 ชิ้น/ad set และต้องต่างกันอย่างน้อย 2 มิติ (persona/awareness/angle/format)"
+            },
+            "when": {
+              "creative_count_per_adset_lt": 6
+            }
+          },
+          "pointer": "/rules/7",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "CRT-03",
+            "name": "suspicious_performance",
+            "then": {
+              "action": "audit_for_fraud_or_tracking_error",
+              "notify": "human"
+            },
+            "when": {
+              "any": [
+                {
+                  "ctr_gt": 0.05
+                },
+                {
+                  "cvr_gt": 0.3
+                }
+              ]
+            }
+          },
+          "pointer": "/rules/8",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "PLC-01",
+            "log": "experiment_log",
+            "name": "low_intent_placement",
+            "then": {
+              "action": "set_placement_value",
+              "multiplier": 0.3,
+              "wait_days": 7
+            },
+            "when": {
+              "all": [
+                {
+                  "placement_in": [
+                    "threads",
+                    "audience_network"
+                  ]
+                },
+                {
+                  "placement_spend_pct_gte": 15
+                },
+                {
+                  "placement_cpa_ratio_gte": 1.3
+                }
+              ]
+            }
+          },
+          "pointer": "/rules/9",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "PLC-02",
+            "log": "experiment_log",
+            "name": "high_intent_placement",
+            "then": {
+              "action": "set_placement_value",
+              "multiplier": 1.3,
+              "wait_days": 7
+            },
+            "when": {
+              "all": [
+                {
+                  "placement_cpa_ratio_lte": 0.8
+                },
+                {
+                  "placement_spend_pct_gte": 10
+                }
+              ]
+            }
+          },
+          "pointer": "/rules/10",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "MEA-01",
+            "name": "emq_degradation",
+            "then": {
+              "action": "freeze_scaling",
+              "notify": "human"
+            },
+            "when": {
+              "emq_drop_gte": 1.0,
+              "window_hours": 48
+            }
+          },
+          "pointer": "/rules/11",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "MEA-02",
+            "name": "platform_backend_gap",
+            "then": {
+              "action": "reconcile",
+              "message": "ตรวจ dedup, timezone, currency, การนับ refund",
+              "notify": "human"
+            },
+            "when": {
+              "platform_purchases_vs_backend_pct_gt": 30,
+              "window_days": 7
+            }
+          },
+          "pointer": "/rules/12",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "MEA-03",
+            "message": "ROAS ต่ำกว่า breakeven — อย่าสเกล",
+            "name": "breakeven_guard",
+            "then": {
+              "action": "alert_and_review",
+              "notify": [
+                "owner",
+                "finance"
+              ]
+            },
+            "when": {
+              "roas_lt": "1 / gross_margin"
+            }
+          },
+          "pointer": "/rules/13",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "id": "MEA-04",
+            "name": "quarterly_truth",
+            "then": {
+              "action": "run_lift_or_geo_test",
+              "scope": "largest_uncertainty"
+            },
+            "when": {
+              "schedule": "quarterly"
+            }
+          },
+          "pointer": "/rules/14",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "channels": [
+              "human_approval_queue",
+              "slack_or_line_notify"
+            ],
+            "levels": [
+              {
+                "action": "log_only",
+                "level": 1,
+                "trigger": "rule triggered once"
+              },
+              {
+                "action": "notify_owner",
+                "level": 2,
+                "trigger": "same rule triggered 2x in 7 days"
+              },
+              {
+                "action": "kill_switch",
+                "level": 3,
+                "requires_human_restart": true,
+                "trigger": "spend anomaly > 120% of cap OR tracking failure"
+              }
+            ]
+          },
+          "pointer": "/escalation",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "change_control": {
+              "freeze_during_active_test": true,
+              "freeze_hours_after_launch": 24,
+              "require_approval": [
+                "increase_budget > 20%",
+                "pause_campaign",
+                "change_audience",
+                "change_optimization_event"
+              ]
+            },
+            "content": {
+              "ai_disclosure_required": true,
+              "banned_claims": [
+                "ดีที่สุด",
+                "อันดับ 1",
+                "รับประกันผล",
+                "รักษาโรค"
+              ],
+              "require_legal_review_for": [
+                "health",
+                "finance",
+                "education_claims"
+              ]
+            },
+            "data": {
+              "hash_required": true,
+              "no_deletion": [
+                "experiment_log",
+                "creative_registry"
+              ],
+              "pii_outbound": false
+            },
+            "kill_switch": {
+              "always_available": true,
+              "stops": [
+                "budget_changes",
+                "pauses",
+                "launch"
+              ]
+            },
+            "rollback": {
+              "keep_snapshots_days": 30,
+              "snapshot_before_change": true
+            },
+            "spend": {
+              "daily_cap_multiplier": 1.1,
+              "max_single_budget_change_pct": 20,
+              "max_weekly_increase_pct": 60
+            }
+          },
+          "pointer": "/guardrails",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "creative_record": {
+              "fields": [
+                {
+                  "creative_id": "string"
+                },
+                {
+                  "concept": "string"
+                },
+                {
+                  "persona": "string"
+                },
+                {
+                  "awareness": [
+                    "unaware",
+                    "problem",
+                    "solution",
+                    "product",
+                    "most"
+                  ]
+                },
+                {
+                  "angle": "string"
+                },
+                {
+                  "format": [
+                    "reels_9x16",
+                    "feed_4x5",
+                    "feed_1x1",
+                    "carousel",
+                    "threads_copy"
+                  ]
+                },
+                {
+                  "hook_text": "string"
+                },
+                {
+                  "launch_date": "isodate"
+                },
+                {
+                  "status": [
+                    "testing",
+                    "winner",
+                    "loser",
+                    "retired"
+                  ]
+                },
+                {
+                  "lifetime_cpa": "number"
+                },
+                {
+                  "lifetime_ctr": "number"
+                }
+              ]
+            },
+            "experiment_record": {
+              "fields": [
+                {
+                  "id": "string"
+                },
+                {
+                  "date": "isodate"
+                },
+                {
+                  "campaign": "string"
+                },
+                {
+                  "adset": "string"
+                },
+                {
+                  "hypothesis": "string"
+                },
+                {
+                  "variable": "string"
+                },
+                {
+                  "control": "string"
+                },
+                {
+                  "treatment": "string"
+                },
+                {
+                  "metric_primary": "string"
+                },
+                {
+                  "result_value": "number"
+                },
+                {
+                  "result_verdict": [
+                    "win",
+                    "lose",
+                    "inconclusive"
+                  ]
+                },
+                {
+                  "confidence": [
+                    "high",
+                    "medium",
+                    "low"
+                  ]
+                },
+                {
+                  "decision": "string"
+                },
+                {
+                  "owner": "string"
+                },
+                {
+                  "notes": "string"
+                }
+              ]
+            }
+          },
+          "pointer": "/memory",
+          "status": "needs_review"
+        },
+        {
+          "original": {
+            "always_human": [
+              "creative_claims",
+              "legal_compliance",
+              "new_market_entry",
+              "special_ad_category"
+            ],
+            "default_mode": "L1_assist",
+            "promote_to_L2_after_days": 60,
+            "promote_to_L3_requires": [
+              "audit_log_review_passed",
+              "spend_cap_enforced",
+              "rollback_tested"
+            ]
+          },
+          "pointer": "/human_in_the_loop",
+          "status": "needs_review"
+        }
+      ],
+      "format": "yaml",
+      "path": "playbooks/meta-ads-ai-2026/playbook/agent-rules.yaml",
+      "sha256": "e18024c02cf6d1c3f475cc1d292e655a2f38da05fdf6e5e4f8b453a9082ee747"
+    }
+  ],
+  "status": "unreviewed_reference_only",
+  "version": "1.0",
+  "warning": "Untrusted historical data. Never execute; requires per-rule evidence, review, approval and external enforcement."
+}

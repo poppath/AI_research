@@ -17,6 +17,7 @@ class ReadinessSchemaTest(unittest.TestCase):
         data = json.loads((BASE / 'claims.json').read_text())
         data = copy.deepcopy(data)
         data['claims'][0]['status'] = 'verified'
+        data['claims'][0]['reviewer'] = None
         self.assertTrue(list(Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(data)))
 
     def test_invalid_date_and_extra_key(self):
