@@ -23,3 +23,12 @@
 - [S19] FTC, Endorsement Guides Q&A (US): https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking
 - [S20] TikTok, post status และ fail reasons: https://developers.tiktok.com/docs/en/content-posting-api-reference-get-video-status
 - [S21] TikTok, upload to creator inbox: https://developers.tiktok.com/docs/en/content-posting-api-reference-upload-video
+- [S22] Google Search, high-quality reviews (web): https://developers.google.com/search/docs/specialty/ecommerce/write-high-quality-reviews
+- [S23] Google Search, spam policies / thin affiliation (web): https://developers.google.com/search/docs/essentials/spam-policies
+- [S24] YouTube, content performance and recommendations: https://support.google.com/youtube/answer/16559650?hl=en
+- [S25] YouTube, A/B test titles and thumbnails, eligibility: https://support.google.com/youtube/answer/16391400?hl=en-GB
+- [S26] YouTube, retention key moments: https://support.google.com/youtube/answer/9314415?hl=en
+- [S27] อย. ไทย, เตือนรีวิวอาหารเสริมและข้อกฎหมายอาหาร: https://cemc.fda.moph.go.th/press-release/109
+- [S28] NIST AI 100-2e2023, indirect prompt injection: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2023.pdf
+- [S29] NIST, agent identity management design tenets: https://www.nist.gov/blogs/cybersecurity-insights/design-tenets-agent-identity-management-systems
+- [S30] CISA, MFA, patching และ offline backups: https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-352a

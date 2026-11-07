@@ -24,3 +24,6 @@ AI ช่วยวิจัย ทำ script ผลิต draft ตรวจ che
 - [คัดสินค้าและโปรแกรม Affiliate](03-product-program-selection.md): eligibility gate, scorecard และ sensitivity
 - [วัดผลและกระทบยอด](04-measurement-reconciliation.md): tracking, pending/approved/paid และ reversal
 - [ความน่าเชื่อถือของเนื้อหาและ incident](05-content-risk-operations.md): provenance, disclosure และแผนรับมือ 24 ชั่วโมง
+
+## ภาพรวมกว้างและหัวข้อเจาะลึกเพิ่มเติม
+[แผนที่ 12 ด้านและลำดับความสำคัญ](06-broad-research-map.md) → [ผู้ชมและคอนเทนต์](07-content-audience-strategy.md) → [การทดลอง](08-testing-and-learning.md) → [business models และกฎหมายไทย](09-operations-business-model.md) → [agent security](10-agent-security.md)
