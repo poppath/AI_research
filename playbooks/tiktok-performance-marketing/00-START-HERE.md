@@ -88,3 +88,11 @@
 | Google Docs | [TikTok Performance Playbook 2026 — Notes (TH)](https://docs.google.com/document/d/1c3ZzV3mA-6XtgLSJuB-pL_5MFIjMkKzfFzI2Po4GoPo) | ฉบับอ่าน/แชร์ 17 หัวข้อ (notes) |
 
 อัปเดตล่าสุด: 2026-11-06 · ตัวเลขทั้งหมดอ้างอิง ณ วันนี้ (ดู freshness rule ใน `benchmarks.json`)
+
+---
+
+## เล่มถัดไป (อ่านต่อ)
+
+TikTok playbook ตอบว่า "หาแขกยังไงให้ถูก" — แต่ CM ต่อออเดอร์แรกเหลือ ~16% แปลว่ากำไรจริงอยู่ที่ออเดอร์ที่ 2
+→ [`../line-crm-retention-2026/`](../line-crm-retention-2026/00-START-HERE.md) · **LINE OA × CRM × Retention/LTV 2026 (TH)**
+ต่อกันตรง: TikTok (บท 04 unit economics + บท 08 measurement) → LINE (บท 05 lifecycle flows + บท 09 LTV)
