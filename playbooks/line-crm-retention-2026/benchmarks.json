@@ -1,0 +1,369 @@
+{
+  "meta": {
+    "playbook": "line-oa-crm-retention",
+    "version": "2026.11",
+    "market": "TH",
+    "currency": "THB",
+    "as_of": "2026-11-06",
+    "freshness_rule": "ตัวเลขใดที่มี as_of เกิน 90 วันต้อง re-verify ก่อนใช้ตัดสินใจงบ",
+    "source_types": {
+      "tiktok_equivalent": "ไม่ใช้ใน playbook นี้",
+      "platform": "[platform] = เอกสารทางการของ LINE / หน่วยงานรัฐ",
+      "vendor": "[vendor] = รายงาน agency หรือบริษัทเครื่องมือ",
+      "industry": "[industry] = รายงานอุตสาหกรรมที่มีระเบียบวิธี (Bain, Klaviyo, Omnisend)",
+      "est": "[est] = ประมาณจากการ triangulate — ใช้เป็นกรอบ ไม่ใช่เป้า"
+    }
+  },
+  "line_packages_thailand": {
+    "as_of": "2026-10",
+    "source_type": "platform",
+    "note": "ไม่รวม VAT 7% · LINE ปรับราคาหลายครั้ง ต้องเช็คหน้า LINE for Business ไทยก่อนตั้งงบ",
+    "plans": [
+      {
+        "name": "Free",
+        "price_thb_month": 0,
+        "messages_included": 300,
+        "overage_thb": null,
+        "crm_included": false
+      },
+      {
+        "name": "Basic",
+        "price_thb_month": 1280,
+        "messages_included": 15000,
+        "overage_thb": 0.1,
+        "crm_included": false
+      },
+      {
+        "name": "Pro",
+        "price_thb_month": 1780,
+        "messages_included": 35000,
+        "overage_thb": 0.06,
+        "crm_included": true
+      }
+    ],
+    "addons": {
+      "oa_chat_package_thb_month": 555,
+      "mycustomer_crm_thb_month": 369,
+      "verified_badge_thb_onetime": 888,
+      "premium_id_thb_year": 444
+    },
+    "breakpoints": {
+      "pro_cheaper_than_basic_overage_at_messages": 20000,
+      "pro_cheaper_than_basic_plus_crm_at_messages": 16310
+    },
+    "billing_rules": [
+      "1 message = 1 การส่งถึง 1 เพื่อน",
+      "เพื่อนที่ block ไม่ถูกนับ",
+      "โควต้ารีเซ็ตทุกเดือน ไม่ทบ",
+      "Reply API ไม่นับโควตา",
+      "push / multicast / broadcast / narrowcast นับโควตา"
+    ]
+  },
+  "line_ads_thailand": {
+    "as_of": "2026-10",
+    "source_type": "vendor",
+    "buying_models": ["CPM", "CPC", "CPF", "CPV", "CPA", "CPI"],
+    "cpm_mass_thb": 15,
+    "cpm_premium_thb": { "min": 50, "max": 200 },
+    "cpv_thb": 1.22,
+    "min_daily_budget_thb": 500,
+    "min_monthly_for_readable_results_thb": { "min": 10000, "max": 25000 },
+    "cpf_thb": { "min": 30, "max": 80, "source_type": "est" },
+    "placements": [
+      "Home Tab",
+      "Chat List",
+      "LINE TODAY",
+      "Wallet Tab",
+      "LINE VOOM",
+      "LINE OpenChat",
+      "LINE Album",
+      "LINE Note"
+    ],
+    "structure_guidance": {
+      "ad_groups": "3–5",
+      "creatives_per_group": "3–5",
+      "no_edits_first_days": 3,
+      "scale_step_pct": { "min": 20, "max": 30 },
+      "scale_interval_days": 3
+    }
+  },
+  "engagement_benchmarks": {
+    "as_of": "2026-11",
+    "source_type": "vendor",
+    "line": {
+      "open_rate_pct": { "typical": 60, "good": 70 },
+      "ctr_pct": { "typical": { "min": 5, "max": 10 }, "good": 12 },
+      "block_rate_pct": { "typical": { "min": 3, "max": 5 }, "good_below": 3, "alert_above": 8 },
+      "rpm_thb": { "typical": { "min": 1, "max": 3 }, "good": 5, "source_type": "est" },
+      "first_response_time_minutes": { "typical": 60, "good": 5, "source_type": "est" }
+    },
+    "broadcast_frequency": {
+      "recommended_per_month": { "min": 2, "max": 4 },
+      "all_base_max_per_month": 1,
+      "value_first_ratio": "70/20/10 (value / promo / direct sell)"
+    }
+  },
+  "retention_benchmarks": {
+    "as_of": "2026-11",
+    "source_type": "industry",
+    "note": "ส่วนใหญ่มาจาก DTC ตะวันตก (Shopify/Klaviyo) — ตลาดไทยมี COD/return/marketplace fee ต่าง",
+    "repeat_purchase_rate_12m_pct": {
+      "all_ecommerce": { "min": 19, "max": 30 },
+      "consumables": { "min": 25, "max": 40 },
+      "consumables_top": { "min": 40, "max": 55 },
+      "apparel": { "min": 12, "max": 17 },
+      "durable": { "min": 7, "max": 15 }
+    },
+    "cohort_repeat_pct": {
+      "m1_healthy": { "min": 35, "max": 42 },
+      "m3_typical": { "min": 22, "max": 25 },
+      "m3_healthy_min": 30,
+      "ninety_day_repeat_typical": { "min": 15, "max": 25 },
+      "ninety_day_repeat_best": 30
+    },
+    "vertical_90day_cumulative_repeat_pct": {
+      "apparel": { "min": 22, "max": 32 },
+      "beauty": { "min": 30, "max": 40 },
+      "supplements": { "min": 35, "max": 50 }
+    },
+    "time_to_second_order_days": { "typical": { "min": 45, "max": 90 }, "good_below": 45 },
+    "retention_rate_pct": { "average": 30, "top_decile": 62 },
+    "loyalty_effects": {
+      "repeat_customer_spend_premium_pct": 67,
+      "profit_lift_from_5pct_retention_pct": { "min": 25, "max": 95 }
+    }
+  },
+  "lifetime_value_metrics": {
+    "as_of": "2026-11",
+    "source_type": "industry",
+    "ltv_cac_healthy": { "min": 2.5, "max": 4.0 },
+    "ltv_cac_danger_below": 2.0,
+    "ltv_cac_underinvest_above": 5.0,
+    "cac_payback_days": { "good_below": 90, "danger_above": 180 },
+    "mer_healthy": { "min": 2.5, "max": 4.0 },
+    "retention_led_vs_acquisition_led": {
+      "retention_led_ltv_cac": 4.2,
+      "acquisition_led_ltv_cac": 1.8,
+      "contribution_margin_multiple": 3
+    },
+    "formulas": {
+      "ltv_12m": "AOV × frequency_12m × CM% × (1 − return_rate)",
+      "cac": "(media + people + tools) / new_customers",
+      "payback_months": "CAC / (CM_per_order × monthly_frequency)",
+      "mer": "total_revenue / total_media_spend",
+      "breakeven_repeat_rate": "(CAC − CM_1) / CM_2plus",
+      "ltv_90d": "CM_1 + (repeat_pct_90d × CM_2plus)"
+    }
+  },
+  "lifecycle_flow_benchmarks": {
+    "as_of": "2026-11",
+    "source_type": "vendor",
+    "note": "มาจาก email marketing ไม่ใช่ LINE — ใช้เป็น floor ไม่ใช่เป้า; LINE มี open rate สูงกว่าแต่ conversion ขึ้นกับ offer",
+    "flow_revenue_share": {
+      "pct_of_email_revenue": 41,
+      "pct_of_sends": 5.3
+    },
+    "by_flow": {
+      "welcome": {
+        "open_rate_pct": { "typical": { "min": 35, "max": 60 }, "top_quartile": { "min": 75, "max": 90 } },
+        "conversion_pct": { "typical": { "min": 2.1, "max": 4.4 }, "top_quartile": { "min": 8, "max": 12 } },
+        "rpr_usd": { "min": 2.5, "max": 6 }
+      },
+      "cart_recovery": {
+        "open_rate_pct": { "min": 50, "max": 65 },
+        "conversion_pct": { "min": 3.3, "max": 7.7 },
+        "note": "highest RPR of all flows"
+      },
+      "post_purchase": {
+        "open_rate_pct": { "min": 50, "max": 65 },
+        "conversion_pct_crosssell": { "min": 3, "max": 6 },
+        "rpr_usd": { "min": 0.8, "max": 2.5 }
+      },
+      "replenishment": {
+        "open_rate_pct": { "min": 40, "max": 55 },
+        "conversion_pct": { "min": 4, "max": 10 },
+        "source_type": "est"
+      },
+      "winback": {
+        "open_rate_pct": { "min": 20, "max": 35 },
+        "conversion_pct": { "min": 1, "max": 4 }
+      }
+    },
+    "automation_effect": {
+      "revenue_per_email_automated_usd": 2.87,
+      "revenue_per_email_campaign_usd": 0.18,
+      "four_core_flows_uplift_pct": 320
+    }
+  },
+  "segmentation": {
+    "as_of": "2026-11",
+    "source_type": "vendor",
+    "rfm_segments": [
+      { "name": "Champions", "r": "4-5", "fm": "4-5", "pct_base": "10-15", "pct_revenue": "35-45", "cap_per_week": "2-3", "action": "VIP / early access / premium upsell" },
+      { "name": "Loyal", "r": "3-5", "fm": "3-4", "pct_base": "10-15", "pct_revenue": "15-25", "cap_per_week": "2", "action": "cross-sell / replenishment / referral" },
+      { "name": "Potential Loyalist", "r": "4-5", "fm": "2-3", "pct_base": "8-12", "pct_revenue": "8-12", "cap_per_week": "2", "action": "onboarding / education / bundle" },
+      { "name": "Recent", "r": "4-5", "fm": "0-1", "pct_base": "5-10", "pct_revenue": "2-5", "cap_per_week": "2", "action": "drive 2nd order" },
+      { "name": "Promising", "r": "3-4", "fm": "1", "pct_base": "4-8", "pct_revenue": "1-3", "cap_per_week": "1-2", "action": "build engagement" },
+      { "name": "Needing Attention", "r": "2-3", "fm": "2-3", "pct_base": "6-10", "pct_revenue": "5-8", "cap_per_week": "1-2", "action": "limited-time offer / restock alert" },
+      { "name": "About To Sleep", "r": "2-3", "fm": "0-2", "pct_base": "5-9", "pct_revenue": "2-4", "cap_per_week": "1", "action": "win-back teaser" },
+      { "name": "At Risk", "r": "0-2", "fm": "2-5", "pct_base": "6-10", "pct_revenue": "8-14", "cap_per_week": "1", "action": "multi-touch win-back" },
+      { "name": "Cant Lose Them", "r": "0-1", "fm": "4-5", "pct_base": "1-3", "pct_revenue": "5-12", "cap_per_week": "bespoke", "action": "personal outreach" },
+      { "name": "Hibernating", "r": "1-2", "fm": "1-2", "pct_base": "8-14", "pct_revenue": "1-3", "cap_per_week": "0.25", "action": "single strong offer then low cadence" },
+      { "name": "Lost", "r": "0-1", "fm": "0-1", "pct_base": "12-20", "pct_revenue": "<1", "cap_per_week": "0.25 (quarterly)", "action": "suppress" }
+    ],
+    "scoring": {
+      "method": "NTILE(5) quintile หรือ fixed threshold เมื่อฐาน < 10,000",
+      "use_margin_not_revenue": true,
+      "recalibrate": "quarterly"
+    },
+    "thresholds_fixed_base_under_10k": {
+      "r_days": { "5": "<=7", "4": "8-30", "3": "31-90", "2": "91-180", "1": ">180" },
+      "f_orders_12m": { "5": ">=5", "4": "4", "3": "3", "2": "2", "1": "1" },
+      "m_thb_12m": { "5": ">=5000", "4": "3000-4999", "3": "1500-2999", "2": "500-1499", "1": "<500" }
+    }
+  },
+  "chat_commerce": {
+    "as_of": "2026-11",
+    "source_type": "vendor",
+    "vendor_claim_close_rate_pct": { "min": 85, "max": 98, "caveat": "วัดจากผู้ที่ทักเข้ามาแล้วเท่านั้น ไม่ใช่ CR ของ funnel" },
+    "chat_to_order_pct": { "min": 15, "max": 25, "source_type": "est" },
+    "first_response_time_minutes": { "good": 5, "acceptable": 60 },
+    "conversion_dropoff": {
+      "under_1_min": "สูงสุด",
+      "1-5_min": "ดี",
+      "5-30_min": "ปานกลาง",
+      "over_60_min": "ต่ำมาก"
+    }
+  },
+  "acquisition_benchmarks": {
+    "as_of": "2026-11",
+    "source_type": "est",
+    "cpf_thb_by_channel": {
+      "qr_receipt_packaging": { "min": 0, "max": 5 },
+      "qr_live_tiktok": 0,
+      "creator_code": { "min": 10, "max": 50 },
+      "line_ads_cpf": { "min": 30, "max": 80, "source_type": "vendor" },
+      "tiktok_fb_to_line": { "min": 40, "max": 120 },
+      "event_booth": { "min": 20, "max": 100, "note": "คุณภาพต่ำสุด" }
+    },
+    "friend_quality_gates": {
+      "add_to_first_purchase_30d_pct": { "typical": { "min": 10, "max": 15 }, "good": 20 },
+      "block_rate_30d_pct": { "good_below": 5 },
+      "stop_acquisition_if": [
+        "block > 7% สองสัปดาห์ติด",
+        "to-friend purchase 30d < 5%",
+        "quota เต็มก่อนกลางเดือนเป็นประจำ"
+      ]
+    }
+  },
+  "loyalty": {
+    "as_of": "2026-11",
+    "source_type": "platform + est",
+    "reward_card_vs_crm": {
+      "reward_card": { "price_thb_month": 0, "stores_customer_data": false, "tiered": false, "targeted_broadcast": false },
+      "mycustomer_crm": { "price_thb_month": 369, "free_on": "Pro", "stores_customer_data": true, "tiered": true, "max_tiers": 5, "targeted_broadcast": true }
+    },
+    "point_cost_ceiling_pct_of_aov": {
+      "cm_above_40": { "min": 5, "max": 8 },
+      "cm_25_to_40": { "min": 3, "max": 5 },
+      "cm_below_20": { "min": 1, "max": 3 }
+    },
+    "recommended_tiers": 3,
+    "point_liability_ceiling_pct_revenue": 5,
+    "point_redemption_target_pct": { "min": 40, "max": 70 }
+  },
+  "measurement": {
+    "as_of": "2026-11",
+    "twelve_numbers": [
+      "net_new_friends",
+      "block_rate",
+      "open_rate",
+      "ctr",
+      "revenue_from_line",
+      "revenue_by_channel (flow/broadcast/chat)",
+      "ninety_day_repeat_by_source",
+      "time_to_second_order",
+      "cac",
+      "ltv_12m_to_cac",
+      "cm_after_ads",
+      "mer"
+    ],
+    "attribution_ladder": [
+      { "spend_thb_month": "< 300000", "method": "code/UTM + ถามลูกค้าตอนปิดการขาย" },
+      { "spend_thb_month": "300000-1000000", "method": "source-level cohort (repeat แยกช่องทาง)" },
+      { "spend_thb_month": "> 1000000", "method": "geo holdout 2-4 สัปดาห์" }
+    ],
+    "budget_allocation_sme_th": {
+      "performance_media_pct": 70,
+      "retention_pct": 20,
+      "test_pct": 10,
+      "retention_heavy_variant": { "performance_media_pct": 60, "retention_pct": 30, "test_pct": 10 }
+    }
+  },
+  "unit_economics_example": {
+    "as_of": "2026-11",
+    "source_type": "est",
+    "currency": "THB",
+    "inputs": {
+      "aov": 890,
+      "cogs": 400,
+      "platform_payment_fee_pct": 7,
+      "affiliate_commission_pct": 20,
+      "fulfillment_shipping": 60,
+      "return_provision_pct": 5
+    },
+    "computed": {
+      "cm_1": 145,
+      "cm_pct": 16.3,
+      "roas_floor": 6.1,
+      "breakeven_repeat_rate_at_cac_250_pct": 66
+    }
+  },
+  "thai_calendar": {
+    "as_of": "2026-11",
+    "source_type": "est",
+    "monthly_cycle": {
+      "payday": "25–1 (โปรหลัก)",
+      "tight": "2–10 (เนื้อหา/ของเล็ก)",
+      "normal": "10–20 (cross-sell)"
+    },
+    "mega_sales": ["6.6", "7.7", "8.8", "9.9", "10.10", "11.11", "12.12"],
+    "mega_sale_prep_weeks": 4,
+    "event_multiplier_budget": { "min": 1.5, "max": 3 }
+  },
+  "policy_and_law_th": {
+    "as_of": "2026-11",
+    "source_type": "platform",
+    "pdpa": {
+      "in_force_since": "2022-06-01",
+      "consent_requirements": [
+        "แยกจาก consent ของบริการ",
+        "ห้าม pre-tick",
+        "ถอนได้ง่ายเท่าที่ให้",
+        "เก็บหลักฐาน timestamp + ถ้อยคำ",
+        "specific ต่อวัตถุประสงค์"
+      ],
+      "sensitive_data": [
+        "เชื้อชาติ",
+        "ความเชื่อทางศาสนา",
+        "ความคิดเห็นทางการเมือง",
+        "ข้อมูลสุขภาพ",
+        "ข้อมูลชีวภาพ",
+        "พฤติกรรมทางเพศ",
+        "ประวัติอาชญากรรม",
+        "สหภาพแรงงาน"
+      ],
+      "breach_notification_hours": 72,
+      "dsr_response_days": 30
+    },
+    "direct_marketing_law": {
+      "name": "พ.ร.บ.ขายตรงและตลาดแบบตรง",
+      "ocpb_registration_may_be_required": true
+    },
+    "draft_guidance": {
+      "published": "2026-07-07",
+      "status": "draft (ยังไม่มีผลบังคับ)",
+      "topics": ["lawful basis 5 ขั้น", "marketing consent", "profiling และ AI safeguards"]
+    }
+  }
+}

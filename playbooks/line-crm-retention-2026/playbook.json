@@ -1,0 +1,450 @@
+{
+  "playbook": "line-oa-crm-retention",
+  "version": "2026.11",
+  "market": "TH",
+  "currency": "THB",
+  "as_of": "2026-11-06",
+  "core_thesis": "Acquisition buys the first order; retention buys the company. Cohort is the compass.",
+  "invocation": {
+    "purpose": "ให้ agent วางแผน/วินิจฉัยงาน LINE OA, CRM, retention และ LTV สำหรับตลาดไทย",
+    "steps": [
+      "1. อ่าน AGENTS.md ที่ root ของ repo เพื่อกฎ epistemic",
+      "2. เลือก stage จาก stages ด้านล่างตามสถานการณ์ผู้ใช้",
+      "3. ดึง rules ที่ match stage + when ของแต่ละ rule",
+      "4. ดึงตัวเลขจาก benchmarks.json เท่านั้น ห้ามแต่งเลขใหม่",
+      "5. สร้าง output ตาม required_output",
+      "6. ตรวจว่า kill_criteria ถูกระบุครบ"
+    ],
+    "required_output": [
+      "assumptions",
+      "primary_kpi",
+      "guardrails",
+      "segment_plan",
+      "flow_plan",
+      "broadcast_calendar",
+      "measurement_plan",
+      "kill_criteria"
+    ],
+    "diagnostic_order": [
+      "tracking",
+      "segment",
+      "flow",
+      "message",
+      "offer",
+      "acquisition"
+    ],
+    "forbidden": [
+      "อ้างตัวเลขที่ไม่มีใน benchmarks.json โดยไม่ระบุว่าเป็นสมมติฐาน",
+      "แนะนำให้ใช้ข้อมูลอ่อนไหว (สุขภาพ/ศาสนา) ในการแบ่งกลุ่ม",
+      "แนะนำ consent แบบ pre-tick หรือผูกกับการใช้บริการ",
+      "อ้าง 85-98% chat commerce conversion เป็น conversion rate ของ funnel",
+      "แนะนำการส่ง broadcast ทั้งฐานถี่กว่าปีละ 12 ครั้งโดยไม่มีเหตุผล"
+    ]
+  },
+  "stages": {
+    "foundation": {
+      "label": "ตั้งระบบครั้งแรก",
+      "rules": ["R-101", "R-102", "R-103", "R-110", "R-150"],
+      "chapters": ["02", "10", "11"],
+      "exit_criteria": "tag standard ประกาศใช้, consent flow ทำงาน, rich menu + greeting + auto-reply พร้อม"
+    },
+    "grow": {
+      "label": "หาเพื่อน/ขยายฐาน",
+      "rules": ["R-104", "R-105", "R-111", "R-151"],
+      "chapters": ["03"],
+      "exit_criteria": "CPF < ฿80 และ add→first purchase 30 วัน ≥ 10%"
+    },
+    "segment": {
+      "label": "แบ่งกลุ่ม",
+      "rules": ["R-106", "R-107", "R-120", "R-152"],
+      "chapters": ["04"],
+      "exit_criteria": "tag ครบ 3 มิติ > 80%, RFM รันได้รายเดือน, cap ความถี่ตั้งแล้ว"
+    },
+    "automate": {
+      "label": "สร้าง flow",
+      "rules": ["R-108", "R-109", "R-121", "R-122"],
+      "chapters": ["05"],
+      "exit_criteria": "welcome + 2nd purchase flow ทำงาน, ทุก flow มี exit condition"
+    },
+    "sell": {
+      "label": "ขายผ่านแชท/MyShop",
+      "rules": ["R-112", "R-123", "R-124"],
+      "chapters": ["07"],
+      "exit_criteria": "first response < 5 นาที, chat→order ≥ 15%, MyShop checkout ทดสอบแล้ว"
+    },
+    "loyalty": {
+      "label": "สมาชิก/โควต้า",
+      "rules": ["R-113", "R-125", "R-126"],
+      "chapters": ["08"],
+      "exit_criteria": "member repeat > non-member อย่างน้อย 10 จุด"
+    },
+    "fix": {
+      "label": "แก้ปัญหา",
+      "rules": ["R-114", "R-130", "R-131", "R-132", "R-153"],
+      "chapters": ["13"],
+      "exit_criteria": "block rate < 5% และสาเหตุถูกระบุด้วยข้อมูล ไม่ใช่ความรู้สึก"
+    }
+  },
+  "rules": [
+    {
+      "id": "R-101",
+      "stage": "foundation",
+      "when": "เริ่มทำ LINE OA หรือยังไม่มี tag standard",
+      "do": "ประกาศ tag standard 3 มิติ (source / stage / value) เป็นรายการปิด ห้ามพิมพ์เอง",
+      "because": "ถ้าไม่มี tag ที่สม่ำเสมอ จะแบ่งกลุ่มไม่ได้ และ CRM จะกลายเป็นกล่องข้อความ",
+      "chapter": "02"
+    },
+    {
+      "id": "R-102",
+      "stage": "foundation",
+      "when": "เลือกแพ็กเกจ LINE OA",
+      "do": "คำนวณ messages/เดือน = เพื่อน × จำนวนส่ง แล้วเลือกแพ็กเกจ; ถ้า ≥20,000 → Pro; ถ้าจะซื้อ CRM อยู่แล้ว → Pro คุ้มตั้งแต่ ~16,310",
+      "because": "แพ็กเกจคิดต่อข้อความ การเลือกผิดทำให้จ่ายเกินหรือส่งไม่ได้กลางเดือน",
+      "chapter": "02"
+    },
+    {
+      "id": "R-103",
+      "stage": "foundation",
+      "when": "ออกแบบ rich menu",
+      "do": "≤4–6 ปุ่มตาม intent ไม่ใช่ตามแผนก และทุกปุ่มต้องวัด tap ได้",
+      "because": "ปุ่มที่มากขึ้นทำให้ทุกปุ่มแย่งความสนใจ และทำให้อ่านผลไม่ได้",
+      "chapter": "02"
+    },
+    {
+      "id": "R-104",
+      "stage": "grow",
+      "when": "หาเพื่อนใหม่",
+      "do": "วัด CPF คู่กับ 90-day net friend value และ 60-day friend retention เสมอ",
+      "because": "เพื่อนผีทำให้ต้นทุนข้อความในอนาคตสูงขึ้นโดยไม่สร้างรายได้",
+      "chapter": "03"
+    },
+    {
+      "id": "R-105",
+      "stage": "grow",
+      "when": "แจก QR ทุกจุด",
+      "do": "ทุก QR ต้องมี param เฉพาะจุด + incentive ที่ตรงบริบท + ข้อความบอกว่าได้อะไร",
+      "because": "QR เดียวใช้ทุกที่ทำให้ไม่รู้ว่าช่องทางใดทำงาน",
+      "chapter": "03"
+    },
+    {
+      "id": "R-106",
+      "stage": "segment",
+      "when": "เริ่มทำ segmentation",
+      "do": "เริ่มที่ RFM quintile (หรือ fixed threshold ถ้าฐาน <10,000) → 11 segment → action map",
+      "because": "ได้ผล 80% ด้วยความพยายาม 5% และอธิบายให้ทีมขายเข้าใจได้",
+      "chapter": "04"
+    },
+    {
+      "id": "R-107",
+      "stage": "segment",
+      "when": "ตั้งความถี่ส่ง",
+      "do": "กำหนด cap ต่อ segment และลดครึ่งหนึ่งทันทีถ้า segment นั้น block > 8%",
+      "because": "ทุกข้อความมีต้นทุนทั้งเงินและ block rate",
+      "chapter": "04"
+    },
+    {
+      "id": "R-108",
+      "stage": "automate",
+      "when": "สร้าง flow",
+      "do": "ทุก flow ต้องมี trigger, condition, message, delay, exit, measure ครบ 6 องค์ประกอบ",
+      "because": "flow ที่ไม่มี exit จะส่งข้อความชวนซื้อให้คนที่ซื้อแล้ว",
+      "chapter": "05"
+    },
+    {
+      "id": "R-109",
+      "stage": "automate",
+      "when": "จัดลำดับการสร้าง flow",
+      "do": "welcome → 2nd purchase → post-purchase care → replenishment → win-back (ทีละตัว ห่างกัน 2 สัปดาห์)",
+      "because": "ออเดอร์ที่ 2 คือจุดที่ unit economics พลิกจากขาดทุนเป็นกำไร",
+      "chapter": "05"
+    },
+    {
+      "id": "R-110",
+      "stage": "foundation",
+      "when": "เปิดใช้งาน OA ครั้งแรก",
+      "do": "มี verified badge + Premium ID + เส้นทาง 'คุยกับเจ้าหน้าที่' + SLA การตอบ",
+      "because": "automation ที่ไม่มีทางออกไปหาคนทำให้ลูกค้าโกรธเร็วขึ้น",
+      "chapter": "02"
+    },
+    {
+      "id": "R-111",
+      "stage": "grow",
+      "when": "ใช้ LINE Ads",
+      "do": "ใช้ CPF เป็น objective หลักสำหรับหาเพื่อน, งบ ≥฿500/วัน/ad group, ห้ามแตะ 3 วันแรก, ขยาย +20–30%/3 วัน",
+      "because": "LINE Ads แข็งที่ reach ราคาถูกและ CPF ไม่ใช่ interest targeting ละเอียด",
+      "chapter": "03"
+    },
+    {
+      "id": "R-112",
+      "stage": "sell",
+      "when": "มีแชทเข้ามาขาย",
+      "do": "ตั้ง SLA ตอบครั้งแรก ≤5 นาทีในเวลาทำการ และ ≤1 ชม.เสมอ; เกิน 3 ข้อความยังไม่จบ → escalate",
+      "because": "ความเร็วในการตอบคือตัวแปรที่ทรงพลังที่สุดของ chat commerce",
+      "chapter": "07"
+    },
+    {
+      "id": "R-113",
+      "stage": "loyalty",
+      "when": "ออกแบบ point/tier",
+      "do": "คำนวณต้นทุน point เป็น % ของ AOV และเพดานตาม CM: CM>40% → 5–8%, CM 25–40% → 3–5%, CM<20% → 1–3%",
+      "because": "loyalty ที่กิน margin เกินจะทำให้ยอดขึ้นแต่กำไรหาย",
+      "chapter": "08"
+    },
+    {
+      "id": "R-114",
+      "stage": "fix",
+      "when": "ยอดหรือ engagement ตก",
+      "do": "ไล่ diagnostic ladder ตามลำดับ tracking → segment → flow → message → offer → acquisition",
+      "because": "การเริ่มแก้ที่ content หรือ audience ทำให้เสียเวลาและแก้ผิดจุด",
+      "chapter": "13"
+    },
+    {
+      "id": "R-120",
+      "stage": "segment",
+      "when": "คำนวณ RFM",
+      "do": "ใช้ margin แทน revenue ถ้ามีข้อมูล และ recalibrate threshold ทุกไตรมาส",
+      "because": "ลูกค้าที่ซื้อของลดหนักจะได้คะแนน M สูงเกินจริงถ้าใช้ revenue",
+      "chapter": "04"
+    },
+    {
+      "id": "R-121",
+      "stage": "automate",
+      "when": "ตั้ง trigger replenishment",
+      "do": "คำนวณจากรอบใช้สินค้าจริงต่อ SKU (เช่น วันที่คาดหมด −7 วัน) ไม่ใช่ค่าเฉลี่ยทั้งฐาน",
+      "because": "trigger ผิดเวลาทำให้ข้อความมาก่อนที่ลูกค้าจะต้องการ",
+      "chapter": "05"
+    },
+    {
+      "id": "R-122",
+      "stage": "automate",
+      "when": "สร้าง flow ที่มีข้อเสนอ",
+      "do": "อย่าใช้ส่วนลดเป็นข้อความแรก; ใช้ content/บริการ/สิทธิ์ก่อน",
+      "because": "ส่วนลดเป็นข้อความแรกฝึกให้ลูกค้ารอโปรและลด CM",
+      "chapter": "05"
+    },
+    {
+      "id": "R-123",
+      "stage": "sell",
+      "when": "เปิด MyShop",
+      "do": "ทดสอบ checkout จริง + ตรวจว่าราคาตรงกับทุกช่องทาง + ผูก point กับ CRM",
+      "because": "ราคาไม่ตรงและ checkout พังทำลายความเชื่อถือและสร้างข้อร้องเรียน",
+      "chapter": "07"
+    },
+    {
+      "id": "R-124",
+      "stage": "sell",
+      "when": "ยิง paid ads เข้า LINE",
+      "do": "ต้องมีคนตอบรองรับ traffic และ tag source ทุกครั้ง; ถ้าตอบไม่ทันให้หยุดยิงก่อน",
+      "because": "การได้ลูกค้าแล้วทิ้งแย่กว่าการไม่ได้ลูกค้า",
+      "chapter": "07"
+    },
+    {
+      "id": "R-125",
+      "stage": "loyalty",
+      "when": "ออกแบบ tier",
+      "do": "ใช้ 3–4 ระดับ ไม่ใช่ 5 และต้องมีวันหมดอายุสถานะ 12 เดือน",
+      "because": "tier ที่มากเกินทำให้ลูกค้าไม่รู้ว่าตัวเองอยู่ไหนและไม่ motivate",
+      "chapter": "08"
+    },
+    {
+      "id": "R-126",
+      "stage": "loyalty",
+      "when": "วัดผล loyalty",
+      "do": "วัด member repeat rate เทียบ non-member (หรือ holdout) และ point liability < 5% ของรายได้เดือน",
+      "because": "จำนวนสมาชิกไม่ใช่หลักฐานว่า loyalty สร้างกำไร",
+      "chapter": "08"
+    },
+    {
+      "id": "R-130",
+      "stage": "fix",
+      "when": "block rate > 8%",
+      "do": "หยุด broadcast ทั้งหมด ยกเว้น transactional; ส่งข้อความขอโทษ 1 ครั้ง; ฟื้นด้วย 1:1 และ targeted กับ Champions ก่อน",
+      "because": "block เป็นการสูญเสียถาวร ต้องแก้ทันทีไม่ใช่ปรับนิดหน่อย",
+      "chapter": "13"
+    },
+    {
+      "id": "R-131",
+      "stage": "fix",
+      "when": "จะเปลี่ยนอะไรก็ตาม",
+      "do": "ทำ A/B 1 ตัวแปร, กลุ่มละ ≥1,000 คน, รอ ≥24 ชม., ตัดสินที่ RPM/conversion ไม่ใช่ open rate",
+      "because": "การเปลี่ยนหลายอย่างพร้อมกันทำให้ไม่รู้ว่าอะไรได้ผล",
+      "chapter": "13"
+    },
+    {
+      "id": "R-132",
+      "stage": "fix",
+      "when": "สรุปว่า LINE ไม่ work",
+      "do": "ตอบ 7 คำถามตรวจสอบก่อน (tag ≥80%, flow ครบ, block rate, response time, คนตอบช่วงกลางคืน, แยก revenue, CM₁ บวก)",
+      "because": "ส่วนใหญ่ปัญหาไม่ใช่ช่องทาง แต่เป็นระบบที่ยังไม่ถูกสร้าง",
+      "chapter": "13"
+    },
+    {
+      "id": "R-140",
+      "stage": "foundation",
+      "when": "เก็บข้อมูลใด ๆ เพื่อการตลาด",
+      "do": "consent แยกจากบริการ ไม่ pre-tick ถอนได้ง่ายเท่าที่ให้ และเก็บหลักฐาน timestamp + ถ้อยคำ",
+      "because": "PDPA กำหนดและ consent ที่พิสูจน์ไม่ได้ใช้ไม่ได้จริง",
+      "chapter": "10"
+    },
+    {
+      "id": "R-141",
+      "stage": "foundation",
+      "when": "ทุกข้อความการตลาด",
+      "do": "ใส่ opt-out ที่ใช้งานได้จริง และเมื่อมีคำขอให้หยุดทุกช่องทางภายใน 24–48 ชม.",
+      "because": "สิทธิคัดค้านการตลาดตรงบังคับใช้และต้องทำงานข้ามช่องทาง",
+      "chapter": "10"
+    },
+    {
+      "id": "R-142",
+      "stage": "foundation",
+      "when": "ออกแบบ tag/segment",
+      "do": "ห้ามใช้ข้อมูลอ่อนไหว (สุขภาพ ศาสนา ชีวภาพ) แม้ลูกค้าจะพิมพ์เองในแชท",
+      "because": "ผิด PDPA มาตรา 26 และเสี่ยงต่อกฎหมายโฆษณา",
+      "chapter": "10"
+    },
+    {
+      "id": "R-143",
+      "stage": "foundation",
+      "when": "ใช้ AI ในการตลาด",
+      "do": "แจ้งใน privacy notice, ให้มนุษย์ยืนยันก่อนตัดสินใจที่มีผลกับลูกค้า, มีช่องทางคัดค้าน profiling",
+      "because": "guidance ด้าน AI/profiling เพิ่มข้อกำหนด safeguards",
+      "chapter": "10"
+    },
+    {
+      "id": "R-150",
+      "stage": "foundation",
+      "when": "เลือกเครื่องมือ",
+      "do": "เริ่มจาก native (OA Manager + MyCustomer) ก่อน; ระวัง 1 channel = 1 webhook",
+      "because": "native ครอบคลุม 80% ของ use case SME และการซื้อซ้อนทำให้ระบบพัง",
+      "chapter": "11"
+    },
+    {
+      "id": "R-151",
+      "stage": "grow",
+      "when": "พิจารณาเพิ่มเพื่อน",
+      "do": "หยุด/ชะลอถ้า block > 7% สองสัปดาห์, to-friend 30d purchase < 5%, หรือ quota เต็มก่อนกลางเดือน",
+      "because": "อย่าเพิ่มเพื่อนเร็วกว่าความสามารถในการดูแล",
+      "chapter": "03"
+    },
+    {
+      "id": "R-152",
+      "stage": "segment",
+      "when": "เห็น segment ที่ไม่ทำรายได้",
+      "do": "ลดความถี่หรือ suppress (Lost = ไตรมาสละครั้ง) แทนการพยายามกระตุ้นทุกเดือน",
+      "because": "30–40% ของฐานมักสร้างรายได้ <5% การส่งถึงกลุ่มนี้คือการจ่ายเงินเปล่า",
+      "chapter": "04"
+    },
+    {
+      "id": "R-153",
+      "stage": "fix",
+      "when": "ตัดสินใจเรื่องงบ",
+      "do": "ใช้ LTV₉₀ = CM₁ + (repeat% × CM₂) เทียบกับ CAC ต่อช่องทาง ไม่ใช่ CPA หรือ platform ROAS",
+      "because": "ช่องที่ CPA แพงกว่าอาจให้ cohort ที่คุ้มกว่ามาก",
+      "chapter": "09"
+    },
+    {
+      "id": "R-160",
+      "stage": "segment",
+      "when": "วัดผลทั้งระบบ",
+      "do": "ใช้ 12 ตัวเลข (เพื่อนใหม่, block, open, CTR, revenue LINE, revenue แยกช่อง, 90d repeat by source, time to 2nd, CAC, LTV:CAC, CM after ads, MER)",
+      "because": "ตัวชี้วัดเดียวหลอกได้เสมอ",
+      "chapter": "09"
+    },
+    {
+      "id": "R-161",
+      "stage": "segment",
+      "when": "คำนวณ LTV",
+      "do": "ใช้ CM basis และกรอบ 12 เดือน ห้ามใช้ revenue หรือ 'ตลอดชีพ' เพื่อ justify CAC",
+      "because": "LTV แบบ revenue สูงเกินจริง 2–4 เท่า",
+      "chapter": "09"
+    },
+    {
+      "id": "R-162",
+      "stage": "foundation",
+      "when": "วางแผนรายเดือน",
+      "do": "ฝังปฏิทินไทย (เงินเดือนออก 25–1, mega sale 9.9–12.12, เทศกาล) และเตรียมล่วงหน้า 3–4 สัปดาห์",
+      "because": "ยอดขายไทยกระจุกตัวรอบเงินเดือนและ mega sale",
+      "chapter": "12"
+    },
+    {
+      "id": "R-163",
+      "stage": "automate",
+      "when": "ตัดสินใจ automate vs คน",
+      "do": "automation สำหรับคัดกรอง/ข้อมูล/ตอบซ้ำ; คนสำหรับปิด high-value, ข้อร้องเรียน, และเรื่องสุขภาพ",
+      "because": "การปิดการขาย high-value และเรื่องอ่อนไหวต้องมีการตัดสินใจของมนุษย์",
+      "chapter": "05"
+    },
+    {
+      "id": "R-170",
+      "stage": "fix",
+      "when": "จะปิด/ลด flow หรือ campaign",
+      "do": "กำหนด kill criteria ล่วงหน้าเป็นตัวเลข + กรอบเวลา และบันทึกใน change log",
+      "because": "ถ้าไม่มีเกณฑ์ล่วงหน้า จะตัดสินด้วยอารมณ์หรือตัดสินช้าเกินไป",
+      "chapter": "13"
+    },
+    {
+      "id": "R-180",
+      "stage": "foundation",
+      "when": "ทุกครั้งที่ตัวเลขใน benchmarks.json อายุเกิน 90 วัน",
+      "do": "re-verify ก่อนใช้ตัดสินใจงบ และอัปเดต as_of",
+      "because": "LINE เปลี่ยนราคาและฟีเจอร์บ่อย และ benchmark ตลาดเปลี่ยนเร็ว",
+      "chapter": "METRICS"
+    }
+  ],
+  "diagnostics": {
+    "symptom_map": [
+      {
+        "symptom": "เพื่อนเยอะแต่ไม่ซื้อ",
+        "check": ["friend source quality", "welcome flow", "rich menu CTA", "first response time"],
+        "primary_fix": "เปลี่ยน incentive acquisition + สร้าง welcome flow ที่มี CTA เดียว",
+        "chapter": "13"
+      },
+      {
+        "symptom": "ซื้อครั้งเดียวไม่กลับ",
+        "check": ["CM₁", "2nd purchase flow", "trigger timing", "review sentiment"],
+        "primary_fix": "สร้าง F2 + ปรับ trigger ตามรอบใช้สินค้า",
+        "chapter": "13"
+      },
+      {
+        "symptom": "block rate พุ่ง",
+        "check": ["messages per month", "targeted ratio", "send time", "content relevance"],
+        "primary_fix": "ลดความถี่ 50% + เปลี่ยนเป็น segmented broadcast",
+        "chapter": "13"
+      },
+      {
+        "symptom": "flow conversion ต่ำ",
+        "check": ["ข้อความยาว/CTA", "offer", "segment ของผู้รับ", "landing"],
+        "primary_fix": "ปรับโครง 3 bubble + เพิ่ม proof + ตรวจหน้าปลายทาง",
+        "chapter": "13"
+      },
+      {
+        "symptom": "ยอด LINE ตกกะทันหัน",
+        "check": ["changes", "stock/price", "block spike", "quota", "competitor"],
+        "primary_fix": "ไล่ checklist 7 ข้อก่อนสรุปสาเหตุ",
+        "chapter": "13"
+      }
+    ]
+  },
+  "anti_patterns": [
+    "วัดจำนวนเพื่อนแทน repeat rate",
+    "broadcast ทั้งฐานทุกสัปดาห์",
+    "ไม่มี tag standard",
+    "ไม่มี exit condition ใน flow",
+    "welcome flow มีแต่การขาย",
+    "ใช้ส่วนลดเป็นข้อความแรกเสมอ",
+    "ไม่มี 2nd purchase flow",
+    "trigger replenishment ด้วยค่าเฉลี่ยทั้งฐาน",
+    "ไม่มี cap ความถี่",
+    "ส่งข้อมูลสุขภาพ/ศาสนาเข้า segment",
+    "pre-tick consent",
+    "ไม่มี opt-out ในข้อความ",
+    "ตอบแชทช้าเกิน 1 ชม.",
+    "ใช้ 2 chatbot platform พร้อมกัน",
+    "rich menu ล้าสมัย/โปรหมดอายุ",
+    "วัดด้วย open rate อย่างเดียว",
+    "ใช้ blended LTV ตัดสินงบ",
+    "ยิง ads เข้า LINE โดยไม่มีคนตอบ",
+    "ไม่มี change log",
+    "ไม่เคยทดสอบ A/B"
+  ]
+}

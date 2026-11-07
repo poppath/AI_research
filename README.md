@@ -8,6 +8,7 @@ Deep-research playbooks written so that **an AI agent can read, reason with, and
 |---|---|---|
 | [`playbooks/tiktok-performance-marketing/`](playbooks/tiktok-performance-marketing/00-START-HERE.md) | TikTok Performance Marketing 2026 — paid, Shop/GMV Max, affiliate, LIVE, creative system, measurement, TH compliance | ✅ Live (2026-11) — [Notion](https://app.notion.com/p/TikTok-Performance-Playbook-2026-TH-Paid-Shop-GMV-Max-Affiliate-LIVE-41076ada3488811082f3ff29bc2a1dd5) · [Google Docs](https://docs.google.com/document/d/1c3ZzV3mA-6XtgLSJuB-pL_5MFIjMkKzfFzI2Po4GoPo) |
 | `playbooks/meta-ads-ai-2026/` | Meta Ads × AI (FB / IG / Reels / Threads) | 🔗 Lives in Notion: [Meta Ads × AI Playbook 2026](https://app.notion.com/p/Meta-Ads-AI-Playbook-2026-Facebook-IG-Reels-Threads-41076ada3488814c953eccd33af83ca3) |
+| [`playbooks/line-crm-retention-2026/`](playbooks/line-crm-retention-2026/00-START-HERE.md) | LINE OA × CRM × Retention/LTV 2026 — OA foundation, friend growth, RFM segmentation, lifecycle flows, broadcast, chat commerce/MyShop, loyalty, LTV measurement, PDPA (TH) | ✅ Live (2026-11) |
 
 ## How to use a playbook
 
