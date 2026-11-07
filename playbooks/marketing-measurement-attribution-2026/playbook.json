@@ -21,11 +21,19 @@
     "evidence and uncertainty",
     "budget/time cap",
     "owner",
-    "stop and review criteria"
+    "stop and review criteria",
+    "business model product or service",
+    "cohort and conversion lag",
+    "reconciliation and privacy requirements"
   ],
   "related": [
     "../profit-unit-economics-2026/00-START-HERE.md",
     "../profit-unit-economics-2026/00-START-HERE.md",
     "../conversion-rate-optimization-2026/00-START-HERE.md"
+  ],
+  "additional_guides": [
+    "02-product-service-measurement.md",
+    "03-incrementality-experiments.md",
+    "04-service-economics-dashboard.md"
   ]
 }

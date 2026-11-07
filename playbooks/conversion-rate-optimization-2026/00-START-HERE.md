@@ -13,3 +13,9 @@
 [← ก่อนหน้า](../marketing-measurement-attribution-2026/00-START-HERE.md) · [ถัดไป →](../ecommerce-operations-fulfillment-2026/00-START-HERE.md) · [Unit Economics](../profit-unit-economics-2026/00-START-HERE.md) · [Research](../customer-research-positioning-2026/00-START-HERE.md) · [Creative](../ai-creative-production-2026/00-START-HERE.md)
 
 ตัวเลขตัวอย่างเป็นสมมติ ไม่ใช่ benchmark; กฎหมายไทยและนโยบาย platform ต้องตรวจตามบริบทธุรกิจ ไม่ใช่คำปรึกษากฎหมาย [แหล่งข้อมูล](SOURCES.md).
+
+## บทเจาะลึก: สินค้าและบริการ
+
+- [CRO สำหรับสินค้า](02-product-cro.md)
+- [CRO สำหรับบริการและ lead quality](03-service-cro.md)
+- [จัดลำดับและวิเคราะห์การทดลอง](04-experiment-prioritization.md)

@@ -13,3 +13,9 @@
 [← ก่อนหน้า](../profit-unit-economics-2026/00-START-HERE.md) · [ถัดไป →](../conversion-rate-optimization-2026/00-START-HERE.md) · [Unit Economics](../profit-unit-economics-2026/00-START-HERE.md) · [Research](../customer-research-positioning-2026/00-START-HERE.md) · [Creative](../ai-creative-production-2026/00-START-HERE.md)
 
 ตัวเลขตัวอย่างเป็นสมมติ ไม่ใช่ benchmark; กฎหมายไทยและนโยบาย platform ต้องตรวจตามบริบทธุรกิจ ไม่ใช่คำปรึกษากฎหมาย [แหล่งข้อมูล](SOURCES.md).
+
+## บทเจาะลึก: สินค้าและบริการ
+
+- [Event contract และ funnel สำหรับสินค้า/บริการ](02-product-service-measurement.md)
+- [Incrementality และตัวอย่างทดลอง](03-incrementality-experiments.md)
+- [Dashboard และเศรษฐศาสตร์บริการ](04-service-economics-dashboard.md)

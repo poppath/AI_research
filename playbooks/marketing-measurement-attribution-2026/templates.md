@@ -11,3 +11,6 @@ Actual vs baseline __ | data quality __ | incident/complaint __ | CM/cash __ | s
 
 ## AI prompt
 “ใช้คู่มือชุดนี้และข้อมูลที่ได้รับอนุญาต [inputs] ระบุหลักฐาน ข้อจำกัด baseline ที่ขาด, primary KPI, guardrails, ขั้นตอนปฏิบัติ, เจ้าของงาน และเงื่อนไขหยุด ห้ามสร้างสถิติ หลักฐานลูกค้า งบ หรือผลทดลอง”
+
+## Context + cohort contract
+ประเภทสินค้า/บริการ __ | lifecycle stage __ | unique unit __ | cohort start __ | mature horizon __ | entry criteria __ | gross/net basis __ | source + coverage __ | unique ID (non-PII) __ | exclusions __ | data owner __ | refund/cancellation policy __ | reconciliation method __

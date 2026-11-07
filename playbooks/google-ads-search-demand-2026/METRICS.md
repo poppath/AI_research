@@ -10,3 +10,8 @@
 | Data quality | จำนวน records ที่ reconcile ผ่าน / records ที่ตรวจ; แสดง missing/duplicates แยก |
 | Guardrails | กำหนดอย่างน้อย 2 ตัวตามบริบท เช่น refund, cash, complaint หรือ stock |
 | Causal effect | ผลต่างตาม design แบบสุ่ม; ระบุ uncertainty และ contamination; หาก underpowered = inconclusive |
+
+## Product vs service
+- **Product:** paid/delivered orders, net revenue, refund cohort และ CM3 ต่อ order; แยก COD และ returns ตามช่องทาง
+- **Service:** unique lead → qualified → held → won → paid ตาม cohort; qualified criteria และช่วงรอต้องชัด; cost/won = cohort spend / won ภายใต้ attribution ที่ระบุ ไม่เท่ากับ incremental CAC
+- **ทั้งคู่:** unique unit, data quality, primary outcome และ safety guardrails; หาก denominator เป็น 0 ให้รายงาน N/A
