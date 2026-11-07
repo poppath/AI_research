@@ -15,3 +15,11 @@
 - [S11] TikTok, commercial content disclosure: https://ads.tiktok.com/resources/help/article/how-to-turn-on-the-commercial-content-disclosure-setting-in-tiktok
 - [S12] FTC (US), influencer disclosure: https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers
 - [S13] Thailand PDPC consultation: https://www.pdpc.or.th/consultation/
+- [S14] Amazon.com Associates policies, qualifying revenue และ disqualified purchases (US; ห้ามใช้แทน Shopee TH): https://affiliate-program.amazon.com/help/operating/policies
+- [S15] Google Analytics, manual tagging: https://support.google.com/analytics/answer/11242870
+- [S16] Google Analytics, redirects และการสูญเสีย parameters: https://support.google.com/analytics/answer/14452452
+- [S17] NIST AI 600-1 GenAI Profile, provenance และ incident monitoring: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
+- [S18] FTC, fake reviews rule announcement (US): https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials
+- [S19] FTC, Endorsement Guides Q&A (US): https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking
+- [S20] TikTok, post status และ fail reasons: https://developers.tiktok.com/docs/en/content-posting-api-reference-get-video-status
+- [S21] TikTok, upload to creator inbox: https://developers.tiktok.com/docs/en/content-posting-api-reference-upload-video

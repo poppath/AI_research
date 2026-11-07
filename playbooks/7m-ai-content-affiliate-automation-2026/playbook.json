@@ -3,17 +3,61 @@
   "as_of": "2026-11-07",
   "market": "TH",
   "framework_note": "Custom framework, not an asserted universal standard",
-  "seven_m": ["Market", "Money", "Man", "Material", "Machine", "Method", "Measurement"],
+  "seven_m": [
+    "Market",
+    "Money",
+    "Man",
+    "Material",
+    "Machine",
+    "Method",
+    "Measurement"
+  ],
   "default_action": "produce_draft_for_human_review",
   "rules": [
-    {"trigger": "rights_or_claim_evidence_missing", "action": "stop_and_request_evidence"},
-    {"trigger": "disclosure_or_platform_consent_missing", "action": "stop_before_publish"},
-    {"trigger": "tiktok_direct_post", "action": "verify_intended_use_scope_audit_preview_and_explicit_consent"},
-    {"trigger": "shopee_or_tiktok_product_tag_api_unverified", "action": "use_permitted_native_flow_and_verify_account"},
-    {"trigger": "publish_outcome_unknown", "action": "reconcile_before_retry"},
-    {"trigger": "budget_exceeded_or_account_restricted", "action": "pause_and_escalate_to_owner"},
-    {"trigger": "commission_pending", "action": "report_separately_from_approved_and_paid"},
-    {"trigger": "unauthorized_reupload", "action": "reject_and_offer_original_or_licensed_content"}
+    {
+      "trigger": "rights_or_claim_evidence_missing",
+      "action": "stop_and_request_evidence"
+    },
+    {
+      "trigger": "disclosure_or_platform_consent_missing",
+      "action": "stop_before_publish"
+    },
+    {
+      "trigger": "tiktok_direct_post",
+      "action": "verify_intended_use_scope_audit_preview_and_explicit_consent"
+    },
+    {
+      "trigger": "shopee_or_tiktok_product_tag_api_unverified",
+      "action": "use_permitted_native_flow_and_verify_account"
+    },
+    {
+      "trigger": "publish_outcome_unknown",
+      "action": "reconcile_before_retry"
+    },
+    {
+      "trigger": "budget_exceeded_or_account_restricted",
+      "action": "pause_and_escalate_to_owner"
+    },
+    {
+      "trigger": "commission_pending",
+      "action": "report_separately_from_approved_and_paid"
+    },
+    {
+      "trigger": "unauthorized_reupload",
+      "action": "reject_and_offer_original_or_licensed_content"
+    },
+    {
+      "trigger": "affiliate_placement_or_product_eligibility_unknown",
+      "action": "stop_and_verify_program_terms"
+    },
+    {
+      "trigger": "tracking_attribution_or_settlement_unmatched",
+      "action": "mark_unknown_and_reconcile_do_not_infer"
+    },
+    {
+      "trigger": "tiktok_spam_risk_error",
+      "action": "stop_do_not_retry_and_escalate"
+    }
   ],
   "sources": "SOURCES.md"
 }

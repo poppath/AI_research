@@ -19,3 +19,8 @@ AI ช่วยวิจัย ทำ script ผลิต draft ตรวจ che
 **ขอบเขตหลักฐาน:** Shopee Original Creator เป็นโปรแกรมเฉพาะ ไม่ใช่กฎเดียวสำหรับครีเอเตอร์ทุกคน [S3]. ข้ออ้างว่า AI label ทำให้เสียคอมทุกประเภทในไทยยังไม่ยืนยัน; ขอคำตอบจาก support พร้อมบันทึกวันที่และบัญชี ก่อนคาดการณ์รายได้. API และเงื่อนไขเปลี่ยนได้ ตรวจใหม่ก่อนใช้งาน.
 
 อ่านต่อ: [7M & workflow](01-7m-workflow.md) · [ปฏิบัติการและ pilot](02-operations-pilot.md) · [แบบฟอร์มและ AI](templates.md) · [metrics](METRICS.md) · [sources](SOURCES.md) · [rules JSON](playbook.json)
+
+## Research ต่อเนื่อง
+- [คัดสินค้าและโปรแกรม Affiliate](03-product-program-selection.md): eligibility gate, scorecard และ sensitivity
+- [วัดผลและกระทบยอด](04-measurement-reconciliation.md): tracking, pending/approved/paid และ reversal
+- [ความน่าเชื่อถือของเนื้อหาและ incident](05-content-risk-operations.md): provenance, disclosure และแผนรับมือ 24 ชั่วโมง
