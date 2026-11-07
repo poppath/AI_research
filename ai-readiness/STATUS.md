@@ -8,7 +8,8 @@
 | Evaluation | adversarial/gap scenarios และ human rubric; test mock policy; template สำหรับผลจาก model จริง | ยังไม่ได้รันกับ LLM, ไม่ใช่ score หรือ benchmark; ต้องทดสอบ model/provider/retrieval/tool จริงและ review โดยคน |
 | Coverage | มี taxonomy/source/gate เดิม; ติดป้ายขอบเขต | ยังไม่ได้ทำครบ GICS 74/163, niche SOP และ verified rates ราย sector |
 | Retrieval | Offline lexical prototype คืน path/lines/hash และสถานะ unknown | ไม่ใช่ RAG production, ไม่มี model, account filters หรือ security boundary; ต้อง review แหล่ง |
-| Pilot/data | pilot card มี baseline, stop/approval/reconciliation | ไม่มี account, approval, financial data หรือระบบจริง; ยังไม่มี pilot results |
+| Scenario simulation | 24 สถานการณ์/51 ขั้นตอน, decision tree พร้อม schema, runner, trace และ tests; ไม่ต้องใช้บัญชีจริง | ผลจำลองไม่ได้พิสูจน์ platform permissions, fees หรือ outcomes จริง; ยังไม่ได้รันประเมิน LLM |
+| Pilot/data | pilot card มี baseline, stop/approval/reconciliation (ไม่บังคับสำหรับการจำลอง) | ไม่มี account, approval, financial data หรือระบบจริง; ยังไม่มี pilot results |
 | Fine-tuning | มี retrieval/fine-tune readiness guide และข้อจำกัด rights | ยังไม่มี training data licenses, dedup, PII scrubbing, train/test split หรือ model-evaluation; ไม่พร้อมฝึก |
 
 จุดเสี่ยง legacy ตาม [audit](../REPO-REVIEW-2026-11-07.md) ยังมีผล. จำนวน records หรือ test cases ที่เพิ่มไม่เท่ากับความครอบคลุมของทั้ง repo. จัด priority ต่อ: claim verification (fees/math/health/finance/platform) → rule migration → evaluation กับ model จริง → pilot ที่ได้รับอนุมัติ → niche expansion.

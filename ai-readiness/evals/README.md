@@ -2,6 +2,8 @@
 
 `cases.json` เป็น behavioral evaluation 18 กรณี พร้อม outcome และ rubric สำหรับคนตรวจ ไม่ใช่ dataset ที่มี canonical answer สมบูรณ์ หรือผลจาก LLM จริง. มีทั้ง missing data, conflict, stale, arithmetic, injection, rights, consent, approvals, timeout, sensitive claims และ fake success.
 
+นอกจากนี้มี [decision tree แบบสถานการณ์ต่อเนื่อง](../scenarios/README.md) ที่ส่ง model ได้โดยไม่เปิดเผย expected outcome; ไม่ต้องเชื่อมบัญชีจริง.
+
 ## วิธีรันกับ model จริง
 
 1. เลือก model/version, system instructions, วันที่, retrieval config และ tools; ใช้บัญชี sandbox หรือ mock **ห้ามต่อ action จริง**.

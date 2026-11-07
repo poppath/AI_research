@@ -6,7 +6,7 @@ Deep-research playbooks written so that **an AI agent can read, reason with, and
 
 ## AI readiness
 
-[เริ่มใช้ repo กับ LLM และ agent](ai-readiness/README.md) · [Agent contract](ai-readiness/AGENT-CONTRACT.md) · [Claim registry](ai-readiness/claims.json) · [Evaluation suite](ai-readiness/evals/README.md) · [สถานะและข้อจำกัด](ai-readiness/STATUS.md). ไม่ใช่ระบบ production หรือ training dataset ที่ตรวจครบ.
+[เริ่มใช้ repo กับ LLM และ agent](ai-readiness/README.md) · [สถานการณ์จำลองและ decision tree](ai-readiness/scenarios/README.md) · [Agent contract](ai-readiness/AGENT-CONTRACT.md) · [Claim registry](ai-readiness/claims.json) · [Evaluation suite](ai-readiness/evals/README.md) · [สถานะและข้อจำกัด](ai-readiness/STATUS.md). ไม่ใช่ระบบ production หรือ training dataset ที่ตรวจครบ.
 
 ## Playbooks
 

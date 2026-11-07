@@ -14,6 +14,8 @@
 
 [Numeric triage](NUMERIC-TRIAGE.md) ชี้บรรทัดที่อาจมีตัวเลขเพื่อ review ไม่ใช่ claim extraction หรือ fact-check ครบถ้วน.
 
+[Decision tree และสถานการณ์สังเคราะห์](scenarios/README.md) ใช้ทดสอบ reasoning โดยไม่ต้องใช้บัญชีจริง; ผลจำลองไม่ใช่ผลธุรกิจจริง.
+
 ## ตรวจในเครื่อง
 
 ```

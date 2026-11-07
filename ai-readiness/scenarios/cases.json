@@ -1,0 +1,1269 @@
+{
+  "version": "1.0",
+  "mode": "synthetic_only",
+  "scenarios": [
+    {
+      "id": "SIM-001",
+      "slug": "merchant-green",
+      "title": "ค้าปลีก: ลงแผนทดลองและเรียนรู้",
+      "sector": "retail-ecommerce",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "เริ่ม",
+          "changes": {},
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        },
+        {
+          "name": "ส่งงานจำลองและข้อมูลเข้าที่",
+          "changes": {
+            "execution": "success",
+            "settlement": "matched",
+            "outcome": "positive"
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "PROPOSE_NEXT_TEST"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-002",
+      "slug": "missing-baseline",
+      "title": "ไม่ทราบธุรกิจและช่องทาง",
+      "sector": "retail-ecommerce",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": null,
+        "role": "merchant",
+        "market": "TH",
+        "channel": null,
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "ข้อมูลไม่ครบ",
+          "changes": {},
+          "expected": {
+            "stage": "baseline",
+            "decision": "NEEDS_INFO"
+          }
+        },
+        {
+          "name": "เติมสมมติฐาน",
+          "changes": {
+            "business": "ร้านทดลอง",
+            "channel": "web"
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-003",
+      "slug": "copyright",
+      "title": "นำคลิปคนอื่นมาใช้โดยไม่มีสิทธิ",
+      "sector": "entertainment-media",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": true,
+        "incident": false,
+        "budget_breach": false,
+        "rights": false,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "เสนอ reupload",
+          "changes": {},
+          "expected": {
+            "stage": "prohibited",
+            "decision": "REJECT"
+          }
+        },
+        {
+          "name": "เปลี่ยนเป็น original",
+          "changes": {
+            "prohibited": false,
+            "rights": true
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-004",
+      "slug": "rights-unknown",
+      "title": "สิทธิ asset ยังไม่ชัด",
+      "sector": "fashion-accessories",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": null,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "ตรวจสิทธิ",
+          "changes": {},
+          "expected": {
+            "stage": "rights",
+            "decision": "HOLD"
+          }
+        },
+        {
+          "name": "ได้รับสิทธิจำลอง",
+          "changes": {
+            "rights": true
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-005",
+      "slug": "stale-evidence",
+      "title": "หลักฐานเก่าหรือ scope ไม่ตรง",
+      "sector": "beauty-personal-care",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "stale",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "พบหลักฐานเก่า",
+          "changes": {},
+          "expected": {
+            "stage": "evidence",
+            "decision": "HOLD"
+          }
+        },
+        {
+          "name": "ตรวจ evidence จำลอง",
+          "changes": {
+            "evidence": "verified"
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-006",
+      "slug": "health-regulated",
+      "title": "อาหารเสริม: ผู้เชี่ยวชาญยังไม่ตรวจ",
+      "sector": "health-clinics",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": true,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "รอ specialist",
+          "changes": {},
+          "expected": {
+            "stage": "regulated",
+            "decision": "HOLD"
+          }
+        },
+        {
+          "name": "สมมติอนุมัติแล้ว",
+          "changes": {
+            "specialist_review": true
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-007",
+      "slug": "finance-regulated",
+      "title": "การเงิน: claim เสี่ยง",
+      "sector": "finance-insurance",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": true,
+        "specialist_review": false,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "ยังไม่ผ่าน",
+          "changes": {},
+          "expected": {
+            "stage": "regulated",
+            "decision": "HOLD"
+          }
+        },
+        {
+          "name": "ย้าย scope และให้ expert ตรวจ",
+          "changes": {
+            "specialist_review": true
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-008",
+      "slug": "eligibility-unknown",
+      "title": "affiliate program ยังไม่ยืนยัน",
+      "sector": "electronics",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "affiliate",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": null,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "ไม่มีสิทธิยืนยัน",
+          "changes": {},
+          "expected": {
+            "stage": "eligibility",
+            "decision": "HOLD"
+          }
+        },
+        {
+          "name": "ยืนยันสมมติ",
+          "changes": {
+            "eligibility": true
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-009",
+      "slug": "affiliate-unit",
+      "title": "affiliate ต้องคิดคอมแทนยอดขาย",
+      "sector": "retail-ecommerce",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "affiliate",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 3000,
+        "cost_minor": 4000,
+        "floor_minor": 0,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "คอมต่ำกว่าต้นทุน",
+          "changes": {},
+          "expected": {
+            "stage": "economics",
+            "decision": "REWORK"
+          }
+        },
+        {
+          "name": "ลดต้นทุนต่อหน่วย",
+          "changes": {
+            "cost_minor": 1500
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-010",
+      "slug": "merchant-negative",
+      "title": "merchant ต้นทุนมากกว่ารายได้",
+      "sector": "food-beverage",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 50000,
+        "cost_minor": 55000,
+        "floor_minor": 0,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "ขาดทุนก่อนขยาย",
+          "changes": {},
+          "expected": {
+            "stage": "economics",
+            "decision": "REWORK"
+          }
+        },
+        {
+          "name": "ปรับต้นทุนสมมติ",
+          "changes": {
+            "cost_minor": 30000
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-011",
+      "slug": "service-floor",
+      "title": "ธุรกิจบริการ margin ต่ำกว่า floor",
+      "sector": "local-home-services",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "service",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 90000,
+        "floor_minor": 20000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "ต่ำกว่า floor",
+          "changes": {},
+          "expected": {
+            "stage": "economics",
+            "decision": "REWORK"
+          }
+        },
+        {
+          "name": "ปรับขอบเขต",
+          "changes": {
+            "cost_minor": 70000
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-012",
+      "slug": "unknown-cost",
+      "title": "ไม่มีค่า COGS หรือค่าคอม",
+      "sector": "home-living",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": null,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "ไม่ทราบต้นทุน",
+          "changes": {},
+          "expected": {
+            "stage": "economics_inputs",
+            "decision": "NEEDS_INFO"
+          }
+        },
+        {
+          "name": "กำหนดต้นทุนสมมติ",
+          "changes": {
+            "cost_minor": 70000
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-013",
+      "slug": "tracking-broken",
+      "title": "วัดผลไม่ได้",
+      "sector": "travel-hospitality",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": false,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "tracking เสีย",
+          "changes": {},
+          "expected": {
+            "stage": "measurement",
+            "decision": "HOLD"
+          }
+        },
+        {
+          "name": "instrumented จำลอง",
+          "changes": {
+            "measurement": true
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-014",
+      "slug": "approval-change",
+      "title": "เปลี่ยนเนื้อหาหลังได้รับ approval",
+      "sector": "education-training",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": false,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "version ไม่ตรง",
+          "changes": {},
+          "expected": {
+            "stage": "approval",
+            "decision": "HOLD"
+          }
+        },
+        {
+          "name": "อนุมัติ version ใหม่จำลอง",
+          "changes": {
+            "approval_matches": true
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-015",
+      "slug": "consent-unknown",
+      "title": "สิทธิ API และ consent ไม่ชัด",
+      "sector": "entertainment-media",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": null,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "ยังไม่ทราบ",
+          "changes": {},
+          "expected": {
+            "stage": "consent",
+            "decision": "HOLD"
+          }
+        },
+        {
+          "name": "consent จำลอง",
+          "changes": {
+            "consent": true
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-016",
+      "slug": "timeout",
+      "title": "post timeout",
+      "sector": "restaurant-cafe",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "เริ่มจำลอง",
+          "changes": {},
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        },
+        {
+          "name": "ไม่ทราบผล",
+          "changes": {
+            "execution": "timeout"
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "RECONCILE_FIRST"
+          }
+        },
+        {
+          "name": "ตรวจแล้วพบส่งสำเร็จ",
+          "changes": {
+            "execution": "success",
+            "settlement": "pending"
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "RECONCILE_FIRST"
+          }
+        },
+        {
+          "name": "reconcile ผ่าน",
+          "changes": {
+            "settlement": "matched",
+            "outcome": "inconclusive"
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "LEARN_MORE"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-017",
+      "slug": "commission-reversal",
+      "title": "commission pending ถูก reverse",
+      "sector": "fashion-accessories",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "affiliate",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "success",
+        "settlement": "pending",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "pending ยังไม่ใช่รายได้จ่ายจริง",
+          "changes": {},
+          "expected": {
+            "stage": "outcome",
+            "decision": "RECONCILE_FIRST"
+          }
+        },
+        {
+          "name": "settlement mismatch",
+          "changes": {
+            "settlement": "mismatch"
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "RECONCILE_FIRST"
+          }
+        },
+        {
+          "name": "ปรับตัวเลขจาก reversal จำลอง",
+          "changes": {
+            "settlement": "matched",
+            "outcome": "negative"
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "REWORK"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-018",
+      "slug": "incident",
+      "title": "เกิด safety incident ระหว่างจำลอง",
+      "sector": "industrial-manufacturing",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "เริ่ม",
+          "changes": {},
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        },
+        {
+          "name": "incident",
+          "changes": {
+            "incident": true
+          },
+          "expected": {
+            "stage": "incident",
+            "decision": "STOP"
+          }
+        },
+        {
+          "name": "แก้ไขและเริ่ม review ใหม่",
+          "changes": {
+            "incident": false,
+            "approval_matches": false
+          },
+          "expected": {
+            "stage": "approval",
+            "decision": "HOLD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-019",
+      "slug": "budget-breach",
+      "title": "ใช้เกิน cap ที่อนุมัติ",
+      "sector": "automotive",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": true,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "budget เกิน",
+          "changes": {},
+          "expected": {
+            "stage": "budget_breach",
+            "decision": "STOP"
+          }
+        },
+        {
+          "name": "แก้ไขและขออนุมัติใหม่",
+          "changes": {
+            "budget_breach": false,
+            "approval_matches": false
+          },
+          "expected": {
+            "stage": "approval",
+            "decision": "HOLD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-020",
+      "slug": "inconclusive",
+      "title": "ข้อมูลยังแยกผลไม่ได้",
+      "sector": "b2b-professional",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "success",
+        "settlement": "matched",
+        "outcome": "inconclusive"
+      },
+      "steps": [
+        {
+          "name": "ตัวอย่างยังไม่ชัด",
+          "changes": {},
+          "expected": {
+            "stage": "outcome",
+            "decision": "LEARN_MORE"
+          }
+        },
+        {
+          "name": "ผลจำลองไม่ดี",
+          "changes": {
+            "outcome": "negative"
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "REWORK"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-021",
+      "slug": "negative-feedback",
+      "title": "ปฏิกิริยาลูกค้าเชิงลบ",
+      "sector": "pets",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "success",
+        "settlement": "matched",
+        "outcome": "negative"
+      },
+      "steps": [
+        {
+          "name": "ต้องทบทวน",
+          "changes": {},
+          "expected": {
+            "stage": "outcome",
+            "decision": "REWORK"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-022",
+      "slug": "unverified-green",
+      "title": "green claim ไม่มีหลักฐาน",
+      "sector": "sustainability-energy",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "missing",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "green claim",
+          "changes": {},
+          "expected": {
+            "stage": "evidence",
+            "decision": "HOLD"
+          }
+        },
+        {
+          "name": "ทบทวนหลักฐานจำลอง",
+          "changes": {
+            "evidence": "verified"
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-023",
+      "slug": "agriculture-service",
+      "title": "เกษตร: ประเมิน unit economics service",
+      "sector": "agriculture",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "service",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": true,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 85000,
+        "floor_minor": 20000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "ต้นทุนสูง",
+          "changes": {},
+          "expected": {
+            "stage": "economics",
+            "decision": "REWORK"
+          }
+        },
+        {
+          "name": "ปรับข้อเสนอสมมติ",
+          "changes": {
+            "cost_minor": 75000
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SIM-024",
+      "slug": "real-estate-right",
+      "title": "อสังหา: สิทธิลงประกาศไม่ครบ",
+      "sector": "real-estate",
+      "assumption": "ข้อมูล การอนุมัติ ราคา และผลลัพธ์ทั้งหมดสมมติ ไม่ใช่ข้อมูลบัญชีจริง",
+      "currency": "THB",
+      "initial": {
+        "business": "ร้านสมมติ",
+        "role": "merchant",
+        "market": "TH",
+        "channel": "online",
+        "prohibited": false,
+        "incident": false,
+        "budget_breach": false,
+        "rights": false,
+        "evidence": "verified",
+        "regulated": false,
+        "specialist_review": null,
+        "eligibility": true,
+        "revenue_minor": 100000,
+        "cost_minor": 70000,
+        "floor_minor": 15000,
+        "measurement": true,
+        "approval_matches": true,
+        "consent": true,
+        "execution": "not_started",
+        "settlement": "not_started",
+        "outcome": "unknown"
+      },
+      "steps": [
+        {
+          "name": "ยังไม่อนุญาต",
+          "changes": {},
+          "expected": {
+            "stage": "rights",
+            "decision": "HOLD"
+          }
+        },
+        {
+          "name": "จำลอง owner authorization",
+          "changes": {
+            "rights": true
+          },
+          "expected": {
+            "stage": "outcome",
+            "decision": "SIMULATE_RUN"
+          }
+        }
+      ]
+    }
+  ]
+}

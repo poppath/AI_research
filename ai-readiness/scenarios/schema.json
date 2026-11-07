@@ -1,0 +1,428 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "mode": {
+      "const": "synthetic_only"
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^SIM-[0-9]{3}$"
+          },
+          "slug": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sector": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assumption": {
+            "type": "string",
+            "minLength": 1
+          },
+          "currency": {
+            "const": "THB"
+          },
+          "initial": {
+            "type": "object",
+            "properties": {
+              "business": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "role": {
+                "enum": [
+                  "merchant",
+                  "affiliate",
+                  "service",
+                  null
+                ]
+              },
+              "market": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "channel": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "prohibited": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "incident": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "budget_breach": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "rights": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "evidence": {
+                "enum": [
+                  "verified",
+                  "missing",
+                  "stale",
+                  "conflict",
+                  null
+                ]
+              },
+              "regulated": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "specialist_review": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "eligibility": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "revenue_minor": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "cost_minor": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "floor_minor": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "measurement": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "approval_matches": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "consent": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "execution": {
+                "enum": [
+                  "not_started",
+                  "success",
+                  "timeout",
+                  "failed"
+                ]
+              },
+              "settlement": {
+                "enum": [
+                  "not_started",
+                  "pending",
+                  "mismatch",
+                  "matched"
+                ]
+              },
+              "outcome": {
+                "enum": [
+                  "unknown",
+                  "inconclusive",
+                  "negative",
+                  "positive"
+                ]
+              }
+            },
+            "required": [
+              "business",
+              "role",
+              "market",
+              "channel",
+              "prohibited",
+              "incident",
+              "budget_breach",
+              "rights",
+              "evidence",
+              "regulated",
+              "specialist_review",
+              "eligibility",
+              "revenue_minor",
+              "cost_minor",
+              "floor_minor",
+              "measurement",
+              "approval_matches",
+              "consent",
+              "execution",
+              "settlement",
+              "outcome"
+            ],
+            "additionalProperties": false
+          },
+          "steps": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "changes": {
+                  "type": "object",
+                  "properties": {
+                    "business": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "minLength": 1
+                    },
+                    "role": {
+                      "enum": [
+                        "merchant",
+                        "affiliate",
+                        "service",
+                        null
+                      ]
+                    },
+                    "market": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "minLength": 1
+                    },
+                    "channel": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "minLength": 1
+                    },
+                    "prohibited": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "incident": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "budget_breach": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "rights": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "evidence": {
+                      "enum": [
+                        "verified",
+                        "missing",
+                        "stale",
+                        "conflict",
+                        null
+                      ]
+                    },
+                    "regulated": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "specialist_review": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "eligibility": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "revenue_minor": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "cost_minor": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "floor_minor": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "measurement": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "approval_matches": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "consent": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "execution": {
+                      "enum": [
+                        "not_started",
+                        "success",
+                        "timeout",
+                        "failed"
+                      ]
+                    },
+                    "settlement": {
+                      "enum": [
+                        "not_started",
+                        "pending",
+                        "mismatch",
+                        "matched"
+                      ]
+                    },
+                    "outcome": {
+                      "enum": [
+                        "unknown",
+                        "inconclusive",
+                        "negative",
+                        "positive"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "expected": {
+                  "type": "object",
+                  "properties": {
+                    "stage": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "decision": {
+                      "enum": [
+                        "REJECT",
+                        "STOP",
+                        "HOLD",
+                        "NEEDS_INFO",
+                        "REWORK",
+                        "SIMULATE_RUN",
+                        "RECONCILE_FIRST",
+                        "LEARN_MORE",
+                        "PROPOSE_NEXT_TEST"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "stage",
+                    "decision"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "name",
+                "changes",
+                "expected"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "slug",
+          "title",
+          "sector",
+          "assumption",
+          "currency",
+          "initial",
+          "steps"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "version",
+    "mode",
+    "scenarios"
+  ],
+  "additionalProperties": false
+}

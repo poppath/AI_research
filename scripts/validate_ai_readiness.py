@@ -11,6 +11,7 @@ PAIRS = [
     ('schemas/agent-evals.schema.json', 'evals/cases.json'),
     ('schemas/decision-record.schema.json', 'examples/decision-record.json'),
     ('schemas/playbook-envelope.schema.json', 'examples/playbook-envelope.json'),
+    ('scenarios/schema.json', 'scenarios/cases.json'),
 ]
 
 
