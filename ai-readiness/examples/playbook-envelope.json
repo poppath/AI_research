@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "id": "affiliate-7m",
+  "title": "7M AI Content & Affiliate Automation",
+  "market": "TH",
+  "status": "draft",
+  "legacy_path": "playbooks/7m-ai-content-affiliate-automation-2026/playbook.json",
+  "source_paths": [
+    "playbooks/7m-ai-content-affiliate-automation-2026/SOURCES.md"
+  ],
+  "claim_ids": [
+    "C-007",
+    "C-008",
+    "C-009",
+    "C-010",
+    "C-011",
+    "C-012",
+    "C-014"
+  ],
+  "last_reviewed_at": null
+}

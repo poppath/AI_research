@@ -1,5 +1,7 @@
 # Repo review และ gap register · 7 พ.ย. 2026
 
+> อัปเดต: เพิ่ม AI readiness foundation, claim ledger เริ่มต้น, schemas, eval cases และ CI แล้ว; ขอบเขตและงานคงค้างอยู่ที่ [AI readiness status](ai-readiness/STATUS.md). Findings ด้านล่างเป็นผลสำรวจเดิม ไม่ได้หมายความว่าตรวจ claims ทั้งหมดแล้ว.
+
 ## ขอบเขตและความเชื่อมั่น
 
 ตรวจ inventory ทั้ง repo (ก่อนแก้: 254 files, 183 Markdown, 69 JSON, 1 YAML, 1 CSV; 16 playbook directories), syntax JSON, relative Markdown links และจำนวน GICS; ตรวจเนื้อหาเชิงลึกแบบ **risk-based sampling** ใน repo rules, README, profit calculations/sources/JSON, TikTok budgets, short guides และ GICS. ไม่ใช่การ fact-check ทีละ claim, ทดสอบ API, ตรวจทุก external link หรือ legal audit. การผ่าน structural check ไม่ใช่การรับรองความจริงหรือความครบถ้วนของเนื้อหา.

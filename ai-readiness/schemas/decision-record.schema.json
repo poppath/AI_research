@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "hold",
+        "needs_info"
+      ]
+    },
+    "market": {
+      "type": "string",
+      "minLength": 1
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "claim_id",
+          "source_url",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "primary_kpi": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "guardrails": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "owner": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "approval": {
+      "enum": [
+        "not_requested",
+        "pending",
+        "not_applicable"
+      ]
+    },
+    "next_review": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "status",
+    "market",
+    "objective",
+    "assumptions",
+    "unknowns",
+    "evidence",
+    "primary_kpi",
+    "guardrails",
+    "owner",
+    "approval",
+    "next_review"
+  ],
+  "additionalProperties": false
+}

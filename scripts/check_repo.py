@@ -8,7 +8,8 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 errors = []
-files = [p for p in ROOT.rglob('*') if p.is_file() and '.git' not in p.parts and '__pycache__' not in p.parts]
+excluded = {'.git', '.venv', '__pycache__', 'node_modules'}
+files = [p for p in ROOT.rglob('*') if p.is_file() and not excluded.intersection(p.relative_to(ROOT).parts)]
 for path in files:
     rel = path.relative_to(ROOT)
     if path.suffix == '.json':

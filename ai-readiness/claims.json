@@ -1,0 +1,260 @@
+{
+  "version": "1.0",
+  "claims": [
+    {
+      "id": "C-001",
+      "statement": "GICS โครงสร้างรวม 11 sector, 25 groups, 74 industries, 163 sub-industries",
+      "repo_path": "playbooks/sector-business-2026/gics-drilldown/00-START-HERE.md",
+      "scope": "GICS methodology version cited; not S&P 500 constituent list",
+      "status": "needs_review",
+      "source": {
+        "title": "MSCI GICS methodology",
+        "url": "https://www.msci.com/indexes/documents/methodology/1_MSCI_Global_Industry_Classification_Standard_GICS_Methodology_20250220.pdf",
+        "type": "official",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "ต้องตรวจ edition ล่าสุดและการเปลี่ยนแปลงก่อนเผยแพร่หรือ reuse taxonomy"
+    },
+    {
+      "id": "C-002",
+      "statement": "S&P 500 ใช้ GICS ในการจำแนกบริษัท",
+      "repo_path": "playbooks/sector-business-2026/gics-drilldown/SOURCES.md",
+      "scope": "S&P US index methodology; not every GICS business is in index",
+      "status": "needs_review",
+      "source": {
+        "title": "S&P U.S. Indices methodology",
+        "url": "https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-us-indices.pdf",
+        "type": "official",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "ตรวจ methodology ล่าสุดและ membership snapshot"
+    },
+    {
+      "id": "C-003",
+      "statement": "สูตร discount cap = 1 − C / (P × (1 − f − t)) ภายใต้ข้อสมมติที่ระบุ",
+      "repo_path": "playbooks/profit-unit-economics-2026/07-promo-voucher-math.md",
+      "scope": "fixed per-order cost C, percentage fee f on post-discount net revenue, target margin t, feasible solution",
+      "status": "reviewed_calculation",
+      "source": {
+        "title": "Model algebra and regression tests",
+        "url": null,
+        "type": "calculation",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": "repo arithmetic review",
+      "reviewed_at": "2026-11-07",
+      "limitations": "ไม่รวม fee ฐานอื่น, VAT, returns, marketing หรือ nonlinear fees; ไม่ใช่ benchmark"
+    },
+    {
+      "id": "C-004",
+      "statement": "Thai marketplace GP fee cut window ตามรายงาน vendor",
+      "repo_path": "playbooks/profit-unit-economics-2026/SOURCES.md",
+      "scope": "TH; reported programme/account eligibility must be verified",
+      "status": "needs_review",
+      "source": {
+        "title": "Relevant Audience reported fee reduction",
+        "url": "https://www.relevantaudience.com/ecommerce-marketing/shopee-lazada-tiktok-shop-gp-fee-cut-thailand/",
+        "type": "vendor",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "ไม่ใช่ official source; ตรวจคำประกาศและ rate card ตรงบัญชี"
+    },
+    {
+      "id": "C-005",
+      "statement": "Shopee TH fee schedule ใน legacy benchmark",
+      "repo_path": "playbooks/profit-unit-economics-2026/benchmarks.json",
+      "scope": "TH; seller and category dependent",
+      "status": "needs_review",
+      "source": {
+        "title": "Shopee Seller Education Hub",
+        "url": "https://seller.shopee.co.th/",
+        "type": "official",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "URL เป็น landing page ไม่ยืนยันตัวเลขหรือ scope; ต้องหา rate card ตรง"
+    },
+    {
+      "id": "C-006",
+      "statement": "COD refusal 8–12% ตามรายงาน vendor",
+      "repo_path": "playbooks/profit-unit-economics-2026/SOURCES.md",
+      "scope": "TH; indirect secondary reporting, not account baseline",
+      "status": "needs_review",
+      "source": {
+        "title": "SellerPao",
+        "url": "https://sellerpao.com/blog/cod-customer-refuse-delivery-solutions",
+        "type": "vendor",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "ไม่มีหลักฐานว่าปรับใช้กับทุกธุรกิจ; วัดข้อมูลบัญชีแทน"
+    },
+    {
+      "id": "C-007",
+      "statement": "TikTok Content Sharing Guidelines กำหนดเงื่อนไขด้าน consent และ intended use",
+      "repo_path": "playbooks/7m-ai-content-affiliate-automation-2026/00-START-HERE.md",
+      "scope": "TikTok content posting API; feature/account/app specific",
+      "status": "needs_review",
+      "source": {
+        "title": "TikTok Content Sharing Guidelines",
+        "url": "https://developers.tiktok.com/docs/en/content-sharing-guidelines",
+        "type": "official",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "ตรวจข้อความปัจจุบัน app audit, scope และ consent; ไม่ถือว่าอนุญาตทุก use case"
+    },
+    {
+      "id": "C-008",
+      "statement": "TikTok API มี status และ failure reason สำหรับการโพสต์",
+      "repo_path": "playbooks/7m-ai-content-affiliate-automation-2026/SOURCES.md",
+      "scope": "TikTok Content Posting API",
+      "status": "needs_review",
+      "source": {
+        "title": "TikTok status reference",
+        "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-get-video-status",
+        "type": "official",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "ตรวจ endpoint, scope, error semantics และ idempotency ก่อนใช้งาน"
+    },
+    {
+      "id": "C-009",
+      "statement": "YouTube มีนโยบายเกี่ยวกับ reused content และ monetization",
+      "repo_path": "playbooks/7m-ai-content-affiliate-automation-2026/SOURCES.md",
+      "scope": "YouTube monetization; account eligibility varies",
+      "status": "needs_review",
+      "source": {
+        "title": "YouTube monetization policies",
+        "url": "https://support.google.com/youtube/answer/1311392?hl=en",
+        "type": "official",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "ตรวจ policy version และการมีสิทธิในบัญชี; ไม่รับประกันผล"
+    },
+    {
+      "id": "C-010",
+      "statement": "YouTube กำหนดเงื่อนไข disclosure สำหรับ altered/synthetic content",
+      "repo_path": "playbooks/7m-ai-content-affiliate-automation-2026/SOURCES.md",
+      "scope": "YouTube, content-specific",
+      "status": "needs_review",
+      "source": {
+        "title": "YouTube synthetic content disclosure",
+        "url": "https://support.google.com/youtube/answer/14328491?hl=en",
+        "type": "official",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "ต้องตรวจ applicability และข้อยกเว้นปัจจุบัน"
+    },
+    {
+      "id": "C-011",
+      "statement": "FTC influencer disclosure เป็นแนวทาง US ไม่ใช่กฎหมายไทยโดยอัตโนมัติ",
+      "repo_path": "playbooks/7m-ai-content-affiliate-automation-2026/SOURCES.md",
+      "scope": "US FTC; Thai requirements must be checked separately",
+      "status": "needs_review",
+      "source": {
+        "title": "FTC Disclosures 101",
+        "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+        "type": "official",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "ตรวจ jurisdiction และ status ปัจจุบันกับผู้เชี่ยวชาญ"
+    },
+    {
+      "id": "C-012",
+      "statement": "Google Analytics manual tagging ใช้เพื่อ attribution ตามข้อกำหนด GA",
+      "repo_path": "playbooks/7m-ai-content-affiliate-automation-2026/SOURCES.md",
+      "scope": "Google Analytics / tagged links; no claim of incrementality",
+      "status": "needs_review",
+      "source": {
+        "title": "Google Analytics manual tagging",
+        "url": "https://support.google.com/analytics/answer/11242870",
+        "type": "official",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "UTM ไม่ใช่ causal proof และ redirects อาจทำให้ parameter สูญหาย"
+    },
+    {
+      "id": "C-013",
+      "statement": "อย. ไทยมีหน้าข้อมูลการขออนุญาตโฆษณาแยกประเภท",
+      "repo_path": "playbooks/sector-business-2026/SOURCES.md",
+      "scope": "Thailand; product and ad type specific",
+      "status": "needs_review",
+      "source": {
+        "title": "Thai FDA advertising",
+        "url": "https://cemc.fda.moph.go.th/advertising/",
+        "type": "official",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "ตรวจข้อกฎหมายและเงื่อนไขตามสินค้า/ข้อความจริงกับผู้เชี่ยวชาญ"
+    },
+    {
+      "id": "C-014",
+      "statement": "NIST AI profile กล่าวถึงความเสี่ยงระบบ GenAI",
+      "repo_path": "playbooks/7m-ai-content-affiliate-automation-2026/SOURCES.md",
+      "scope": "General risk guidance, not enforcement",
+      "status": "needs_review",
+      "source": {
+        "title": "NIST AI 600-1",
+        "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+        "type": "official",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "กรอบความเสี่ยงไม่ใช่หลักฐานว่าระบบนี้ปลอดภัย"
+    },
+    {
+      "id": "C-015",
+      "statement": "Meta Ads EMQ >= 6 ถูกใช้เป็น heuristic ใน legacy YAML",
+      "repo_path": "playbooks/meta-ads-ai-2026/playbook/agent-rules.yaml",
+      "scope": "legacy heuristic; account-specific",
+      "status": "needs_review",
+      "source": {
+        "title": "Legacy agent rules",
+        "url": null,
+        "type": "unknown",
+        "accessed_at": null,
+        "effective_at": null
+      },
+      "reviewer": null,
+      "reviewed_at": null,
+      "limitations": "ไม่ใช่ universal threshold; ห้าม execute จาก YAML โดยไม่ review"
+    }
+  ]
+}

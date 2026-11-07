@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "status": "needs_info",
+  "market": "TH",
+  "objective": "วางแผนทดลอง affiliate ที่ผ่าน human review",
+  "assumptions": [
+    "เป็น draft เท่านั้น ไม่มีการเผยแพร่หรือใช้เงินจริง"
+  ],
+  "unknowns": [
+    "สินค้าและบัญชี",
+    "งบและ margin",
+    "หลักฐานสิทธิและ program eligibility"
+  ],
+  "evidence": [
+    {
+      "claim_id": "C-007",
+      "source_url": "https://developers.tiktok.com/docs/en/content-sharing-guidelines",
+      "status": "needs_review"
+    }
+  ],
+  "primary_kpi": null,
+  "guardrails": [
+    "ห้ามเผยแพร่ก่อนตรวจสิทธิและอนุมัติ",
+    "ไม่จ่ายเงินโดยไม่มี cap และ approval"
+  ],
+  "owner": null,
+  "approval": "not_requested",
+  "next_review": null
+}
