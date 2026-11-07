@@ -1,0 +1,410 @@
+{
+  "as_of": "2026-11-07",
+  "gics_methodology_version": "April 2026 (MSCI); October 2026 (S&P DJI)",
+  "gics_official_totals": {
+    "sectors": 11,
+    "industry_groups": 25,
+    "industries": 74,
+    "sub_industries": 163
+  },
+  "coverage": "11 sectors and 25 industry groups; business examples are illustrative, not an exhaustive sub-industry inventory or official company assignments",
+  "source": "https://www.msci.com/indexes/documents/methodology/1_MSCI_Global_Industry_Classification_Standard_GICS_Methodology_20250220.pdf",
+  "groups": [
+    {
+      "sector_code": "10",
+      "sector_name": "Energy",
+      "group_code": "1010",
+      "group_name": "Energy",
+      "examples_non_official": [
+        "สำรวจน้ำมันและก๊าซ",
+        "ขุดเจาะ/อุปกรณ์",
+        "โรงกลั่น",
+        "ขนส่งและเก็บเชื้อเพลิง"
+      ],
+      "audience": "ผู้ซื้ออุตสาหกรรมตรวจ spec, ความต่อเนื่องและความปลอดภัย",
+      "evidence_gate": "technical specification, contractor qualification, safety และสิทธิในพื้นที่",
+      "kpi_guardrails": "qualified RFQ ที่ผ่าน technical review; ขอบเขตงานและ near-miss",
+      "playbook": "../industrial-manufacturing/00-START-HERE.md"
+    },
+    {
+      "sector_code": "15",
+      "sector_name": "Materials",
+      "group_code": "1510",
+      "group_name": "Materials",
+      "examples_non_official": [
+        "เคมีภัณฑ์",
+        "วัสดุก่อสร้าง",
+        "บรรจุภัณฑ์",
+        "โลหะและเหมือง",
+        "กระดาษและป่าไม้"
+      ],
+      "audience": "ผู้ผลิตตรวจคุณภาพ วัตถุดิบ ราคาและ traceability",
+      "evidence_gate": "SDS/spec, ใบอนุญาต, แหล่งวัตถุดิบ และข้อกล่าวอ้างสิ่งแวดล้อม",
+      "kpi_guardrails": "accepted sample/RFQ; defect และ safety incidents",
+      "playbook": "../industrial-manufacturing/00-START-HERE.md"
+    },
+    {
+      "sector_code": "20",
+      "sector_name": "Industrials",
+      "group_code": "2010",
+      "group_name": "Capital Goods",
+      "examples_non_official": [
+        "เครื่องจักรโรงงาน",
+        "เครื่องจักรเกษตร",
+        "อุปกรณ์ไฟฟ้า",
+        "ผู้รับเหมาก่อสร้างเชิงวิศวกรรม"
+      ],
+      "audience": "โรงงาน/จัดซื้อตรวจ spec, service และอะไหล่",
+      "evidence_gate": "test report, ใบรับรอง, warranty, ขอบเขตติดตั้งและความปลอดภัย",
+      "kpi_guardrails": "qualified RFQ-to-accepted order; defect และ safety",
+      "playbook": "../industrial-manufacturing/00-START-HERE.md"
+    },
+    {
+      "sector_code": "20",
+      "sector_name": "Industrials",
+      "group_code": "2020",
+      "group_name": "Commercial & Professional Services",
+      "examples_non_official": [
+        "ทำความสะอาดอาคาร",
+        "รปภ.",
+        "recruitment",
+        "research/consulting",
+        "outsourced processing"
+      ],
+      "audience": "ผู้จัดการจัดซื้อดู SLA, ทีมงานและความเป็นส่วนตัว",
+      "evidence_gate": "scope, SLA, คุณสมบัติพนักงาน, สิทธิข้อมูลและ reference",
+      "kpi_guardrails": "qualified proposal-to-contract; SLA breach และ privacy",
+      "playbook": "../b2b-professional/00-START-HERE.md"
+    },
+    {
+      "sector_code": "20",
+      "sector_name": "Industrials",
+      "group_code": "2030",
+      "group_name": "Transportation",
+      "examples_non_official": [
+        "ขนส่งทางอากาศ",
+        "เรือ",
+        "รถขนส่ง",
+        "รถโดยสาร",
+        "สนามบินและท่าเรือ"
+      ],
+      "audience": "ผู้ส่ง/ผู้โดยสารสนใจพื้นที่ เวลา ความปลอดภัยและเงื่อนไข",
+      "evidence_gate": "coverage, transit terms, insurance, capacity และการอนุญาต",
+      "kpi_guardrails": "completed shipment/booking contribution; delay และ damage",
+      "playbook": "../industrial-manufacturing/00-START-HERE.md"
+    },
+    {
+      "sector_code": "25",
+      "sector_name": "Consumer Discretionary",
+      "group_code": "2510",
+      "group_name": "Automobiles & Components",
+      "examples_non_official": [
+        "รถยนต์",
+        "มอเตอร์ไซค์",
+        "อะไหล่",
+        "ยาง"
+      ],
+      "audience": "ผู้ซื้อพิจารณารุ่น สภาพ fitment และการรับประกัน",
+      "evidence_gate": "fitment, inspection, warranty; overlay การเงินเมื่อเสนอสินเชื่อ",
+      "kpi_guardrails": "qualified sale/completed job; rework และ safety",
+      "playbook": "../automotive/00-START-HERE.md"
+    },
+    {
+      "sector_code": "25",
+      "sector_name": "Consumer Discretionary",
+      "group_code": "2520",
+      "group_name": "Consumer Durables & Apparel",
+      "examples_non_official": [
+        "เครื่องใช้ไฟฟ้า",
+        "เฟอร์นิเจอร์",
+        "บ้านสร้างขาย",
+        "เสื้อผ้า รองเท้า"
+      ],
+      "audience": "ลูกค้ากังวลไซซ์ compatibility ระยะส่ง และการคืน",
+      "evidence_gate": "dimensions, fit/size, safety, warranty และภาพจริง",
+      "kpi_guardrails": "delivered order contribution; return และ damage",
+      "playbook": "../home-living/00-START-HERE.md"
+    },
+    {
+      "sector_code": "25",
+      "sector_name": "Consumer Discretionary",
+      "group_code": "2530",
+      "group_name": "Consumer Services",
+      "examples_non_official": [
+        "โรงแรม",
+        "ร้านอาหาร",
+        "สันทนาการ",
+        "บริการการศึกษา"
+      ],
+      "audience": "ผู้ซื้อเปรียบเทียบราคา วันเวลา คุณภาพและนโยบายยกเลิก",
+      "evidence_gate": "availability, capacity, menu/course, refund และ license",
+      "kpi_guardrails": "completed booking/order/enrollment; refund และ complaint",
+      "playbook": "../travel-hospitality/00-START-HERE.md"
+    },
+    {
+      "sector_code": "25",
+      "sector_name": "Consumer Discretionary",
+      "group_code": "2550",
+      "group_name": "Consumer Discretionary Distribution & Retail",
+      "examples_non_official": [
+        "ตัวแทนจำหน่าย",
+        "ร้านสินค้าทั่วไป",
+        "ร้านเสื้อผ้า/อิเล็กทรอนิกส์/บ้าน"
+      ],
+      "audience": "ผู้ซื้อเทียบราคา availability และการคืน",
+      "evidence_gate": "SKU, price timestamp, stock, fulfillment และ return policy",
+      "kpi_guardrails": "fulfilled order contribution; return และ stockout",
+      "playbook": "../retail-ecommerce/00-START-HERE.md"
+    },
+    {
+      "sector_code": "30",
+      "sector_name": "Consumer Staples",
+      "group_code": "3010",
+      "group_name": "Consumer Staples Distribution & Retail",
+      "examples_non_official": [
+        "ค้าปลีกอาหาร",
+        "ร้านขายยา",
+        "ตัวแทนกระจายสินค้าอุปโภคบริโภค"
+      ],
+      "audience": "ผู้ซื้อสนใจความพร้อม ความสะดวกและความปลอดภัย",
+      "evidence_gate": "supplier, batch, expiry, eligibility และข้อมูลผลิตภัณฑ์",
+      "kpi_guardrails": "delivered order contribution; expiry และ complaint",
+      "playbook": "../retail-ecommerce/00-START-HERE.md"
+    },
+    {
+      "sector_code": "30",
+      "sector_name": "Consumer Staples",
+      "group_code": "3020",
+      "group_name": "Food, Beverage & Tobacco",
+      "examples_non_official": [
+        "ผลผลิตการเกษตร",
+        "อาหารบรรจุ",
+        "เครื่องดื่ม",
+        "ยาสูบ"
+      ],
+      "audience": "ผู้ซื้อดูส่วนผสม ความปลอดภัย ราคาและการจัดส่ง",
+      "evidence_gate": "label, allergens, batch, claims; ยาสูบ/แอลกอฮอล์ต้องตรวจข้อห้ามเฉพาะก่อนทำการตลาด",
+      "kpi_guardrails": "delivered margin; spoilage และ food-safety incidents",
+      "playbook": "../food-beverage/00-START-HERE.md"
+    },
+    {
+      "sector_code": "30",
+      "sector_name": "Consumer Staples",
+      "group_code": "3030",
+      "group_name": "Household & Personal Products",
+      "examples_non_official": [
+        "ของใช้ในครัวเรือน",
+        "ผลิตภัณฑ์ทำความสะอาด",
+        "personal care"
+      ],
+      "audience": "ผู้ซื้อดูส่วนผสม วิธีใช้ ข้อควรระวัง",
+      "evidence_gate": "ฉลาก/SDS, proof ของ claims, product และ advertising permission",
+      "kpi_guardrails": "contribution ต่อ order; adverse reports และ returns",
+      "playbook": "../beauty-personal-care/00-START-HERE.md"
+    },
+    {
+      "sector_code": "35",
+      "sector_name": "Health Care",
+      "group_code": "3510",
+      "group_name": "Health Care Equipment & Services",
+      "examples_non_official": [
+        "เครื่องมือและเวชภัณฑ์",
+        "คลินิก/โรงพยาบาล",
+        "health technology"
+      ],
+      "audience": "ผู้ให้บริการและผู้ป่วยต้องการความปลอดภัยและข้อมูลที่ถูกต้อง",
+      "evidence_gate": "license, clinical review, privacy, product authorization และ vendor contracts",
+      "kpi_guardrails": "completed eligible appointment; patient safety/privacy incidents",
+      "playbook": "../health-clinics/00-START-HERE.md"
+    },
+    {
+      "sector_code": "35",
+      "sector_name": "Health Care",
+      "group_code": "3520",
+      "group_name": "Pharmaceuticals, Biotechnology & Life Sciences",
+      "examples_non_official": [
+        "ยา",
+        "biotech",
+        "เครื่องมือวิจัยและบริการห้องปฏิบัติการ"
+      ],
+      "audience": "ผู้เชี่ยวชาญและผู้จัดซื้อดู evidence, safety, eligibility",
+      "evidence_gate": "ใบอนุญาต, approved indication, evidence และข้อจำกัดการโฆษณา",
+      "kpi_guardrails": "qualified institutional lead; safety/claim incidents",
+      "playbook": "../health-clinics/00-START-HERE.md"
+    },
+    {
+      "sector_code": "40",
+      "sector_name": "Financials",
+      "group_code": "4010",
+      "group_name": "Banks",
+      "examples_non_official": [
+        "ธนาคารรายย่อย",
+        "สินเชื่อธุรกิจ",
+        "บริการเงินฝาก"
+      ],
+      "audience": "ผู้ใช้ต้องเข้าใจค่าธรรมเนียม ความเสี่ยงและคุณสมบัติ",
+      "evidence_gate": "ผู้ให้บริการที่ได้รับอนุญาต; terms/rates; privacy และ responsible lending",
+      "kpi_guardrails": "qualified applications/completed business; complaints และ compliance",
+      "playbook": "../finance-insurance/00-START-HERE.md"
+    },
+    {
+      "sector_code": "40",
+      "sector_name": "Financials",
+      "group_code": "4020",
+      "group_name": "Financial Services",
+      "examples_non_official": [
+        "ชำระเงิน",
+        "consumer finance",
+        "brokerage",
+        "capital markets",
+        "mortgage REIT"
+      ],
+      "audience": "ธุรกิจและผู้ใช้ดูค่าธรรมเนียม ความเสี่ยงและความเชื่อถือ",
+      "evidence_gate": "permission/license, terms, actual risk, no-return-guarantee",
+      "kpi_guardrails": "approved revenue หลัง clawback; fraud และ complaints",
+      "playbook": "../finance-insurance/00-START-HERE.md"
+    },
+    {
+      "sector_code": "40",
+      "sector_name": "Financials",
+      "group_code": "4030",
+      "group_name": "Insurance",
+      "examples_non_official": [
+        "นายหน้าประกัน",
+        "ประกันชีวิต/สุขภาพ",
+        "ทรัพย์สินและวินาศภัย",
+        "reinsurance"
+      ],
+      "audience": "ผู้ซื้อพิจารณาความคุ้มครอง ข้อยกเว้นและเบี้ย",
+      "evidence_gate": "license, policy wording, ข้อยกเว้น และเงื่อนไขค่าตอบแทน",
+      "kpi_guardrails": "issued policies/net commission หลัง cancellation; complaints",
+      "playbook": "../finance-insurance/00-START-HERE.md"
+    },
+    {
+      "sector_code": "45",
+      "sector_name": "Information Technology",
+      "group_code": "4510",
+      "group_name": "Software & Services",
+      "examples_non_official": [
+        "SaaS",
+        "IT consulting",
+        "infrastructure",
+        "application และ systems software"
+      ],
+      "audience": "ผู้ซื้อประเมิน integration, security และต้นทุนรวม",
+      "evidence_gate": "จริง demo, data processing terms, security และ SLA",
+      "kpi_guardrails": "qualified trial-to-paid/net contribution; churn และ security",
+      "playbook": "../b2b-professional/00-START-HERE.md"
+    },
+    {
+      "sector_code": "45",
+      "sector_name": "Information Technology",
+      "group_code": "4520",
+      "group_name": "Technology Hardware & Equipment",
+      "examples_non_official": [
+        "อุปกรณ์สื่อสาร",
+        "hardware/storage",
+        "ส่วนประกอบและผู้ผลิตอิเล็กทรอนิกส์"
+      ],
+      "audience": "ผู้ซื้อดู spec ความเข้ากันได้และบริการหลังขาย",
+      "evidence_gate": "compatibility, test conditions, warranty และมาตรฐานที่ใช้",
+      "kpi_guardrails": "accepted order contribution; defects และ returns",
+      "playbook": "../electronics/00-START-HERE.md"
+    },
+    {
+      "sector_code": "45",
+      "sector_name": "Information Technology",
+      "group_code": "4530",
+      "group_name": "Semiconductors & Semiconductor Equipment",
+      "examples_non_official": [
+        "ชิป",
+        "วัสดุ wafer",
+        "เครื่องทดสอบ/ผลิตชิป"
+      ],
+      "audience": "ผู้ผลิตตรวจ yield, qualification และ supply assurance",
+      "evidence_gate": "spec, test methodology, supply capacity และ confidentiality",
+      "kpi_guardrails": "qualified technical engagement; defects และ delivery failure",
+      "playbook": "../industrial-manufacturing/00-START-HERE.md"
+    },
+    {
+      "sector_code": "50",
+      "sector_name": "Communication Services",
+      "group_code": "5010",
+      "group_name": "Telecommunication Services",
+      "examples_non_official": [
+        "โครงข่ายสาย",
+        "wireless",
+        "ผู้ให้บริการสื่อสาร"
+      ],
+      "audience": "ลูกค้าตรวจพื้นที่สัญญาณ ราคา ระยะสัญญาและบริการ",
+      "evidence_gate": "coverage evidence, plan terms, fees, privacy และ license",
+      "kpi_guardrails": "net activated service; churn และ network complaints",
+      "playbook": "../b2b-professional/00-START-HERE.md"
+    },
+    {
+      "sector_code": "50",
+      "sector_name": "Communication Services",
+      "group_code": "5020",
+      "group_name": "Media & Entertainment",
+      "examples_non_official": [
+        "โฆษณา",
+        "สิ่งพิมพ์",
+        "ภาพยนตร์",
+        "เกม",
+        "interactive media"
+      ],
+      "audience": "ผู้ชม/แบรนด์พิจารณาคุณภาพ สิทธิและคุณค่าต่อผู้ชม",
+      "evidence_gate": "content/likeness/music license, disclosures และ ad policy",
+      "kpi_guardrails": "net revenue ต่อ content; rights claims และ audience retention",
+      "playbook": "../entertainment-media/00-START-HERE.md"
+    },
+    {
+      "sector_code": "55",
+      "sector_name": "Utilities",
+      "group_code": "5510",
+      "group_name": "Utilities",
+      "examples_non_official": [
+        "ไฟฟ้า",
+        "แก๊ส",
+        "น้ำ",
+        "independent power",
+        "renewable electricity"
+      ],
+      "audience": "ผู้ซื้อ/ชุมชนต้องการความปลอดภัย ความต่อเนื่องและต้นทุน",
+      "evidence_gate": "license, safety, tariff terms, evidence ผลกระทบและการผลิต",
+      "kpi_guardrails": "delivered service contribution; safety และ reliability incidents",
+      "playbook": "../sustainability-energy/00-START-HERE.md"
+    },
+    {
+      "sector_code": "60",
+      "sector_name": "Real Estate",
+      "group_code": "6010",
+      "group_name": "Equity Real Estate Investment Trusts (REITs)",
+      "examples_non_official": [
+        "ทรัพย์ให้เช่าประเภทอุตสาหกรรม",
+        "โรงแรม",
+        "ที่อยู่อาศัย",
+        "คลังข้อมูล"
+      ],
+      "audience": "ผู้เช่า/ผู้ลงทุนดูคุณภาพทรัพย์ สัญญาและความเสี่ยง",
+      "evidence_gate": "property facts, disclosures, license และความแตกต่างระหว่างผู้เช่ากับผู้ลงทุน",
+      "kpi_guardrails": "qualified occupancy/engagement; availability และ compliance",
+      "playbook": "../real-estate/00-START-HERE.md"
+    },
+    {
+      "sector_code": "60",
+      "sector_name": "Real Estate",
+      "group_code": "6020",
+      "group_name": "Real Estate Management & Development",
+      "examples_non_official": [
+        "พัฒนาอสังหา",
+        "บริหารทรัพย์",
+        "นายหน้า/บริการอสังหาริมทรัพย์"
+      ],
+      "audience": "ผู้ซื้อและผู้เช่าดูทำเล ราคา สภาพ และสิทธิในทรัพย์",
+      "evidence_gate": "owner authorization, price/date, property facts และ terms",
+      "kpi_guardrails": "qualified viewing-to-close; stale listings และ complaints",
+      "playbook": "../real-estate/00-START-HERE.md"
+    }
+  ]
+}

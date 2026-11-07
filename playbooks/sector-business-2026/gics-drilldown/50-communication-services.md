@@ -1,0 +1,50 @@
+# 50 Communication Services · GICS-inspired business drill-down
+
+TH · 7 พ.ย. 2026 · [สารบัญ](00-START-HERE.md) · [7M ส่วนกลาง](../COMMON.md) · [sources และข้อจำกัด](SOURCES.md). Official group names/codes จาก methodology; ตัวอย่างธุรกิจและแผนปฏิบัติเป็นการประยุกต์ ไม่ใช่การจัดประเภทบริษัทหรือคำแนะนำลงทุน. ไม่มีข้อมูล baseline ของบัญชีนี้.
+
+## 5010 Telecommunication Services
+
+**ตัวอย่างธุรกิจย่อย (ไม่ใช่รายการ GICS ครบ):** โครงข่ายสาย; wireless; ผู้ให้บริการสื่อสาร.
+
+**Market:** ลูกค้าตรวจพื้นที่สัญญาณ ราคา ระยะสัญญาและบริการ.
+
+**Money:** ก่อนซื้อ traffic แยก merchant gross profit, affiliate approved commission หรือ service contract แล้วหักต้นทุนดำเนินงาน/คืน/ขาย ตามจริง; ไม่มีข้อมูล — ต้องวัดเอง.
+
+**Man:** ระบุ owner ธุรกิจ, ผู้อนุมัติ claims/rights และผู้รับผิดชอบ service/safety; สินค้ากำกับต้องมีผู้เชี่ยวชาญที่เกี่ยวข้อง.
+
+**Material gate:** coverage evidence, plan terms, fees, privacy และ license; source/date และสถานะสิทธิต้องตรวจจริง; ข้อมูลไม่ครบ = HOLD.
+
+**Machine:** AI ทำ research และ draft ได้; ไม่ให้ข้อมูลเว็บที่ไม่เชื่อถือสั่ง agent และไม่เผยแพร่โดยไม่มีคนอนุมัติและ platform permissions.
+
+**Method:** เลือก niche/offer → ตรวจ evidence/สิทธิ → original creative อธิบาย use case และข้อจำกัด → human approval → วิธีเผยแพร่ที่อนุญาต → ติดตามการส่งมอบและ reconciliation.
+
+**Measurement:** net activated service; churn และ network complaints; กำหนดสูตร/window, cap และ stop threshold ตามบัญชีจริงก่อน pilot.
+
+**หยุดทันที:** evidence หรือใบอนุญาตที่ใช้ไม่ชัด, service/safety incident, คำกล่าวอ้างเกินจริง, platform ห้าม หรือ cap เกิน; ไม่ขยายก่อนแก้.
+
+**Playbook เดิมที่เกี่ยวข้อง:** [แนวทางปฏิบัติ](../b2b-professional/00-START-HERE.md) — เป็น crosswalk เชิงใช้งาน ไม่ได้ยืนยัน GICS classification ของธุรกิจ.
+
+## 5020 Media & Entertainment
+
+**ตัวอย่างธุรกิจย่อย (ไม่ใช่รายการ GICS ครบ):** โฆษณา; สิ่งพิมพ์; ภาพยนตร์; เกม; interactive media.
+
+**Market:** ผู้ชม/แบรนด์พิจารณาคุณภาพ สิทธิและคุณค่าต่อผู้ชม.
+
+**Money:** ก่อนซื้อ traffic แยก merchant gross profit, affiliate approved commission หรือ service contract แล้วหักต้นทุนดำเนินงาน/คืน/ขาย ตามจริง; ไม่มีข้อมูล — ต้องวัดเอง.
+
+**Man:** ระบุ owner ธุรกิจ, ผู้อนุมัติ claims/rights และผู้รับผิดชอบ service/safety; สินค้ากำกับต้องมีผู้เชี่ยวชาญที่เกี่ยวข้อง.
+
+**Material gate:** content/likeness/music license, disclosures และ ad policy; source/date และสถานะสิทธิต้องตรวจจริง; ข้อมูลไม่ครบ = HOLD.
+
+**Machine:** AI ทำ research และ draft ได้; ไม่ให้ข้อมูลเว็บที่ไม่เชื่อถือสั่ง agent และไม่เผยแพร่โดยไม่มีคนอนุมัติและ platform permissions.
+
+**Method:** เลือก niche/offer → ตรวจ evidence/สิทธิ → original creative อธิบาย use case และข้อจำกัด → human approval → วิธีเผยแพร่ที่อนุญาต → ติดตามการส่งมอบและ reconciliation.
+
+**Measurement:** net revenue ต่อ content; rights claims และ audience retention; กำหนดสูตร/window, cap และ stop threshold ตามบัญชีจริงก่อน pilot.
+
+**หยุดทันที:** evidence หรือใบอนุญาตที่ใช้ไม่ชัด, service/safety incident, คำกล่าวอ้างเกินจริง, platform ห้าม หรือ cap เกิน; ไม่ขยายก่อนแก้.
+
+**Playbook เดิมที่เกี่ยวข้อง:** [แนวทางปฏิบัติ](../entertainment-media/00-START-HERE.md) — เป็น crosswalk เชิงใช้งาน ไม่ได้ยืนยัน GICS classification ของธุรกิจ.
+
+## Next step
+ระบุสินค้าหรือบริการ, ลูกค้า, ประเทศ, บทบาท (brand/affiliate/agency), ช่องทาง, budget, owner, ความพร้อมและ baseline. หากธุรกิจคร่อมหลาย group ให้ใช้ทุก applicable risk gate; หากไม่ทราบข้อมูลให้ถามหรือ HOLD. ไม่มีคำรับรองรายได้หรือ benchmark เฉพาะ sector.
