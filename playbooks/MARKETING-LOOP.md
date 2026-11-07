@@ -17,3 +17,6 @@
 [Customer research](customer-research-positioning-2026/00-START-HERE.md) → [Offer](offer-merchandising-promotion-2026/00-START-HERE.md) → [Creative](ai-creative-production-2026/00-START-HERE.md) → Meta/TikTok/Google → CRO → Fulfillment → CX → [LINE retention](line-crm-retention-2026/00-START-HERE.md) → Measurement + [Unit Economics](profit-unit-economics-2026/00-START-HERE.md) → feedback ไป research และ budget planning ↺
 
 ทุก playbook เป็นกรอบตั้งต้น ไม่ใช่ข้อมูลบัญชีจริง; ไม่มีการนำข้อมูลลูกค้า ธุรกิจ งบ หรือผลทดลองที่ไม่ได้รับมาแต่งเติม
+
+## AI content & affiliate automation
+[7M AI Content & Affiliate Automation](7m-ai-content-affiliate-automation-2026/00-START-HERE.md) — ใช้ creative, measurement และ economics ร่วมกับ human approval และ platform-specific safety gates.
