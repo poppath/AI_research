@@ -1,0 +1,847 @@
+{
+  "playbook": "profit-unit-economics-2026",
+  "version": "1.0.0",
+  "as_of": "2026-11-07",
+  "market": "TH",
+  "currency": "THB",
+  "source_types": {
+    "primary": "เอกสารราชการ / แพลตฟอร์ม / rate card ทางการ",
+    "vendor": "บริษัท / SaaS blog / agency — ใช้เป็นสมมติฐาน",
+    "est": "ประมาณการที่คำนวณเองจากสูตร",
+    "press": "สื่อ"
+  },
+  "groups": {
+    "platform_fees": [
+      {
+        "id": "shopee_th_commission_nonmall",
+        "label": "Shopee TH commission (Non-Mall)",
+        "value": "7.49%–17.12%",
+        "note": "รวม VAT แล้ว; ตามหมวดสินค้า",
+        "as_of": "2026-08-04",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 1
+      },
+      {
+        "id": "shopee_th_commission_mall",
+        "label": "Shopee TH commission (Mall)",
+        "value": "7.49%–19.26%",
+        "as_of": "2026-08-04",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 1
+      },
+      {
+        "id": "shopee_th_by_category",
+        "label": "Shopee TH commission แยกหมวด (Non-Mall)",
+        "value": {
+          "mobile_laptop_console": "7.49%",
+          "tv": "8.56%",
+          "washing_machine": "11.24%",
+          "small_appliance": "15.52%",
+          "beauty_health_food_mombaby": "16.05%",
+          "home_pets_sports": "16.05%",
+          "fashion_shoes_bags": "17.12%"
+        },
+        "as_of": "2026-08-04",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 3
+      },
+      {
+        "id": "shopee_th_tx_fee",
+        "label": "Shopee TH transaction fee",
+        "value": "3.21%",
+        "note": "3% + VAT; คิดบนยอดที่ผู้ซื้อจ่ายรวมค่าส่ง; ตั้งแต่ มี.ค. 2026 ฐานรวม platform subsidy",
+        "as_of": "2026-08-04",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 1
+      },
+      {
+        "id": "shopee_th_infra_fee",
+        "label": "Shopee TH platform infrastructure fee",
+        "value_thb": 1.07,
+        "unit": "per_order",
+        "as_of": "2026-08-04",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 1
+      },
+      {
+        "id": "shopee_mall_entry",
+        "label": "Shopee Mall entry fee",
+        "value_thb": 30000,
+        "note": "+ VAT, ครั้งเดียว",
+        "as_of": "2026-08-04",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 1
+      },
+      {
+        "id": "shopee_service_fees",
+        "label": "Shopee service fee ที่เลือกเข้าร่วม",
+        "value": {
+          "free_shipping_programme": "3%–5%",
+          "free_shipping_xtra": "5.35%–8.56%",
+          "coins_cashback": "2%–4%",
+          "prime_seller": "6.42%–8.56%",
+          "livextra": "2.14%–3.21%"
+        },
+        "as_of": "2026-08-04",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 1
+      },
+      {
+        "id": "tiktok_th_commission_marketplace",
+        "label": "TikTok Shop TH commission (Marketplace)",
+        "value": "10.70%",
+        "note": "ส่วนใหญ่ของหมวด",
+        "as_of": "2026-07-05",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 5
+      },
+      {
+        "id": "tiktok_th_commission_mall",
+        "label": "TikTok Shop TH commission (Mall)",
+        "value": "13.91%",
+        "as_of": "2026-07-05",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 5
+      },
+      {
+        "id": "tiktok_th_cgf",
+        "label": "TikTok Shop TH Commerce Growth Fee",
+        "value": "8.03%",
+        "value_electronics": "6.96%",
+        "cap_thb_per_item": 199,
+        "note": "ไม่คืนเมื่อ return; ปลอด 30 วันแรกผู้ขายใหม่; ลด 0.54 pts สำหรับ Marketplace GMV <฿10,000/30 วัน",
+        "as_of": "2026-05-06",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 5
+      },
+      {
+        "id": "tiktok_th_tx_fee",
+        "label": "TikTok Shop TH transaction fee",
+        "value": "3.21%",
+        "note": "ฐาน = customer payment + platform discount (ตั้งแต่ 2026-03-21)",
+        "as_of": "2026-07-05",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 4
+      },
+      {
+        "id": "tiktok_th_infra_fee",
+        "label": "TikTok Shop TH infrastructure fee",
+        "value_thb": 1.07,
+        "unit": "per_order",
+        "as_of": "2026-07-05",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 5
+      },
+      {
+        "id": "tiktok_th_total_take_rate",
+        "label": "TikTok Shop TH take rate รวม (non-electronics)",
+        "value": "~21.94% + ฿1.07",
+        "as_of": "2026-07-05",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": 5
+      },
+      {
+        "id": "lazada_th_commission",
+        "label": "Lazada TH commission",
+        "value": "5.50%–14.50%",
+        "as_of": "2026-08-01",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 6
+      },
+      {
+        "id": "lazada_th_tx_fee",
+        "label": "Lazada TH transaction fee",
+        "value": "3.21%",
+        "as_of": "2026-08-01",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 6
+      },
+      {
+        "id": "lazada_th_take_rate",
+        "label": "Lazada TH total take rate",
+        "value": "9.32%–18.95%",
+        "as_of": "2026-08-01",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": 6
+      },
+      {
+        "id": "platform_take_rate_comparison_fashion_550",
+        "label": "Take rate ออเดอร์แฟชั่น ฿550",
+        "value": {
+          "tiktok_shop_nonmall": { "take_rate": "23.2%", "fees_thb": 127.64, "beroas": 5.29 },
+          "tiktok_shop_gmvmax": { "take_rate": "22.1%", "fees_thb": 121.74, "beroas": 5.01 },
+          "shopee_fashion_1712": { "take_rate": "20.5%", "fees_thb": 112.72, "beroas": 4.87 }
+        },
+        "as_of": "2026-08-25",
+        "market": "TH",
+        "source_type": "vendor",
+        "source_ref": 8
+      }
+    ],
+    "gp_cut_window": [
+      {
+        "id": "gp_cut_period",
+        "label": "GP cut window",
+        "value": "2026-12-01 ถึง 2027-05-31",
+        "note": "กลับไปใช้อัตรา 1 ม.ค. 2026; ครอบคลุม commission + infra + transaction เท่านั้น ไม่รวมค่าแอด",
+        "announced": "2026-10-28",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 11
+      },
+      {
+        "id": "gp_cut_rates",
+        "label": "เพดานค่าธรรมเนียมก่อน/ระหว่าง GP cut",
+        "value": {
+          "shopee": { "before": "19.26%", "during": "13.91%", "delta_pts": -5.35 },
+          "lazada": { "before": "17.50%", "during": "11.60%", "delta_pts": -5.90 },
+          "tiktok_shop": { "before": "21.94%", "during": "17.66%", "delta_pts": -4.28 }
+        },
+        "as_of": "2026-11-02",
+        "market": "TH",
+        "source_type": "vendor",
+        "source_ref": 11
+      },
+      {
+        "id": "gp_cut_breakeven_impact",
+        "label": "ผลกระทบต่อ breakeven ROAS",
+        "value": {
+          "example": "ราคา ฿500, COGS ฿250, ต้นทุน/ออเดอร์ ฿30",
+          "before": { "fee_pct": "18%", "profit_pre_ads_thb": 130, "breakeven_roas": 3.85 },
+          "during": { "fee_pct": "12%", "profit_pre_ads_thb": 160, "breakeven_roas": 3.13 },
+          "delta_pct": -18.7
+        },
+        "as_of": "2026-11-02",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": 11
+      },
+      {
+        "id": "gp_cut_estimated_seller_saving",
+        "label": "ประมาณการลดต้นทุนผู้ขายรวม",
+        "value_thb_millions": 1930,
+        "period": "6 เดือน",
+        "as_of": "2026-10-28",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 11
+      }
+    ],
+    "cod_fulfilment": [
+      {
+        "id": "cod_refusal_rate_th",
+        "label": "COD refusal rate เฉลี่ยไทย",
+        "value": "8%–12%",
+        "as_of": "2026",
+        "market": "TH",
+        "source_type": "vendor",
+        "source_ref": 12
+      },
+      {
+        "id": "cod_refusal_by_category",
+        "label": "Refusal rate ตามหมวด",
+        "value": {
+          "fashion": "5%–15%",
+          "food": "3%–8%",
+          "electronics": "3%–7%",
+          "high_ticket_gt_1000": "10%–20%",
+          "fragile": "~10%",
+          "crossborder_gt_7days": ">20%"
+        },
+        "as_of": "2026",
+        "market": "TH",
+        "source_type": "vendor",
+        "source_ref": 12
+      },
+      {
+        "id": "refusal_cost_per_event",
+        "label": "ต้นทุนต่อการตีกลับ 1 ครั้ง",
+        "value": {
+          "unsellable_goods": {
+            "outbound_shipping_thb": 35,
+            "return_shipping_thb": 35,
+            "cod_fee_lost_thb": 0,
+            "product_cost_thb": 180,
+            "repack_thb": 14,
+            "total_thb": 264
+          },
+          "resellable_goods": {
+            "outbound_shipping_thb": 35,
+            "return_shipping_thb": 35,
+            "repack_thb": 14,
+            "total_thb": 84
+          }
+        },
+        "as_of": "2026-10-31",
+        "market": "TH",
+        "source_type": "vendor",
+        "source_ref": 13
+      },
+      {
+        "id": "refusal_monthly_impact",
+        "label": "ผลกระทบรายเดือนที่ refusal 12%",
+        "value": {
+          "orders_thb": 1000,
+          "refused_orders": 120,
+          "cost_thb": 31680,
+          "pct_of_revenue": "5.4%"
+        },
+        "as_of": "2026-11",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": 13
+      },
+      {
+        "id": "cod_fee_rates",
+        "label": "ค่าธรรมเนียม COD",
+        "value": {
+          "flash": "~2.5%",
+          "kex": "2.4%",
+          "thailand_post": "2.3%–3%",
+          "minimum_thb": "15–20"
+        },
+        "as_of": "2026",
+        "market": "TH",
+        "source_type": "vendor",
+        "source_ref": 12
+      },
+      {
+        "id": "dee_delivery_regulation",
+        "label": "มาตรการ 'ส่งดี' (Dee-Delivery)",
+        "value": "มีผล 2024-10-03; ผู้ซื้อมีสิทธิ์เปิดกล่องตรวจก่อนจ่าย (COD)",
+        "regulator": "สคบ.",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 17
+      }
+    ],
+    "shipping_packaging": [
+      {
+        "id": "shipping_rates_th_2026",
+        "label": "ค่าส่ง 1 กก. (ราคากลาง)",
+        "value_thb": {
+          "flash": "23–35",
+          "jnt": "25–30",
+          "kex_kerry": "32–45",
+          "thailand_post": "19–67",
+          "dhl_ecommerce": "25–35"
+        },
+        "as_of": "2026-02",
+        "market": "TH",
+        "source_type": "vendor",
+        "source_ref": 19
+      },
+      {
+        "id": "shipping_rates_by_weight",
+        "label": "ค่าส่งตามน้ำหนัก",
+        "value_thb": {
+          "flash": { "1kg": 40, "2kg": 60, "5kg": 120, "10kg": 200 },
+          "jnt": { "1kg": 35, "2kg": 50, "5kg": 100, "10kg": 180 },
+          "kerry": { "1kg": 60, "2kg": 80, "5kg": 150, "10kg": 250 }
+        },
+        "as_of": "2026-02",
+        "market": "TH",
+        "source_type": "vendor",
+        "source_ref": 21
+      },
+      {
+        "id": "flash_vs_kerry_gap",
+        "label": "ส่วนต่างราคา Flash vs Kerry",
+        "value": "30%–40% ทุก tier",
+        "as_of": "2026-09",
+        "market": "TH",
+        "source_type": "vendor",
+        "source_ref": 20
+      },
+      {
+        "id": "volumetric_divisor",
+        "label": "ตัวหารน้ำหนักปริมาตร",
+        "value": 6000,
+        "formula": "(กว้าง × ยาว × สูง ซม.) ÷ 6000",
+        "market": "TH",
+        "source_type": "vendor",
+        "source_ref": 21
+      },
+      {
+        "id": "packaging_cost",
+        "label": "ต้นทุนบรรจุภัณฑ์ต่อออเดอร์",
+        "value_thb": "12–45",
+        "as_of": "2026-11",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": null
+      },
+      {
+        "id": "packaging_cost_by_aov",
+        "label": "บรรจุภัณฑ์ที่สมเหตุสมผลต่อ AOV",
+        "value": {
+          "lt_300": { "thb": "8–15", "pct_of_aov": "≤5%" },
+          "300_800": { "thb": "12–25", "pct_of_aov": "3–4%" },
+          "800_2000": { "thb": "20–40", "pct_of_aov": "2–3%" },
+          "gt_2000": { "thb": "35–80", "pct_of_aov": "1.5–4%" }
+        },
+        "as_of": "2026-11",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": null
+      },
+      {
+        "id": "pack_labour_cost",
+        "label": "ค่าแรงแพ็ก",
+        "value_thb": "5–12",
+        "unit": "per_order",
+        "as_of": "2026-11",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": null
+      },
+      {
+        "id": "3pl_crossover",
+        "label": "จุดตัด 3PL vs in-house",
+        "value": "80–150 ออเดอร์/วัน",
+        "as_of": "2026-11",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": null
+      }
+    ],
+    "margin_benchmarks": [
+      {
+        "id": "gross_margin_by_category",
+        "label": "Gross margin ตามหมวด (global)",
+        "value": {
+          "beauty_cosmetics": "50%–70%",
+          "fashion_apparel": "40%–60%",
+          "electronics": "15%–30%",
+          "home_goods": "30%–50%",
+          "food_beverage": "20%–40%",
+          "supplements": "50%–70%",
+          "jewelry": "50%–70%"
+        },
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 24
+      },
+      {
+        "id": "net_margin_by_category",
+        "label": "Net margin ตามหมวด (global)",
+        "value": {
+          "fashion_apparel": "5%–12%",
+          "beauty_cosmetics": "8%–18%",
+          "electronics": "3%–8%",
+          "home_goods": "5%–12%"
+        },
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 24
+      },
+      {
+        "id": "cm_thresholds",
+        "label": "เกณฑ์ CM (global)",
+        "value": {
+          "cm2_green": ">30%",
+          "cm2_yellow": "20%–30%",
+          "cm2_red": "<20%",
+          "cm3_minimum_healthy": "20%",
+          "cm3_top_quartile": "25%–35%"
+        },
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 22
+      },
+      {
+        "id": "landed_cost_multiplier",
+        "label": "Landed cost จาก FOB",
+        "value": "1.4–1.8×",
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 23
+      },
+      {
+        "id": "fulfilment_variable_cost",
+        "label": "Fulfilment + variable cost % ของ revenue",
+        "value": {
+          "at_1m": "12%–18%",
+          "at_100m_plus": "7%–10%"
+        },
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 23
+      },
+      {
+        "id": "dtc_return_rate",
+        "label": "Return rate DTC เฉลี่ย",
+        "value": "~14%",
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 23
+      },
+      {
+        "id": "th_adjustment_note",
+        "label": "การปรับ benchmark สำหรับไทย",
+        "value": "ปรับ CM2 เป้าหมายขึ้น 3–8 pts (GP สูงกว่า, COD, return สูง)",
+        "as_of": "2026-11",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": 42
+      }
+    ],
+    "marketing_efficiency": [
+      {
+        "id": "breakeven_mer_by_cm",
+        "label": "Breakeven MER = 1 ÷ CM2%",
+        "value": {
+          "cm_50": 2.0,
+          "cm_45": 2.22,
+          "cm_40": 2.5,
+          "cm_35": 2.86,
+          "cm_30": 3.33,
+          "cm_25": 4.0,
+          "cm_20": 5.0,
+          "cm_15": 6.67,
+          "cm_10": 10.0
+        },
+        "as_of": "2026",
+        "market": "formula",
+        "source_type": "est",
+        "source_ref": 25
+      },
+      {
+        "id": "healthy_blended_mer",
+        "label": "Healthy blended MER (DTC)",
+        "value": "3.0×–5.0×",
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 29
+      },
+      {
+        "id": "mer_by_revenue_stage",
+        "label": "MER ตามขนาดธุรกิจ",
+        "value": {
+          "1m_5m": "1.5×–2.5×",
+          "5m_10m": "2.5×–3.5×",
+          "10m_25m": "3.0×–4.5×",
+          "25m_100m": "3.5×–6.0×"
+        },
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 29
+      },
+      {
+        "id": "triple_whale_median_spend",
+        "label": "Median marketing spend % ของ revenue",
+        "value": "41% (MER ~2.4×)",
+        "as_of": "2025",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 27
+      },
+      {
+        "id": "median_platform_roas",
+        "label": "Median platform ROAS",
+        "value": "2.04×",
+        "as_of": "2024",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 25
+      },
+      {
+        "id": "platform_attributed_overstatement",
+        "label": "Platform-attributed ÷ actual revenue",
+        "value": "110%–145%",
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "est",
+        "source_ref": 42
+      },
+      {
+        "id": "ad_spend_pct_revenue",
+        "label": "Ad spend % ของ revenue",
+        "value": "10%–25%",
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "est",
+        "source_ref": null
+      }
+    ],
+    "ltv_retention": [
+      {
+        "id": "ltv_cac_thresholds",
+        "label": "LTV:CAC",
+        "value": {
+          "red": "<2.0×",
+          "healthy": "2.5–4.0×",
+          "good": "4.0–6.0×",
+          "check_underinvestment": ">6.0×"
+        },
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 22
+      },
+      {
+        "id": "ltv_cac_by_model",
+        "label": "LTV:CAC ตามโมเดลธุรกิจ",
+        "value": {
+          "retention_led": 4.2,
+          "acquisition_heavy": 1.8
+        },
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 2
+      },
+      {
+        "id": "payback_period",
+        "label": "Payback period",
+        "value": {
+          "standard": "<90 วัน",
+          "acceptable_max": "120–180 วัน",
+          "risk": ">180 วัน"
+        },
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 22
+      },
+      {
+        "id": "repeat_rate_benchmarks",
+        "label": "Repeat purchase rate",
+        "value": {
+          "90day_average": "15%–25%",
+          "90day_excellent": "30%+",
+          "12mo_ecommerce": "19%–30%",
+          "12mo_consumables": "25%–40%",
+          "12mo_top_performer": "40%–55%",
+          "12mo_apparel": "12%–17%",
+          "12mo_durable": "7%–15%"
+        },
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 22
+      },
+      {
+        "id": "time_to_second_order",
+        "label": "Time to 2nd order",
+        "value": {
+          "typical": "45–90 วัน",
+          "target": "<45 วัน"
+        },
+        "as_of": "2026",
+        "market": "global",
+        "source_type": "vendor",
+        "source_ref": 22
+      }
+    ],
+    "tax_cashflow": [
+      {
+        "id": "vat",
+        "label": "VAT",
+        "value": "7%",
+        "threshold": "รายรับ > ฿1,800,000/ปี",
+        "deadline_registration": "ภายใน 30 วันนับจากถึงเกณฑ์",
+        "deadline_filing": "ภ.พ.30 วันที่ 15 ของเดือนถัดไป",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 30
+      },
+      {
+        "id": "pp36",
+        "label": "ภ.พ.36 (VAT ซื้อบริการต่างประเทศ)",
+        "value": "7%",
+        "deadline": "วันที่ 7 ของเดือนถัดไป",
+        "note": "ขอคืนเป็นภาษีซื้อได้ถ้าจด VAT",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 31
+      },
+      {
+        "id": "wht_rates",
+        "label": "อัตรา WHT",
+        "value": {
+          "agency_ads": "3%",
+          "services": "3%",
+          "rent": "5%",
+          "logistics": "1%",
+          "kol_individual": "3%"
+        },
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 31
+      },
+      {
+        "id": "income_tax",
+        "label": "ภาษีเงินได้",
+        "value": {
+          "individual_max": "35%",
+          "corporate_sme": "15%–20%"
+        },
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 30
+      },
+      {
+        "id": "vat_penalty",
+        "label": "เบี้ยปรับ VAT ล่าช้า",
+        "value": "1.5%/เดือน",
+        "retroactive": "ถึง 5 ปี",
+        "market": "TH",
+        "source_type": "primary",
+        "source_ref": 30
+      },
+      {
+        "id": "ccc_typical_th",
+        "label": "Cash conversion cycle ร้านไทย",
+        "value": "30–45 วัน",
+        "as_of": "2026-11",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": null
+      },
+      {
+        "id": "payout_cycles",
+        "label": "Payout cycle",
+        "value": {
+          "marketplace": "7–14 วันหลังส่งสำเร็จ",
+          "cod": "1–7 วันหลังเก็บเงิน"
+        },
+        "as_of": "2026",
+        "market": "TH",
+        "source_type": "vendor",
+        "source_ref": 12
+      },
+      {
+        "id": "working_capital_per_gmv",
+        "label": "เงินหมุนที่ต้องใช้ต่อยอดขาย",
+        "formula": "ΔGMV × (CCC ÷ 365)",
+        "example": "CCC 35 วัน → ทุก ฿1M ที่โตขึ้นต้องใช้ ~฿96,000",
+        "as_of": "2026-11",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": null
+      }
+    ],
+    "promo_discount": [
+      {
+        "id": "discount_impact_on_cm",
+        "label": "ส่วนลด → กำไรที่หายไป (%)",
+        "formula": "ส่วนลด% ÷ CM2 เดิม%",
+        "example": "CM2 25%, ลด 10% → กำไรหาย 40%",
+        "market": "formula",
+        "source_type": "est",
+        "source_ref": null
+      },
+      {
+        "id": "max_discount_rule",
+        "label": "Max discount",
+        "formula": "CM2 เดิม − CM2 เป้าหมายขั้นต่ำ",
+        "value_typical": "ไม่เกิน 12%",
+        "market": "formula",
+        "source_type": "est",
+        "source_ref": null
+      },
+      {
+        "id": "platform_voucher_cost",
+        "label": "ต้นทุนจริงของ platform voucher ต่อร้าน",
+        "value": "3.21% × มูลค่า voucher (Tx fee)",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": 4
+      },
+      {
+        "id": "gift_vs_discount",
+        "label": "Gift with purchase vs ส่วนลด",
+        "example": {
+          "discount_10pct_cost_thb": 59,
+          "gift_cogs_thb": 25,
+          "gift_tag_price_thb": 150,
+          "cost_advantage": "58% ถูกกว่า",
+          "perceived_value_advantage": "2.5×"
+        },
+        "market": "formula",
+        "source_type": "est",
+        "source_ref": null
+      },
+      {
+        "id": "average_discount_rate",
+        "label": "Average discount rate (ร้านไทย)",
+        "value": {
+          "marketplace_heavy": "12%–20%",
+          "own_site": "5%–10%"
+        },
+        "as_of": "2026-11",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": null
+      }
+    ],
+    "pricing": [
+      {
+        "id": "price_floor_formula",
+        "label": "Price floor",
+        "formula": "COGS(landed) + fulfil + platform fees + CM2 ขั้นต่ำ",
+        "cm2_minimum": "18%–25%",
+        "market": "formula",
+        "source_type": "est",
+        "source_ref": null
+      },
+      {
+        "id": "price_tiers_cm_target",
+        "label": "CM2 เป้าหมายตามชั้นราคา",
+        "value": {
+          "anchor": "40%–55%",
+          "core": "30%–38%",
+          "entry": "15%–25%",
+          "bundle": "35%–42%"
+        },
+        "market": "formula",
+        "source_type": "est",
+        "source_ref": null
+      },
+      {
+        "id": "elasticity_th",
+        "label": "Price elasticity (ประมาณการ)",
+        "value": {
+          "mass_market": "-1.2 ถึง -2.5",
+          "premium": "-0.4 ถึง -0.9"
+        },
+        "as_of": "2026-11",
+        "market": "TH",
+        "source_type": "est",
+        "source_ref": null
+      }
+    ]
+  },
+  "usage_notes": [
+    "ทุกตัวเลขต้องอ้างด้วย id นี้เสมอ ไม่ใช่พิมพ์ตัวเลขลอย ๆ",
+    "ถ้า id ไม่มีในไฟล์นี้ = ไม่มีข้อมูล ให้บอก 'ต้องวัดเอง' และเสนอวิธีวัด",
+    "ตัวเลข source_type=vendor คือสมมติฐาน ไม่ใช่ความจริง — ต้องยืนยันด้วย primary data ของตัวเองก่อนตัดสินใจระดับงบ",
+    "ตัวเลข as_of เกิน 90 วันต้อง re-verify ก่อนใช้ตัดสินใจด้านงบ (โดยเฉพาะ platform fees)",
+    "GP cut window เป็นสถานะชั่วคราว — ห้าม hardcode อัตรา '13.91%' เป็นเรทปกติ"
+  ]
+}

@@ -96,3 +96,7 @@
 TikTok playbook ตอบว่า "หาแขกยังไงให้ถูก" — แต่ CM ต่อออเดอร์แรกเหลือ ~16% แปลว่ากำไรจริงอยู่ที่ออเดอร์ที่ 2
 → [`../line-crm-retention-2026/`](../line-crm-retention-2026/00-START-HERE.md) · **LINE OA × CRM × Retention/LTV 2026 (TH)**
 ต่อกันตรง: TikTok (บท 04 unit economics + บท 08 measurement) → LINE (บท 05 lifecycle flows + บท 09 LTV)
+
+**ฐานของทั้งสองเล่ม:** [`../profit-unit-economics-2026/`](../profit-unit-economics-2026/00-START-HERE.md) · **Profit & Unit Economics 2026 (TH)**
+เล่มนั้นนิยาม CM1/CM2/CM3, take rate จริงของแต่ละ marketplace, breakeven ROAS/MER/CAC และ price floor — ตัวเลข "CM ~16%" ที่ TikTok playbook อ้างถึง คำนวณและอธิบายที่มาที่นั่น
+อัปเดตสำคัญที่กระทบเล่มนี้: **GP cut window 1 ธ.ค. 2026 – 31 พ.ค. 2027** ทำให้ breakeven ROAS บน Shopee/Lazada/TikTok Shop ลดลง ~19% ชั่วคราว แล้วเด้งกลับ มิ.ย. 2027 (ดู profit playbook บท 04 §5)

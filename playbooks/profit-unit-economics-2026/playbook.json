@@ -1,0 +1,530 @@
+{
+  "playbook": "profit-unit-economics-2026",
+  "title": "Profit & Unit Economics — Thailand 2026",
+  "version": "1.0.0",
+  "as_of": "2026-11-07",
+  "market": "TH",
+  "currency_primary": "THB",
+  "currency_secondary": "USD",
+  "purpose": "กำหนด CM ladder, breakeven ROAS/CAC, take rate และ pricing floor สำหรับตลาดไทย เพื่อให้ทุกการตัดสินใจเรื่องงบ การตลาด และราคา อ้างอิงตัวเลขกำไรต่อหน่วยที่ถูกต้อง",
+  "relationship_to_other_playbooks": {
+    "tiktok-performance-marketing": "ให้ตัวเลข CM1/breakeven CAC ที่ TikTok playbook ต้องใช้ตัดสินงบ",
+    "line-crm-retention-2026": "ให้ CM2 ของออเดอร์ที่ 1 และ 2 ที่ใช้ในสูตร LTV₉₀:CAC"
+  },
+  "notation_warning": "เล่มนี้ใช้ CM1/CM2/CM3 = ลำดับการหักต้นทุน (ก่อน platform fee / ก่อนการตลาด / หลังการตลาด). เล่ม LINE ใช้ CM₁/CM₂ = ออเดอร์ที่ 1 / ออเดอร์ที่ 2. ห้ามปนกัน — ให้เขียนกำกับด้วยคำเสมอ",
+  "stages": ["measure", "fix_structure", "fix_channel", "optimize_media", "price", "stabilize"],
+  "invocation": {
+    "required_inputs": ["AOV", "COGS landed", "channel mix", "current ad spend", "current revenue", "refusal rate", "return rate"],
+    "outputs": [
+      "cm_ladder_per_channel",
+      "take_rate_actual_vs_expected",
+      "breakeven_roas_and_mer",
+      "max_cac_with_payback_window",
+      "leak_ranking",
+      "action_plan_30_60_90"
+    ],
+    "guardrails": [
+      "ทุกตัวเลขต้องมี as_of + market + source_type",
+      "ห้ามใช้ benchmark ตะวันตกโดยไม่ปรับตามหมายเหตุ SOURCES[42]",
+      "ถ้าไม่มีข้อมูล ให้ใช้ Rough estimate และระบุชัดว่าเป็น est",
+      "ห้ามแนะนำให้เพิ่มงบก่อนที่ CM2 จะผ่านเกณฑ์ขั้นต่ำ"
+    ]
+  },
+  "rules": [
+    {
+      "id": "R-301",
+      "stage": "measure",
+      "trigger": "ยังไม่ทราบ CM2 ต่อออเดอร์เป็นบาท",
+      "action": "หยุดการตัดสินใจเรื่องงบโฆษณาทั้งหมด และคำนวณ CM2 ต่อ SKU ต่อช่องทางด้วย Rough estimate ภายใน 7 วัน",
+      "why": "ทุกการตัดสินใจเรื่องงบที่ไม่มี CM2 เป็นฐานคือการเดา",
+      "guardrail": "ใช้ landed cost ไม่ใช่ FOB",
+      "chapter": "03",
+      "verify_within_days": 7
+    },
+    {
+      "id": "R-302",
+      "stage": "measure",
+      "trigger": "คำนวณ CM2",
+      "action": "คำนวณ CM1 = net revenue − COGS(landed) − ค่าส่ง − บรรจุภัณฑ์ − COD fee − refusal provision; CM2 = CM1 − platform fees ทั้งหมด; CM3 = CM2 − ค่าโฆษณา",
+      "why": "การรวม platform fee ไว้ใน CM1 ทำให้เทียบข้ามช่องทางไม่ได้",
+      "guardrail": "คิดเป็นบาทต่อออเดอร์ก่อน แล้วค่อยแปลงเป็น % บน net revenue หลังส่วนลดร้าน",
+      "chapter": "03"
+    },
+    {
+      "id": "R-303",
+      "stage": "measure",
+      "trigger": "ต้องการ take rate จริง",
+      "action": "รวม commission + transaction fee + infra fee + service fee ที่เข้าร่วม + CGF + affiliate แล้วหารด้วย GMV จาก payout report 1 เดือนเต็ม",
+      "why": "commission เดี่ยวไม่ใช่ take rate — ต่างกันได้ 5–8 pts",
+      "guardrail": "ตรวจว่า ผลรวม (ยอดขาย − take rate − ค่าส่งที่ร้านจ่าย) ≈ payout total ±1%",
+      "chapter": "04"
+    },
+    {
+      "id": "R-304",
+      "stage": "measure",
+      "trigger": "วัด refusal rate",
+      "action": "ใช้สูตร จำนวนพัสดุที่ถูกปฏิเสธ ÷ จำนวนพัสดุที่ส่งออก และแยกตามขนส่ง พื้นที่ ช่องทาง และ SKU",
+      "why": "ต้องมีอย่างน้อย 30 ออเดอร์ต่อกลุ่มก่อนสรุป",
+      "guardrail": "ห้ามใช้ จำนวนปฏิเสธ ÷ จำนวนออเดอร์",
+      "chapter": "05"
+    },
+    {
+      "id": "R-305",
+      "stage": "fix_structure",
+      "trigger": "CM2 < 10%",
+      "action": "ห้ามยิงแอด ให้เลือกหนึ่งใน: ขึ้นราคา, เปลี่ยนช่องทาง, เลิกขาย SKU, หรือเจรจา COGS ใหม่",
+      "why": "ไม่มีพื้นที่ให้ CAC เลย",
+      "guardrail": "ห้ามแก้ด้วยการเพิ่มยอดขาย",
+      "chapter": "03",
+      "priority": "critical"
+    },
+    {
+      "id": "R-306",
+      "stage": "fix_structure",
+      "trigger": "CM2 10–20%",
+      "action": "ตั้ง CAC ceiling = CM2 และพึ่ง repeat ในการทำกำไร ต้องมี 90-day repeat ≥ 25% จึงจะ scale ได้",
+      "why": "margin แคบเกินกว่าจะจ่าย CAC แบบ full",
+      "guardrail": "ต้องมี payback < 120 วัน",
+      "chapter": "08"
+    },
+    {
+      "id": "R-307",
+      "stage": "fix_structure",
+      "trigger": "พบ SKU ที่ CM2 < 15%",
+      "action": "ตัดสินใจภายใน 1 สัปดาห์: ขึ้นราคา / เปลี่ยนช่องทาง / เลิกขาย — ห้ามปล่อยค้าง",
+      "why": "ปกติ 10–25% ของ SKU ติดลบและถูกซ่อนด้วยค่าเฉลี่ย",
+      "guardrail": "ถ้า SKU เป็น traffic driver ให้จำกัดสัดส่วนไม่เกิน 20% ของยอด",
+      "chapter": "03"
+    },
+    {
+      "id": "R-308",
+      "stage": "fix_structure",
+      "trigger": "ค่าเฉลี่ยทั้งร้านดูดี",
+      "action": "ห้ามสรุปจากค่าเฉลี่ย ให้ดู distribution CM2 ต่อ SKU และดู SKU concentration (top 10 SKU = กี่ % ของ CM2)",
+      "why": "ค่าเฉลี่ยซ่อน SKU ที่ขาดทุน",
+      "chapter": "03"
+    },
+    {
+      "id": "R-309",
+      "stage": "fix_structure",
+      "trigger": "ยังไม่ใส่ provision refusal ใน CM",
+      "action": "เพิ่มบรรทัด provision = refusal_rate × (ค่าส่งไป + ค่าส่งกลับ + repack + ต้นทุนสินค้า × % ที่ขายต่อไม่ได้) แยกตาม SKU",
+      "why": "refusal 12% = 5.4% ของยอด = เท่ากับ commission +5.4 pts",
+      "guardrail": "ห้ามใช้ค่าเฉลี่ยเดียวทั้งร้าน",
+      "chapter": "05"
+    },
+    {
+      "id": "R-310",
+      "stage": "fix_structure",
+      "trigger": "คำนวณ COGS",
+      "action": "ใช้ landed cost = FOB + freight + duty + forwarder (+VAT นำเข้าถ้าขอคืนไม่ได้)",
+      "why": "landed cost = 1.4–1.8× factory gate",
+      "guardrail": "ถ้าใช้ FOB จะทำให้ CM สูงเกินจริง 5–10 pts",
+      "chapter": "02"
+    },
+    {
+      "id": "R-311",
+      "stage": "fix_structure",
+      "trigger": "จดทะเบียน VAT แล้ว",
+      "action": "ตัด VAT ออกจากทั้งฝั่งรายได้และฝั่งต้นทุน (ขอคืนได้) และห้ามคูณ VAT ซ้ำบน commission/transaction fee ที่ประกาศแบบรวม VAT แล้ว",
+      "why": "commission 17.12% = 16% + VAT; Tx 3.21% = 3% + VAT",
+      "chapter": "10"
+    },
+    {
+      "id": "R-312",
+      "stage": "fix_channel",
+      "trigger": "เลือกช่องทางขาย",
+      "action": "เปรียบเทียบด้วย take rate + TMV economics ไม่ใช่ commission เดี่ยว และคำนวณ breakeven CAC ต่อช่องทาง",
+      "why": "สินค้าเดียวกัน CM2 ต่างกันได้ 2–3 เท่าระหว่าง marketplace กับเว็บตัวเอง",
+      "guardrail": "ห้ามเทียบ TikTok Shop กับ Shopee ด้วย commission อย่างเดียว",
+      "chapter": "04"
+    },
+    {
+      "id": "R-313",
+      "stage": "fix_channel",
+      "trigger": "สินค้า AOV < ฿300 และ CM2 บน marketplace < 15%",
+      "action": "ย้ายไปเว็บตัวเอง/LINE หรือเลิกขายบน marketplace",
+      "why": "marketplace กิน margin หมดแล้ว",
+      "chapter": "04"
+    },
+    {
+      "id": "R-314",
+      "stage": "fix_channel",
+      "trigger": "สินค้า return rate > 15% (นอกแฟชั่น)",
+      "action": "ตรวจ product page และ size guide ก่อนปรับการตลาด เพราะ Tx fee + CGF ไม่คืนเมื่อ return",
+      "why": "ออเดอร์ return ทำให้ขาดทุน ~11% ของราคาสินค้าโดยไม่ชดเชย",
+      "chapter": "04"
+    },
+    {
+      "id": "R-315",
+      "stage": "fix_channel",
+      "trigger": "ต้องการรักษา price parity หลายช่องทาง",
+      "action": "ใช้ product differentiation (ต่าง SKU/ขนาด/ของแถมต่อช่อง) แทน perfect parity หรือ net-of-fee pricing",
+      "why": "perfect parity ทำให้ CM บน marketplace ต่ำ; net-of-fee ทำให้ลูกค้าเห็นว่าแพงกว่า",
+      "chapter": "11"
+    },
+    {
+      "id": "R-316",
+      "stage": "fix_channel",
+      "trigger": "refusal rate > 12%",
+      "action": "แก้ logistics และ product page ก่อนแก้การตลาด: เพิ่ม order confirmation, เปลี่ยนขนส่งที่เร็วกว่า, ระบุสินค้าให้ตรง",
+      "why": "refusal 12% บน 1,000 ออเดอร์ = ~฿31,000/เดือน ต้นทุนตรง",
+      "guardrail": "ห้ามแก้ด้วยการห้ามเปิดกล่อง (ผิดมาตรการส่งดี)",
+      "chapter": "05"
+    },
+    {
+      "id": "R-317",
+      "stage": "fix_channel",
+      "trigger": "น้ำหนักสินค้าใกล้ขีด 1/2/5 กก.",
+      "action": "ลดน้ำหนักบรรจุภัณฑ์หรือเปลี่ยนรูปแบบกล่องให้อยู่ในขั้นที่ถูกกว่า",
+      "why": "ลด 100 กรัมอาจประหยัด ฿15–20/ออเดอร์",
+      "chapter": "06"
+    },
+    {
+      "id": "R-318",
+      "stage": "fix_channel",
+      "trigger": "กล่องใหญ่แต่ของเบา",
+      "action": "ตรวจ volumetric weight = (ก×ย×ส) ÷ 6000 และลดขนาดกล่อง",
+      "why": "ของเบาแต่กล่องใหญ่จ่ายค่าส่งขั้น 2–5 กก. โดยไม่รู้ตัว",
+      "chapter": "06"
+    },
+    {
+      "id": "R-319",
+      "stage": "optimize_media",
+      "trigger": "ต้องการตัดสินใจเรื่องงบโฆษณา",
+      "action": "ใช้ Blended MER เทียบ breakeven MER (1 ÷ CM2%) — ไม่ใช้ platform ROAS",
+      "why": "platform ROAS มี double-counting 20–40%",
+      "guardrail": "ถ้า sum(platform attributed revenue) > total revenue แสดงว่ามี double-counting",
+      "chapter": "08"
+    },
+    {
+      "id": "R-320",
+      "stage": "optimize_media",
+      "trigger": "MER < breakeven MER",
+      "action": "ลดงบ 30–50% ทันที และวินิจฉัยตามลำดับบท 13",
+      "why": "ทุกบาทที่ใช้ไปคือการซื้อ revenue ที่ขาดทุน",
+      "chapter": "08",
+      "priority": "critical"
+    },
+    {
+      "id": "R-321",
+      "stage": "optimize_media",
+      "trigger": "MER > target MER + 25%",
+      "action": "เพิ่มงบ 20–30% และรออย่างน้อย 7 วันก่อนวัด",
+      "why": "การเพิ่มแรงเกินทำให้ CPA พุ่งและ learning phase เสีย",
+      "guardrail": "ห้ามเพิ่มเกิน 30% ต่อครั้ง",
+      "chapter": "08"
+    },
+    {
+      "id": "R-322",
+      "stage": "optimize_media",
+      "trigger": "คำนวณ max CAC",
+      "action": "Max CAC = CM2₁ + (90-day repeat% × CM2₂) — แต่ถ้า payback window ของธุรกิจสั้นกว่า ให้ใช้แค่ CM2₁",
+      "why": "การใช้ repeat โดยไม่จริงทำให้จ่ายเกิน",
+      "guardrail": "ต้องตรวจว่า repeat rate มาจาก cohort จริง ไม่ใช่ความรู้สึก",
+      "chapter": "09"
+    },
+    {
+      "id": "R-323",
+      "stage": "optimize_media",
+      "trigger": "ตั้ง target CPA",
+      "action": "Target CPA = breakeven CPA × (1 − target profit margin) — ห้ามใช้ breakeven เป็น target",
+      "why": "breakeven = ไม่มีกำไรเลย",
+      "chapter": "08"
+    },
+    {
+      "id": "R-324",
+      "stage": "optimize_media",
+      "trigger": "จะเพิ่มงบเกิน 2 เท่าของปัจจุบัน หรือจะเลิกช่องทางหนึ่ง",
+      "action": "ทำ incrementality test (geo holdout หรือ time-based holdout) ก่อน",
+      "why": "MER บอกว่าคุ้มไหม แต่ไม่บอกว่าถ้าหยุดจะเกิดอะไร",
+      "guardrail": "platform ROAS 4.2× อาจเป็น incremental จริงเพียง 1.8×",
+      "chapter": "08"
+    },
+    {
+      "id": "R-325",
+      "stage": "optimize_media",
+      "trigger": "คำนวณ LTV",
+      "action": "ใช้ Contribution LTV = AOV × frequency × CM2% × (1 − return_rate) และแยกตาม acquisition cohort + channel",
+      "why": "revenue LTV ทำให้จ่ายเกินจริง 3–5 เท่า",
+      "guardrail": "ห้ามใช้ blended LTV",
+      "chapter": "09"
+    },
+    {
+      "id": "R-326",
+      "stage": "optimize_media",
+      "trigger": "LTV:CAC",
+      "action": "เกณฑ์: < 1.5 ห้ามเพิ่มงบ · 2.5–4.0 scale ได้ · > 6.0 ตรวจว่าขาดโอกาสโตหรือไม่",
+      "why": "healthy 2.5–4.0× (CM basis 12 เดือน)",
+      "chapter": "09"
+    },
+    {
+      "id": "R-327",
+      "stage": "optimize_media",
+      "trigger": "payback period > 120 วัน",
+      "action": "หยุด scale จนกว่าจะมีแผนเงินหมุนที่ชัดเจน",
+      "why": "เงินที่ต้องสำรอง = CAC × ลูกค้าใหม่ × payback (เดือน)",
+      "guardrail": "SME ส่วนใหญ่ตายเพราะเงินสด ไม่ใช่ขาดทุน",
+      "chapter": "09"
+    },
+    {
+      "id": "R-328",
+      "stage": "optimize_media",
+      "trigger": "CM3 < 20%",
+      "action": "ตรวจ overhead ก่อนปรับการตลาด เพราะปัญหาไม่ได้อยู่ที่ CPA",
+      "why": "CM3 ขั้นต่ำ healthy = 20%, ดีเยี่ยม 25–35%",
+      "chapter": "03"
+    },
+    {
+      "id": "R-329",
+      "stage": "price",
+      "trigger": "ก่อนขึ้นสินค้าใหม่",
+      "action": "คำนวณ price floor = COGS + fulfil + platform fees + CM2 ขั้นต่ำ (18–25%) และปฏิเสธ SKU ที่ตลาดบังคับให้ขายต่ำกว่า floor",
+      "why": "ถ้าขายต่ำกว่า floor จะไม่มีที่ให้ CAC เลย",
+      "chapter": "11"
+    },
+    {
+      "id": "R-330",
+      "stage": "price",
+      "trigger": "จะเข้าร่วมแคมเปญแพลตฟอร์ม",
+      "action": "ตรวจ 5 ข้อ: CM2 หลังส่วนลด ≥18% · incremental vs shifting · stock ≥1.5× · แผนรับ return · ต้นทุนแอดช่วงแคมเปญ",
+      "why": "แคมเปญที่ CM2 < 18% คือการขาดทุนที่ถูกทำให้ดูเหมือนการตลาด",
+      "guardrail": "max discount = CM2 เดิม − CM2 ขั้นต่ำ",
+      "chapter": "07"
+    },
+    {
+      "id": "R-331",
+      "stage": "price",
+      "trigger": "ตั้ง voucher / ส่วนลด",
+      "action": "ตั้ง max discount cap ต่อออเดอร์ และห้าม stack voucher ประเภทเดียวกัน",
+      "why": "voucher stacking คือสาเหตุอันดับ 1 ของ CM ติดลบที่ไม่มีใครรู้ตัว",
+      "chapter": "07"
+    },
+    {
+      "id": "R-332",
+      "stage": "price",
+      "trigger": "ต้องการเพิ่ม perceived value โดยไม่ลดราคา",
+      "action": "ใช้ gift with purchase ที่ COGS ต่ำ (ถูกกว่าส่วนลด 58% ใน perceived value ที่สูงกว่า 2.5 เท่า) หรือ bundle",
+      "why": "bundle เพิ่ม CM2 เป็นบาท 59% โดย CM2% ลดแค่ 1.3 pts",
+      "chapter": "07"
+    },
+    {
+      "id": "R-333",
+      "stage": "price",
+      "trigger": "จะให้ส่งฟรี",
+      "action": "ตั้ง threshold = AOV × 1.25–1.40 และตรวจว่า CM2 ที่ AOV ใหม่ − ค่าส่ง ยัง ≥ CM2 เดิม",
+      "why": "ส่งฟรีทุกออเดอร์ = ลดราคา 7.6% → CM2 28% จะเหลือ 20.4%",
+      "chapter": "06"
+    },
+    {
+      "id": "R-334",
+      "stage": "price",
+      "trigger": "ต้องการขึ้นราคา",
+      "action": "ขึ้นพร้อม upgrade (ของแถม/ขนาด/บริการ) + แจ้งล่วงหน้า 2 สัปดาห์ + ตรวจ price parity ทุกช่องทาง",
+      "why": "วิธีที่ปลอดภัยที่สุดและไม่ทำลาย trust",
+      "guardrail": "ห้ามใช้ shrinkflation โดยไม่แจ้ง (ผิดกฎหมาย)",
+      "chapter": "11"
+    },
+    {
+      "id": "R-335",
+      "stage": "price",
+      "trigger": "ธ.ค. 2026 – พ.ค. 2027 (GP cut window)",
+      "action": "เก็บส่วนต่างจาก GP cut เป็น buffer ห้ามใช้เป็นเหตุผลลดราคา และคำนวณ breakeven ROAS สองชุด (ช่วง cut / หลัง cut)",
+      "why": "GP cut สิ้นสุด 31 พ.ค. 2027 → breakeven ROAS จะเด้งขึ้น ~19% ใน มิ.ย. 2027",
+      "guardrail": "ใช้ชุดที่แย่กว่าเป็นเกณฑ์ตัดสินใจลงทุนระยะยาว (สต็อก, hire, สัญญา)",
+      "chapter": "04",
+      "priority": "critical"
+    },
+    {
+      "id": "R-336",
+      "stage": "price",
+      "trigger": "โซน premium (>฿2,000)",
+      "action": "ห้ามลดราคา — ใช้ราคากลม (฿1,500 ฿2,900) และลงทุนในความน่าเชื่อถือ/การรับประกันแทน",
+      "why": "การลดราคาในโซน premium ทำลายยอด เพราะลูกค้าตีความว่าของมีปัญหา",
+      "chapter": "11"
+    },
+    {
+      "id": "R-337",
+      "stage": "stabilize",
+      "trigger": "ต้องการดูสุขภาพกำไร",
+      "action": "ตั้ง dashboard 12 ตัวเลข 3 ชั้น (ผลลัพธ์/ประสิทธิภาพ/โครงสร้าง) พร้อมเกณฑ์เตือนและ trend 12 สัปดาห์",
+      "why": "ตัวเลขที่ไม่มีเกณฑ์เตือนคือตัวเลขที่ไม่มีคนดู",
+      "chapter": "12"
+    },
+    {
+      "id": "R-338",
+      "stage": "stabilize",
+      "trigger": "ประชุมรายสัปดาห์",
+      "action": "ใช้ 60 นาที: 12 ตัวเลข (10 นาที) → 3 คำถามวินิจฉัย (20) → 3 การตัดสินใจ (20) → บันทึก (10)",
+      "why": "ต้องมีคนมีอำนาจอนุมัติในห้อง และต้องบันทึกทุกครั้ง",
+      "chapter": "12"
+    },
+    {
+      "id": "R-339",
+      "stage": "stabilize",
+      "trigger": "ปิดบัญชีรายเดือน",
+      "action": "reconcile payout platform vs บัญชี และปรับ provision refusal จริง vs ที่ตั้งไว้",
+      "why": "ถ้าไม่ reconcile ตัวเลข CM จะเพี้ยนทุกเดือน",
+      "chapter": "12"
+    },
+    {
+      "id": "R-340",
+      "stage": "stabilize",
+      "trigger": "คำนวณกระแสเงินสด",
+      "action": "คำนวณ CCC = DIO + DSO − DPO และเงินที่ต้องสำรองเมื่อโต = ΔGMV × (CCC ÷ 365)",
+      "why": "CCC 35 วัน = ทุกยอด ฿1M ที่โตขึ้นต้องใช้เงินหมุนเพิ่ม ~฿96K",
+      "guardrail": "ถ้า cash runway < 3 เดือน ห้าม scale",
+      "chapter": "10"
+    },
+    {
+      "id": "R-341",
+      "stage": "stabilize",
+      "trigger": "รายรับใกล้ถึง ฿1.8M/ปี",
+      "action": "เริ่มวางระบบบัญชีให้พร้อมจด VAT ที่ ฿1.2–1.6M และจดภายใน 30 วันเมื่อถึงเกณฑ์",
+      "why": "เบี้ยปรับ + ดอกเบี้ยย้อนหลังได้ถึง 5 ปี",
+      "chapter": "10"
+    },
+    {
+      "id": "R-342",
+      "stage": "stabilize",
+      "trigger": "ยิงแอดต่างประเทศและยังไม่จด VAT",
+      "action": "คำนวณว่าการจด VAT โดยสมัครใจคุ้มหรือไม่ (ได้คืน 7% ของ ad spend) เทียบกับภาระที่ต้องขึ้นราคา 7%",
+      "why": "ภ.พ.36 = 7% ของค่าแอด ถ้าขอคืนไม่ได้ = ต้นทุนจริง",
+      "guardrail": "ที่ค่าแอด >฿50,000/เดือน มักคุ้มที่จะจด",
+      "chapter": "10"
+    },
+    {
+      "id": "R-343",
+      "stage": "stabilize",
+      "trigger": "จ่ายค่า KOL / agency / ค่าเช่า",
+      "action": "หัก WHT ตามอัตรา (KOL/agency 3%, ค่าเช่า 5%, ขนส่ง 1%) และนำส่งภายในวันที่ 7 ของเดือนถัดไป",
+      "why": "ถ้าไม่หัก ร้านต้องรับผิดชอบเอง + เบี้ยปรับ",
+      "chapter": "10"
+    },
+    {
+      "id": "R-344",
+      "stage": "stabilize",
+      "trigger": "ทุกไตรมาส",
+      "action": "ทบทวน 5 เรื่อง: re-price · ช่องทาง mix · SKU rationalization · incrementality · GP cut adjustment",
+      "why": "การทบทวนโครงสร้างต้องมีจังหวะ ไม่ใช่ทำเมื่อมีปัญหา",
+      "chapter": "12"
+    },
+    {
+      "id": "R-345",
+      "stage": "stabilize",
+      "trigger": "ทุกการเปลี่ยนแปลงราคา/แคมเปญ/งบ",
+      "action": "บันทึกใน change log 6 คอลัมน์ (วันที่ · สิ่งที่เปลี่ยน · เหตุผล · ผลที่คาด · ผลจริง · หมายเหตุ)",
+      "why": "ถ้าไม่มี change log จะวิเคราะห์ไม่ได้ว่าอะไรได้ผล",
+      "chapter": "12"
+    }
+  ],
+  "forbidden": [
+    "ใช้ gross margin ตัดสินใจเรื่อง ad spend",
+    "คำนวณ CM จากราคาป้ายแทน net revenue หลังส่วนลดร้าน",
+    "ใช้ revenue LTV หรือ blended LTV ตัดสินงบ",
+    "ใช้ platform ROAS เปรียบเทียบข้ามช่องทาง",
+    "ใช้ commission เดี่ยวเปรียบเทียบ take rate ข้ามแพลตฟอร์ม",
+    "ลืมนับ Commerce Growth Fee / service fee เป็นต้นทุนบังคับ",
+    "คิดว่า platform voucher ไม่มีต้นทุน (มีค่า Tx fee)",
+    "ลดราคาโดยไม่รู้ CM2 ของตัวเอง",
+    "ใช้ GP cut เป็นเหตุผลในการลดราคา",
+    "คูณ VAT ซ้ำบน commission ที่ประกาศแบบรวม VAT แล้ว",
+    "ใช้ COGS จาก FOB แทน landed cost",
+    "คิด provision refusal เป็น 'ค่าใช้จ่ายอื่น' นอก CM",
+    "ใช้ CM เฉลี่ยทั้งร้านตัดสินใจเรื่อง SKU",
+    "เพิ่มงบเกิน 30% ต่อครั้ง หรือถี่กว่าราย 7 วัน",
+    "ใช้ breakeven เป็น target",
+    "stack voucher โดยไม่มี max discount cap",
+    "ใช้ shrinkflation โดยไม่แจ้งลูกค้า",
+    "scale ธุรกิจเมื่อ cash runway < 3 เดือน",
+    "ปล่อย SKU ที่ CM2 < 15% ค้างไว้เกิน 1 เดือน"
+  ],
+  "symptom_map": [
+    {
+      "symptom": "ยอดโตแต่เงินในบัญชีไม่โต",
+      "likely_causes": ["CM2 ต่ำ + CCC ยาว", "โตด้วย SKU ที่ CM ต่ำ", "เงินจมสต็อก"],
+      "diagnose_chapters": ["03", "10"],
+      "first_action": "คำนวณ CM2 ต่อ SKU ต่อช่องทาง และ CCC"
+    },
+    {
+      "symptom": "ROAS ดีแต่กำไรไม่ดี",
+      "likely_causes": ["platform ROAS double-counting", "organic cannibalization", "CM2 ต่ำกว่า breakeven"],
+      "diagnose_chapters": ["08"],
+      "first_action": "คำนวณ blended MER และเทียบ breakeven MER"
+    },
+    {
+      "symptom": "COD ตีกลับเยอะ",
+      "likely_causes": ["ส่งช้า > 7 วัน", "รูป/คำอธิบายไม่ตรง", "ไม่มี order confirmation", "creator คุณภาพต่ำ"],
+      "diagnose_chapters": ["05"],
+      "first_action": "วัด refusal แยกตามขนส่ง/พื้นที่/SKU และเปิด order confirmation"
+    },
+    {
+      "symptom": "ขายดีช่วงแคมเปญ แต่หลังแคมเปญแย่",
+      "likely_causes": ["ยอดย้ายมาจากสัปดาห์อื่น", "ลูกค้ารอส่วนลด", "stock หมดหลังแคมเปญ"],
+      "diagnose_chapters": ["07", "12"],
+      "first_action": "วัด incremental vs shifting และตรวจ CM3 ช่วงแคมเปญ"
+    },
+    {
+      "symptom": "ต้นทุนสูงขึ้นทุกปี แต่ขึ้นราคาไม่ได้",
+      "likely_causes": ["ไม่รู้ price floor", "สินค้าไม่ต่างจากคู่แข่ง", "กลัวคู่แข่ง"],
+      "diagnose_chapters": ["11"],
+      "first_action": "คำนวณ price floor และทดสอบ price A/B 1 SKU"
+    }
+  ],
+  "diagnostic_order": [
+    "STEP 1: CM2 ต่อออเดอร์ต่อช่องทาง (บาท)",
+    "STEP 2: แยก CM2 ตามช่องทาง + SKU — หา SKU ที่ติดลบ",
+    "STEP 3: ตรวจ take rate จริง vs ที่ควรเป็น (±2 pts)",
+    "STEP 4: ตรวจ MER vs breakeven MER",
+    "STEP 5: ตรวจ CAC vs max CAC (รวม repeat + payback window)",
+    "STEP 6: ตรวจ refusal + return rate",
+    "STEP 7: ตรวจ cash conversion cycle"
+  ],
+  "anti_patterns": [
+    "ใช้ gross margin ตัดสินใจเรื่องแอด",
+    "คำนวณ CM จากราคาป้าย ไม่ใช่ net revenue",
+    "ไม่มี provision refusal ใน CM",
+    "ใช้ COGS จาก FOB ไม่ใช่ landed cost",
+    "ใช้ CM เฉลี่ยทั้งร้าน",
+    "เทียบแพลตฟอร์มด้วย commission อย่างเดียว",
+    "ไม่นับ CGF / service fee เป็นต้นทุนบังคับ",
+    "คิดว่า platform voucher ฟรี",
+    "ไม่ตั้ง max discount cap",
+    "ใช้ installment 0% ทั้งร้านโดยไม่รู้ผล",
+    "ให้ส่งฟรีทุกออเดอร์โดยไม่ขึ้นราคา",
+    "ไม่ตรวจ volumetric weight",
+    "ใช้ platform ROAS ตัดสินใจข้ามช่อง",
+    "ใช้ breakeven เป็น target",
+    "ไม่คิด repeat ใน max CAC",
+    "คิด repeat ที่ยังไม่เกิด",
+    "ใช้ blended LTV",
+    "ดูแค่กำไร ไม่ดู CCC",
+    "ไม่จด VAT เมื่อถึงเกณฑ์",
+    "ไม่มี change log"
+  ],
+  "quick_start_7_days": [
+    { "day": 1, "task": "ดาวน์โหลด payout report 1 เดือนเต็มทุกช่องทาง" },
+    { "day": 2, "task": "ใส่ landed cost ของ SKU top 30" },
+    { "day": 3, "task": "map ค่าธรรมเนียมทุกบรรทัด → take rate จริง" },
+    { "day": 4, "task": "คำนวณ CM2 ต่อ SKU ต่อช่องทาง (rough estimate)" },
+    { "day": 5, "task": "หา SKU ที่ CM2 < 15% และตัดสินใจเบื้องต้น" },
+    { "day": 6, "task": "ตั้ง breakeven ROAS/MER ต่อช่องทาง" },
+    { "day": 7, "task": "ตั้ง dashboard 12 ตัวเลข + เริ่ม weekly cadence" }
+  ],
+  "chapters": {
+    "00": "START HERE — TL;DR, สูตรหลัก, ตัวเลข anchor",
+    "01": "ตลาด 2026 — 5 แรงกดดันที่ทำให้กำไรหาย",
+    "02": "Anatomy ของ cost stack ไทย 13 ชั้น",
+    "03": "CM ladder — CM1 / CM2 / CM3",
+    "04": "Take rate ของ marketplace + GP cut window",
+    "05": "COD และการตีกลับ",
+    "06": "ค่าส่งและบรรจุภัณฑ์",
+    "07": "Voucher และส่วนลด — discount depth",
+    "08": "Breakeven ROAS / MER / CAC",
+    "09": "LTV และ payback บน contribution margin",
+    "10": "ภาษีและกระแสเงินสด — VAT, ภ.พ.36, WHT, CCC",
+    "11": "Pricing architecture — floor, parity, ขึ้นราคา",
+    "12": "Operating cadence — weekly P&L, dashboard",
+    "13": "Diagnostics และ 20 anti-patterns"
+  }
+}

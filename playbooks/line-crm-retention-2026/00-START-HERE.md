@@ -112,4 +112,14 @@ TikTok playbook บอกว่า "creative คือคันเร่ง" —
 | Notion | [LINE OA × CRM × Retention/LTV Playbook 2026 (TH)](https://app.notion.com/p/LINE-OA-CRM-Retention-LTV-Playbook-2026-TH-41176ada348881399a95e49da3842858) | สรุปทุกบท + ตาราง decision + flow + anti-patterns |
 | Google Docs | [ฉบับอ่าน/แชร์](https://docs.google.com/document/d/1NcTC3CIYyDC_i9hnhBKgu9jMX4FHBxfKk1pqAd4VnuM/edit) | สรุป 14 หัวข้อ ภาษาไทย อ่านบนมือถือได้ |
 
+
+---
+
+## 🔗 เล่มที่ใช้คู่กัน
+
+- **ก่อนเล่มนี้:** [`../profit-unit-economics-2026/`](../profit-unit-economics-2026/00-START-HERE.md) · **Profit & Unit Economics 2026 (TH)** — นิยาม CM2, take rate ของแต่ละช่องทาง, breakeven CAC/LTV และ price floor
+  → สูตรในบท 08–09 ของเล่มนี้ (LTV₉₀:CAC, breakeven repeat) ต้องใช้ CM ที่คำนวณจากเล่มนั้น
+- **เล่มก่อนหน้า:** [`../tiktok-performance-marketing/`](../tiktok-performance-marketing/00-START-HERE.md) — TikTok หาแขก, LINE เก็บแขก
+- **ข้อควรระวังเรื่องสัญกรณ์:** เล่มนี้ใช้ `CM₁`/`CM₂` = CM ของ**ออเดอร์ที่ 1/2** · profit playbook ใช้ `CM1`/`CM2` = **ลำดับการหักต้นทุน** (ก่อน platform fee / ก่อนการตลาด) — ห้ามปนกัน
+
 อัปเดตล่าสุด: 2026-11-07
