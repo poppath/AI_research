@@ -11,6 +11,10 @@ Deep-research playbooks written so that **an AI agent can read, reason with, and
 | [`playbooks/line-crm-retention-2026/`](playbooks/line-crm-retention-2026/00-START-HERE.md) | LINE OA × CRM × Retention/LTV 2026 — OA foundation, friend growth, RFM segmentation, lifecycle flows, broadcast, chat commerce/MyShop, loyalty, LTV measurement, PDPA (TH) | ✅ Live (2026-11) — [Notion](https://app.notion.com/p/LINE-OA-CRM-Retention-LTV-Playbook-2026-TH-41176ada348881399a95e49da3842858) · [Google Docs](https://docs.google.com/document/d/1NcTC3CIYyDC_i9hnhBKgu9jMX4FHBxfKk1pqAd4VnuM/edit) |
 | [`playbooks/profit-unit-economics-2026/`](playbooks/profit-unit-economics-2026/00-START-HERE.md) | Profit & Unit Economics 2026 — cost stack 13 ชั้น, CM ladder, marketplace take rate, COD/refusal, ค่าส่ง, voucher math, breakeven ROAS/MER/CAC, LTV, ภาษี/CCC, pricing floor (TH) | ✅ Live (2026-11) |
 
+
+| [`playbooks/customer-research-positioning-2026/`](playbooks/customer-research-positioning-2026/00-START-HERE.md) | Customer Research & Positioning — interviews, evidence, segmentation, positioning, validation, privacy (TH) | ✅ Live (2026-11) |
+| [`playbooks/ai-creative-production-2026/`](playbooks/ai-creative-production-2026/00-START-HERE.md) | AI Creative Production — concept, production, claim/rights QA, experimentation, operating system (TH) | ✅ Live (2026-11) |
+
 ## How to use a playbook
 
 1. **Humans** → read `00-START-HERE.md`, then the numbered chapters in order.

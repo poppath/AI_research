@@ -1,0 +1,60 @@
+{
+  "title": "customer-research-positioning-2026",
+  "version": "2026-11-07",
+  "market": "TH",
+  "status": "guidance, not account-specific evidence",
+  "rules": [
+    {
+      "id": "CR-01",
+      "trigger": "No decision question",
+      "action": "Define owner, decision, deadline and alternatives before research"
+    },
+    {
+      "id": "CR-02",
+      "trigger": "Only positive customers recruited",
+      "action": "Recruit relevant non-buyers or record missing coverage"
+    },
+    {
+      "id": "CR-03",
+      "trigger": "Quote without provenance",
+      "action": "Treat as unverified; never fabricate participants"
+    },
+    {
+      "id": "CR-04",
+      "trigger": "Claim lacks evidence or approval",
+      "action": "Block publication and obtain proof"
+    },
+    {
+      "id": "CR-05",
+      "trigger": "Research contains personal data",
+      "action": "Assess lawful basis, minimize, restrict access and assess provider before AI use"
+    },
+    {
+      "id": "CR-06",
+      "trigger": "Sample is nonrepresentative",
+      "action": "Do not extrapolate qualitative counts to population"
+    },
+    {
+      "id": "CR-07",
+      "trigger": "Test underpowered or contaminated",
+      "action": "Report inconclusive and plan next test"
+    },
+    {
+      "id": "CR-08",
+      "trigger": "Offer economics unknown",
+      "action": "Measure CM2 before budget decisions"
+    }
+  ],
+  "output_requirements": [
+    "assumptions",
+    "evidence and uncertainties",
+    "primary KPI and guardrails",
+    "measurement plan",
+    "owner",
+    "predefined stop criteria"
+  ],
+  "links": {
+    "sources": "SOURCES.md",
+    "metrics": "METRICS.md"
+  }
+}

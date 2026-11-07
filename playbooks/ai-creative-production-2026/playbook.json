@@ -1,0 +1,70 @@
+{
+  "title": "ai-creative-production-2026",
+  "version": "2026-11-07",
+  "market": "TH",
+  "status": "guidance, not account-specific evidence",
+  "rules": [
+    {
+      "id": "AC-01",
+      "trigger": "No approved claim proof or rights",
+      "action": "Block release and escalate"
+    },
+    {
+      "id": "AC-02",
+      "trigger": "Personal data in AI input",
+      "action": "Minimize data and use only approved provider and purpose"
+    },
+    {
+      "id": "AC-03",
+      "trigger": "AI output contains unsupported claim",
+      "action": "Remove or verify before release"
+    },
+    {
+      "id": "AC-04",
+      "trigger": "Unbalanced platform delivery",
+      "action": "Treat comparison as exploratory, not causal"
+    },
+    {
+      "id": "AC-05",
+      "trigger": "Randomized test underpowered",
+      "action": "Report inconclusive, not no effect"
+    },
+    {
+      "id": "AC-06",
+      "trigger": "Tracking broken or safety cap reached",
+      "action": "Pause and investigate"
+    },
+    {
+      "id": "AC-07",
+      "trigger": "Platform AIGC disclosure applicable",
+      "action": "Apply current channel-specific requirements and review"
+    },
+    {
+      "id": "AC-08",
+      "trigger": "CM2 or economics unknown",
+      "action": "Do not recommend scaling until measured"
+    },
+    {
+      "id": "AC-09",
+      "trigger": "Synthetic testimonial or identity without rights",
+      "action": "Block publication"
+    },
+    {
+      "id": "AC-10",
+      "trigger": "Claims or rights become invalid",
+      "action": "Retire affected assets and review related versions"
+    }
+  ],
+  "output_requirements": [
+    "assumptions",
+    "evidence and uncertainties",
+    "primary KPI and guardrails",
+    "measurement plan",
+    "owner",
+    "predefined stop criteria"
+  ],
+  "links": {
+    "sources": "SOURCES.md",
+    "metrics": "METRICS.md"
+  }
+}

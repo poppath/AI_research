@@ -1,0 +1,7 @@
+{
+  "as_of": "2026-11-07",
+  "market": "TH",
+  "freshness_rule": "Reverify external figures and policies before use; flag anything older than 90 days.",
+  "benchmarks": [],
+  "note": "No defensible universal numeric targets established. Collect account-specific baselines; examples are not benchmarks."
+}
