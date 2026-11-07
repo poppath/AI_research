@@ -1,5 +1,7 @@
 # Meta Ads × AI Playbook 2026
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 > งานวิจัย + เพลย์บุ๊กปฏิบัติการ สำหรับทำโฆษณา Facebook/Meta ให้มีประสิทธิภาพด้วย AI
 > ครอบคลุม: การเข้าถึง (Reach) · Target Audience · ทุก placement (Facebook, Instagram, Reels, Stories, Threads, Messenger, WhatsApp) · เครื่องมือ AI ของ Meta · ระบบสร้างครีเอทีฟด้วย AI · การวัดผลแบบเพิ่มส่วน (incrementality)
 > อัปเดตล่าสุด: 2026-11-06 · ตลาดอ้างอิงหลัก: ประเทศไทย

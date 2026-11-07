@@ -1,5 +1,7 @@
 # 08 · Measurement & Attribution
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 > **TL;DR** — platform-reported ROAS บน TikTok **over-credit 30–60%**. Pixel อย่างเดียวจับ conversion ได้ ~65%; Pixel + Events API ได้ ~95%. ถ้าคุณตัดสินใจงบจากตัวเลขใน Ads Manager คุณกำลัง optimise ให้ TikTok ชนะ ไม่ใช่ให้ธุรกิจชนะ
 
 ---

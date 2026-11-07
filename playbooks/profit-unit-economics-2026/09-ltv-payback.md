@@ -1,5 +1,7 @@
 # 09 · LTV และ Payback บนฐาน Contribution Margin
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 > as_of: 2026-11 · market: TH + global · source_type: vendor + est
 
 LTV ที่คำนวณจากยอดขาย (revenue-based) คือ **ตัวเลขที่ทำให้แบรนด์ตายเร็วที่สุด** เพราะมันบอกให้คุณจ่ายค่าแอดมากกว่าที่ควรจ่าย

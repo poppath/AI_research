@@ -1,5 +1,7 @@
 # บท 11 · Tools Stack — เลือกเครื่องมือให้คุ้ม
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 ## TL;DR
 
 - **เริ่มจาก native ก่อนเสมอ**: LINE OA Manager + MyCustomer CRM ครอบคลุม 80% ของ use case SME ไทย

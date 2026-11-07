@@ -1,5 +1,7 @@
 # 06 · Audience, Targeting & Search Ads
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 > **TL;DR** — ในยุค automation การตั้ง targeting ที่ดีคือ **"ทำให้ AI มีทางเลือกที่ถูกต้อง"** ไม่ใช่ "เลือกคนให้ AI". ใช้ broad เป็นฐาน, ใส่ signal ที่ดี (custom audience, VBO, exclusions) เป็นกรอบ, และใช้ **search** เป็น surface ที่ให้ intent สูงสุดในราคาถูก
 
 ---

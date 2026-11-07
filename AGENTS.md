@@ -23,26 +23,15 @@ This repo is a **knowledge base for AI agents** as much as for humans. If you ar
 4. **Platform docs beat vendor blogs** when they conflict. Vendor claims of "+52% ROAS" are marketing, not forecasts.
 5. **Say when data is stale.** Anything `as_of` older than 90 days must be re-verified before a budget decision.
 
-## 3. Reasoning rules for TikTok plans
+## 3. Decision and evidence rules (reviewed 2026-11-07)
 
-1. **Automation-first, but never automation-only.** Smart+ / GMV Max are the default for scaling; keep at least one manual/ABO channel alive for clean creative read-outs.
-2. **Creative is the throttle.** When performance drops, diagnose in this order: (a) creative fatigue, (b) offer/price, (c) tracking breakage, (d) auction/bid, (e) audience. Changing audience first is almost always wrong on TikTok.
-3. **Do not scale below signal thresholds.** Conversion campaigns need ≈50 conversions / 7 days per ad group, and budget ≈10× CPA, before "it doesn't work" is a valid conclusion.
-4. **Never compare platforms on platform-reported ROAS.** Use blended + incrementality.
-5. **Respect the learning phase.** No edits to bid/audience/creative inside the first 7 days (Smart+/GMV Max) or 3–5 days (manual), unless the campaign is broken (not spending, wrong event).
-6. **Localise compliance before copy.** Health/beauty/finance claims in TH have hard legal limits. See chapter 10.
-
-## 3b. Reasoning rules for profit / unit-economics plans
-
-1. **CM before media.** Never recommend increasing ad budget before CM2 per order (in baht) is known and above the floor. CM2 < 18% means the problem is structural, not a media problem.
-2. **Baht per order first, % second.** Compute CM as ฿/order per SKU per channel, then compare percentages on net revenue (after seller discount) — never on list price.
-3. **Take rate, not commission.** Compare channels on total take rate (commission + transaction + infra + service fee + growth fee + affiliate). Commission alone understates by 5–8 pts.
-4. **Land, not FOB.** COGS = landed cost (freight + duty + forwarder). Using FOB overstates CM by 5–10 pts.
-5. **Provision refusals inside CM.** COD refusal (TH: 8–12%) must be a CM line item, split by SKU — never an "other cost" at the bottom.
-6. **MER decides budget; platform ROAS decides creative.** Never compare channels on platform-reported ROAS (double-counts 20–40%).
-7. **Check the GP cut window.** 1 Dec 2026 – 31 May 2027 Thai platform fees revert to 1 Jan 2026 rates, ad fees excluded. Compute two breakeven ROAS sets (during / after) and plan on the worse one. Never pass a fee cut on as a price cut.
-8. **Cash is not profit.** Always pair CM with cash conversion cycle and cash runway. Profit with a 45-day CCC and 2-month runway is a solvency risk.
-9. **Notation.** This repo uses `CM1/CM2/CM3` = cost-deduction order (before platform fee / before marketing / after marketing) in the profit playbook, and `CM₁/CM₂` = first-order / second-order in the LINE playbook. Never mix them; write the meaning in words.
+- คำแนะนำ TikTok ในบทเก่าเรื่อง learning, conversions, budget และ no-edit เป็น heuristic ไม่ใช่เกณฑ์สากลหรือเงื่อนไขรับรอง performance; ตรวจเอกสารปัจจุบันตาม objective, product และ account ก่อนใช้ และหยุดได้ทันทีเมื่อมี safety/cash/tracking incident
+- วัด creative, offer, tracking, auction และ audience ตามหลักฐาน ไม่บังคับลำดับวินิจฉัยเดียวทุกบัญชี; platform ROAS ไม่ใช่ incremental ROAS
+- Profit: คำนวณ CM เป็นบาทตามนิยามใน `03-cm-ladder.md`, แล้วหารด้วย revenue หลังส่วนลด; กำหนด floor จากต้นทุน, CAC, overhead, cash และ risk ของกิจการ ไม่ใช้ 18% เป็น universal floor
+- COD refusal, ค่าธรรมเนียม, attribution overlap และมาตรการ GP cut ต้องตรวจ statement, contract และแหล่งทางการปัจจุบันก่อนใช้; รายงานผ่าน vendor ไม่เท่ากับยืนยัน official และห้ามสมมติว่าใช้ได้กับทุกบัญชี
+- คำนวณโปรโมชันใหม่ตามฐานรายได้และ fee จริง ดู [วิธีแก้ discount](playbooks/profit-unit-economics-2026/07-promo-voucher-math.md); อย่าใช้สูตรลัดเดิม
+- Profit CM1/CM2/CM3 คือขั้นหักต้นทุน แต่ LINE CM₁/CM₂ หมายถึง first/second order: ระบุความหมายทุกครั้ง
+- ข้อความเก่าใน profit, TikTok, LINE และ Meta เป็น research snapshot ไม่ใช่ verified rates หรือผลทดสอบ: อ่าน [audit](REPO-REVIEW-2026-11-07.md) และ re-verify ก่อนดำเนินการ; กฎนี้มี precedence เหนือ heuristic เก่าที่ขัดกันใน prose/JSON
 
 ## 4. Output rules
 

@@ -1,5 +1,7 @@
 # บท 13 · Diagnostics & Anti-patterns — แก้ปัญหาให้ถูกจุด
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 ## TL;DR
 
 - เมื่อ "ยอดไม่โต" คนมักเริ่มแก้ที่ content — แต่ลำดับที่ถูกคือ **tracking → segment → flow → ข้อความ → offer → acquisition**

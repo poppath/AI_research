@@ -12,9 +12,24 @@
     "line-crm-retention-2026": "ให้ CM2 ของออเดอร์ที่ 1 และ 2 ที่ใช้ในสูตร LTV₉₀:CAC"
   },
   "notation_warning": "เล่มนี้ใช้ CM1/CM2/CM3 = ลำดับการหักต้นทุน (ก่อน platform fee / ก่อนการตลาด / หลังการตลาด). เล่ม LINE ใช้ CM₁/CM₂ = ออเดอร์ที่ 1 / ออเดอร์ที่ 2. ห้ามปนกัน — ให้เขียนกำกับด้วยคำเสมอ",
-  "stages": ["measure", "fix_structure", "fix_channel", "optimize_media", "price", "stabilize"],
+  "stages": [
+    "measure",
+    "fix_structure",
+    "fix_channel",
+    "optimize_media",
+    "price",
+    "stabilize"
+  ],
   "invocation": {
-    "required_inputs": ["AOV", "COGS landed", "channel mix", "current ad spend", "current revenue", "refusal rate", "return rate"],
+    "required_inputs": [
+      "AOV",
+      "COGS landed",
+      "channel mix",
+      "current ad spend",
+      "current revenue",
+      "refusal rate",
+      "return rate"
+    ],
     "outputs": [
       "cm_ladder_per_channel",
       "take_rate_actual_vs_expected",
@@ -287,9 +302,9 @@
       "id": "R-330",
       "stage": "price",
       "trigger": "จะเข้าร่วมแคมเปญแพลตฟอร์ม",
-      "action": "ตรวจ 5 ข้อ: CM2 หลังส่วนลด ≥18% · incremental vs shifting · stock ≥1.5× · แผนรับ return · ต้นทุนแอดช่วงแคมเปญ",
-      "why": "แคมเปญที่ CM2 < 18% คือการขาดทุนที่ถูกทำให้ดูเหมือนการตลาด",
-      "guardrail": "max discount = CM2 เดิม − CM2 ขั้นต่ำ",
+      "action": "คำนวณ CM2 หลังส่วนลดบน net revenue ใหม่เทียบ floor ที่กิจการกำหนด; ตรวจ incremental vs shifting, stock, return และ media cost",
+      "why": "กำหนด floor ตาม business economics ไม่ใช่ universal threshold",
+      "guardrail": "ดูบท 07; อย่าลบ margin เดิมกับ margin เป้าหมายเพื่อหา discount cap",
       "chapter": "07"
     },
     {
@@ -442,32 +457,65 @@
   "symptom_map": [
     {
       "symptom": "ยอดโตแต่เงินในบัญชีไม่โต",
-      "likely_causes": ["CM2 ต่ำ + CCC ยาว", "โตด้วย SKU ที่ CM ต่ำ", "เงินจมสต็อก"],
-      "diagnose_chapters": ["03", "10"],
+      "likely_causes": [
+        "CM2 ต่ำ + CCC ยาว",
+        "โตด้วย SKU ที่ CM ต่ำ",
+        "เงินจมสต็อก"
+      ],
+      "diagnose_chapters": [
+        "03",
+        "10"
+      ],
       "first_action": "คำนวณ CM2 ต่อ SKU ต่อช่องทาง และ CCC"
     },
     {
       "symptom": "ROAS ดีแต่กำไรไม่ดี",
-      "likely_causes": ["platform ROAS double-counting", "organic cannibalization", "CM2 ต่ำกว่า breakeven"],
-      "diagnose_chapters": ["08"],
+      "likely_causes": [
+        "platform ROAS double-counting",
+        "organic cannibalization",
+        "CM2 ต่ำกว่า breakeven"
+      ],
+      "diagnose_chapters": [
+        "08"
+      ],
       "first_action": "คำนวณ blended MER และเทียบ breakeven MER"
     },
     {
       "symptom": "COD ตีกลับเยอะ",
-      "likely_causes": ["ส่งช้า > 7 วัน", "รูป/คำอธิบายไม่ตรง", "ไม่มี order confirmation", "creator คุณภาพต่ำ"],
-      "diagnose_chapters": ["05"],
+      "likely_causes": [
+        "ส่งช้า > 7 วัน",
+        "รูป/คำอธิบายไม่ตรง",
+        "ไม่มี order confirmation",
+        "creator คุณภาพต่ำ"
+      ],
+      "diagnose_chapters": [
+        "05"
+      ],
       "first_action": "วัด refusal แยกตามขนส่ง/พื้นที่/SKU และเปิด order confirmation"
     },
     {
       "symptom": "ขายดีช่วงแคมเปญ แต่หลังแคมเปญแย่",
-      "likely_causes": ["ยอดย้ายมาจากสัปดาห์อื่น", "ลูกค้ารอส่วนลด", "stock หมดหลังแคมเปญ"],
-      "diagnose_chapters": ["07", "12"],
+      "likely_causes": [
+        "ยอดย้ายมาจากสัปดาห์อื่น",
+        "ลูกค้ารอส่วนลด",
+        "stock หมดหลังแคมเปญ"
+      ],
+      "diagnose_chapters": [
+        "07",
+        "12"
+      ],
       "first_action": "วัด incremental vs shifting และตรวจ CM3 ช่วงแคมเปญ"
     },
     {
       "symptom": "ต้นทุนสูงขึ้นทุกปี แต่ขึ้นราคาไม่ได้",
-      "likely_causes": ["ไม่รู้ price floor", "สินค้าไม่ต่างจากคู่แข่ง", "กลัวคู่แข่ง"],
-      "diagnose_chapters": ["11"],
+      "likely_causes": [
+        "ไม่รู้ price floor",
+        "สินค้าไม่ต่างจากคู่แข่ง",
+        "กลัวคู่แข่ง"
+      ],
+      "diagnose_chapters": [
+        "11"
+      ],
       "first_action": "คำนวณ price floor และทดสอบ price A/B 1 SKU"
     }
   ],
@@ -503,13 +551,34 @@
     "ไม่มี change log"
   ],
   "quick_start_7_days": [
-    { "day": 1, "task": "ดาวน์โหลด payout report 1 เดือนเต็มทุกช่องทาง" },
-    { "day": 2, "task": "ใส่ landed cost ของ SKU top 30" },
-    { "day": 3, "task": "map ค่าธรรมเนียมทุกบรรทัด → take rate จริง" },
-    { "day": 4, "task": "คำนวณ CM2 ต่อ SKU ต่อช่องทาง (rough estimate)" },
-    { "day": 5, "task": "หา SKU ที่ CM2 < 15% และตัดสินใจเบื้องต้น" },
-    { "day": 6, "task": "ตั้ง breakeven ROAS/MER ต่อช่องทาง" },
-    { "day": 7, "task": "ตั้ง dashboard 12 ตัวเลข + เริ่ม weekly cadence" }
+    {
+      "day": 1,
+      "task": "ดาวน์โหลด payout report 1 เดือนเต็มทุกช่องทาง"
+    },
+    {
+      "day": 2,
+      "task": "ใส่ landed cost ของ SKU top 30"
+    },
+    {
+      "day": 3,
+      "task": "map ค่าธรรมเนียมทุกบรรทัด → take rate จริง"
+    },
+    {
+      "day": 4,
+      "task": "คำนวณ CM2 ต่อ SKU ต่อช่องทาง (rough estimate)"
+    },
+    {
+      "day": 5,
+      "task": "หา SKU ที่ CM2 < 15% และตัดสินใจเบื้องต้น"
+    },
+    {
+      "day": 6,
+      "task": "ตั้ง breakeven ROAS/MER ต่อช่องทาง"
+    },
+    {
+      "day": 7,
+      "task": "ตั้ง dashboard 12 ตัวเลข + เริ่ม weekly cadence"
+    }
   ],
   "chapters": {
     "00": "START HERE — TL;DR, สูตรหลัก, ตัวเลข anchor",
@@ -526,5 +595,6 @@
     "11": "Pricing architecture — floor, parity, ขึ้นราคา",
     "12": "Operating cadence — weekly P&L, dashboard",
     "13": "Diagnostics และ 20 anti-patterns"
-  }
+  },
+  "audit_warning": "Historical rules and thresholds are not universal; follow AGENTS.md and REPO-REVIEW-2026-11-07.md, reverify current policies and recompute unit economics before action."
 }

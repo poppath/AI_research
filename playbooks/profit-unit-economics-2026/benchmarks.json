@@ -45,8 +45,9 @@
         },
         "as_of": "2026-08-04",
         "market": "TH",
-        "source_type": "primary",
-        "source_ref": 3
+        "source_type": "vendor",
+        "source_ref": 3,
+        "verification_note": "แหล่งอ้างอิงเป็น secondary; ตรวจแหล่ง official ก่อนใช้งาน"
       },
       {
         "id": "shopee_th_tx_fee",
@@ -184,9 +185,21 @@
         "id": "platform_take_rate_comparison_fashion_550",
         "label": "Take rate ออเดอร์แฟชั่น ฿550",
         "value": {
-          "tiktok_shop_nonmall": { "take_rate": "23.2%", "fees_thb": 127.64, "beroas": 5.29 },
-          "tiktok_shop_gmvmax": { "take_rate": "22.1%", "fees_thb": 121.74, "beroas": 5.01 },
-          "shopee_fashion_1712": { "take_rate": "20.5%", "fees_thb": 112.72, "beroas": 4.87 }
+          "tiktok_shop_nonmall": {
+            "take_rate": "23.2%",
+            "fees_thb": 127.64,
+            "beroas": 5.29
+          },
+          "tiktok_shop_gmvmax": {
+            "take_rate": "22.1%",
+            "fees_thb": 121.74,
+            "beroas": 5.01
+          },
+          "shopee_fashion_1712": {
+            "take_rate": "20.5%",
+            "fees_thb": 112.72,
+            "beroas": 4.87
+          }
         },
         "as_of": "2026-08-25",
         "market": "TH",
@@ -202,16 +215,29 @@
         "note": "กลับไปใช้อัตรา 1 ม.ค. 2026; ครอบคลุม commission + infra + transaction เท่านั้น ไม่รวมค่าแอด",
         "announced": "2026-10-28",
         "market": "TH",
-        "source_type": "primary",
-        "source_ref": 11
+        "source_type": "vendor",
+        "source_ref": 11,
+        "verification_note": "แหล่งอ้างอิงเป็น secondary; ตรวจแหล่ง official ก่อนใช้งาน"
       },
       {
         "id": "gp_cut_rates",
         "label": "เพดานค่าธรรมเนียมก่อน/ระหว่าง GP cut",
         "value": {
-          "shopee": { "before": "19.26%", "during": "13.91%", "delta_pts": -5.35 },
-          "lazada": { "before": "17.50%", "during": "11.60%", "delta_pts": -5.90 },
-          "tiktok_shop": { "before": "21.94%", "during": "17.66%", "delta_pts": -4.28 }
+          "shopee": {
+            "before": "19.26%",
+            "during": "13.91%",
+            "delta_pts": -5.35
+          },
+          "lazada": {
+            "before": "17.50%",
+            "during": "11.60%",
+            "delta_pts": -5.9
+          },
+          "tiktok_shop": {
+            "before": "21.94%",
+            "during": "17.66%",
+            "delta_pts": -4.28
+          }
         },
         "as_of": "2026-11-02",
         "market": "TH",
@@ -223,8 +249,16 @@
         "label": "ผลกระทบต่อ breakeven ROAS",
         "value": {
           "example": "ราคา ฿500, COGS ฿250, ต้นทุน/ออเดอร์ ฿30",
-          "before": { "fee_pct": "18%", "profit_pre_ads_thb": 130, "breakeven_roas": 3.85 },
-          "during": { "fee_pct": "12%", "profit_pre_ads_thb": 160, "breakeven_roas": 3.13 },
+          "before": {
+            "fee_pct": "18%",
+            "profit_pre_ads_thb": 130,
+            "breakeven_roas": 3.85
+          },
+          "during": {
+            "fee_pct": "12%",
+            "profit_pre_ads_thb": 160,
+            "breakeven_roas": 3.13
+          },
           "delta_pct": -18.7
         },
         "as_of": "2026-11-02",
@@ -239,8 +273,9 @@
         "period": "6 เดือน",
         "as_of": "2026-10-28",
         "market": "TH",
-        "source_type": "primary",
-        "source_ref": 11
+        "source_type": "vendor",
+        "source_ref": 11,
+        "verification_note": "แหล่งอ้างอิงเป็น secondary; ตรวจแหล่ง official ก่อนใช้งาน"
       }
     ],
     "cod_fulfilment": [
@@ -351,9 +386,24 @@
         "id": "shipping_rates_by_weight",
         "label": "ค่าส่งตามน้ำหนัก",
         "value_thb": {
-          "flash": { "1kg": 40, "2kg": 60, "5kg": 120, "10kg": 200 },
-          "jnt": { "1kg": 35, "2kg": 50, "5kg": 100, "10kg": 180 },
-          "kerry": { "1kg": 60, "2kg": 80, "5kg": 150, "10kg": 250 }
+          "flash": {
+            "1kg": 40,
+            "2kg": 60,
+            "5kg": 120,
+            "10kg": 200
+          },
+          "jnt": {
+            "1kg": 35,
+            "2kg": 50,
+            "5kg": 100,
+            "10kg": 180
+          },
+          "kerry": {
+            "1kg": 60,
+            "2kg": 80,
+            "5kg": 150,
+            "10kg": 250
+          }
         },
         "as_of": "2026-02",
         "market": "TH",
@@ -391,10 +441,22 @@
         "id": "packaging_cost_by_aov",
         "label": "บรรจุภัณฑ์ที่สมเหตุสมผลต่อ AOV",
         "value": {
-          "lt_300": { "thb": "8–15", "pct_of_aov": "≤5%" },
-          "300_800": { "thb": "12–25", "pct_of_aov": "3–4%" },
-          "800_2000": { "thb": "20–40", "pct_of_aov": "2–3%" },
-          "gt_2000": { "thb": "35–80", "pct_of_aov": "1.5–4%" }
+          "lt_300": {
+            "thb": "8–15",
+            "pct_of_aov": "≤5%"
+          },
+          "300_800": {
+            "thb": "12–25",
+            "pct_of_aov": "3–4%"
+          },
+          "800_2000": {
+            "thb": "20–40",
+            "pct_of_aov": "2–3%"
+          },
+          "gt_2000": {
+            "thb": "35–80",
+            "pct_of_aov": "1.5–4%"
+          }
         },
         "as_of": "2026-11",
         "market": "TH",
@@ -759,11 +821,11 @@
       {
         "id": "max_discount_rule",
         "label": "Max discount",
-        "formula": "CM2 เดิม − CM2 เป้าหมายขั้นต่ำ",
-        "value_typical": "ไม่เกิน 12%",
+        "formula": "ภายใต้ fixed cost C และ fee rate f บน net revenue: d_max = 1 − C / (P × (1 − f − t)); t เป็น target margin หลังลด; ตรวจ feasibility และ fee จริง",
         "market": "formula",
         "source_type": "est",
-        "source_ref": null
+        "source_ref": null,
+        "example": "P=100, C=70, f=0, t=18% (สมมติ) → d_max ≈14.63%"
       },
       {
         "id": "platform_voucher_cost",

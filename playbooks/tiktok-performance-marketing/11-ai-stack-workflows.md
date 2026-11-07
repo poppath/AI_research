@@ -1,5 +1,7 @@
 # 11 · AI Stack & Automation Workflows
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 > **TL;DR** — AI ไม่ได้แทน strategist; มันแทน **งานที่ทำซ้ำ** (variation, research, reporting, tagging). ผลลัพธ์ที่ดีที่สุดเกิดเมื่อ: AI ผลิต 20 ตัวเลือก → มนุษย์เลือก 3 → AI ทำ variation ของ 3 → ระบบทดสอบ. จุดที่ AI ยังแพ้มนุษย์ชัด ๆ คือ **creative direction** และ **judgment เรื่อง claim/ความเสี่ยง**
 
 ---

@@ -1,5 +1,7 @@
 # Meta Ads × AI Playbook — คู่มือปฏิบัติการ 90 วัน
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 > เอกสารนี้คือ "คู่มือใช้งาน" ไม่ใช่ทฤษฎี — ทุกหัวข้อมีสิ่งที่ต้องทำ, เกณฑ์ตัดสิน, และสิ่งที่ต้องบันทึก
 > ใช้คู่กับ: `docs/02` (audience) · `docs/03` (placement) · `docs/04` (creative) · `docs/05` (measurement) · `prompt-library.md` · `agent-rules.yaml`
 

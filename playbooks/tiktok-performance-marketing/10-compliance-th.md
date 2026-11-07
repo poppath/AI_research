@@ -1,5 +1,7 @@
 # 10 · Compliance — TikTok Policy + กฎหมายไทย
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 > **TL;DR** — compliance บน TikTok ไม่ใช่ "งาน legal" แต่เป็น **ข้อจำกัดของ creative ที่ต้องออกแบบเข้าไปตั้งแต่ต้น** เพราะแอดที่ถูก reject กลางแคมเปญ = learning reset + เสียเวลา. ปี 2026 มี 3 การเปลี่ยนหลัก: ปิด Custom Identity (ต้องมี verified business account), แบน AI endorsement, เข้ม health claims. ฝั่งไทย: Thai FDA sweep มี.ค. 2026 ยิงตรงที่ supplement + influencer + reseller
 
 > ⚠️ **ข้อจำกัดความรับผิด:** บทนี้เป็นแนวปฏิบัติทางการตลาด ไม่ใช่คำปรึกษาทางกฎหมาย. กฎหมายและนโยบายเปลี่ยนบ่อย — ต้องให้ผู้เชี่ยวชาญด้านกฎหมาย/RA ของคุณตรวจก่อนเผยแพร่จริง

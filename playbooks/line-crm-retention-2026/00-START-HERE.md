@@ -1,5 +1,7 @@
 # LINE OA × CRM × Retention/LTV Playbook 2026 (TH)
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 > **ฉบับสำหรับคนและสำหรับ AI** — อ่านจบแล้วตัดสินใจได้ ไม่ใช่แค่เข้าใจ
 > ขอบเขต: LINE Official Account · LINE Ads · MyShop / chat commerce · MyCustomer CRM · loyalty · lifecycle flows · LTV/cohort measurement · PDPA
 > ตลาด: ไทยเป็นหลัก (THB) · ข้อมูล ณ 2026-11-06

@@ -44,44 +44,95 @@
   "stages": {
     "foundation": {
       "label": "ตั้งระบบครั้งแรก",
-      "rules": ["R-101", "R-102", "R-103", "R-110", "R-150"],
-      "chapters": ["02", "10", "11"],
+      "rules": [
+        "R-101",
+        "R-102",
+        "R-103",
+        "R-110",
+        "R-150"
+      ],
+      "chapters": [
+        "02",
+        "10",
+        "11"
+      ],
       "exit_criteria": "tag standard ประกาศใช้, consent flow ทำงาน, rich menu + greeting + auto-reply พร้อม"
     },
     "grow": {
       "label": "หาเพื่อน/ขยายฐาน",
-      "rules": ["R-104", "R-105", "R-111", "R-151"],
-      "chapters": ["03"],
+      "rules": [
+        "R-104",
+        "R-105",
+        "R-111",
+        "R-151"
+      ],
+      "chapters": [
+        "03"
+      ],
       "exit_criteria": "CPF < ฿80 และ add→first purchase 30 วัน ≥ 10%"
     },
     "segment": {
       "label": "แบ่งกลุ่ม",
-      "rules": ["R-106", "R-107", "R-120", "R-152"],
-      "chapters": ["04"],
+      "rules": [
+        "R-106",
+        "R-107",
+        "R-120",
+        "R-152"
+      ],
+      "chapters": [
+        "04"
+      ],
       "exit_criteria": "tag ครบ 3 มิติ > 80%, RFM รันได้รายเดือน, cap ความถี่ตั้งแล้ว"
     },
     "automate": {
       "label": "สร้าง flow",
-      "rules": ["R-108", "R-109", "R-121", "R-122"],
-      "chapters": ["05"],
+      "rules": [
+        "R-108",
+        "R-109",
+        "R-121",
+        "R-122"
+      ],
+      "chapters": [
+        "05"
+      ],
       "exit_criteria": "welcome + 2nd purchase flow ทำงาน, ทุก flow มี exit condition"
     },
     "sell": {
       "label": "ขายผ่านแชท/MyShop",
-      "rules": ["R-112", "R-123", "R-124"],
-      "chapters": ["07"],
+      "rules": [
+        "R-112",
+        "R-123",
+        "R-124"
+      ],
+      "chapters": [
+        "07"
+      ],
       "exit_criteria": "first response < 5 นาที, chat→order ≥ 15%, MyShop checkout ทดสอบแล้ว"
     },
     "loyalty": {
       "label": "สมาชิก/โควต้า",
-      "rules": ["R-113", "R-125", "R-126"],
-      "chapters": ["08"],
+      "rules": [
+        "R-113",
+        "R-125",
+        "R-126"
+      ],
+      "chapters": [
+        "08"
+      ],
       "exit_criteria": "member repeat > non-member อย่างน้อย 10 จุด"
     },
     "fix": {
       "label": "แก้ปัญหา",
-      "rules": ["R-114", "R-130", "R-131", "R-132", "R-153"],
-      "chapters": ["13"],
+      "rules": [
+        "R-114",
+        "R-130",
+        "R-131",
+        "R-132",
+        "R-153"
+      ],
+      "chapters": [
+        "13"
+      ],
       "exit_criteria": "block rate < 5% และสาเหตุถูกระบุด้วยข้อมูล ไม่ใช่ความรู้สึก"
     }
   },
@@ -395,31 +446,57 @@
     "symptom_map": [
       {
         "symptom": "เพื่อนเยอะแต่ไม่ซื้อ",
-        "check": ["friend source quality", "welcome flow", "rich menu CTA", "first response time"],
+        "check": [
+          "friend source quality",
+          "welcome flow",
+          "rich menu CTA",
+          "first response time"
+        ],
         "primary_fix": "เปลี่ยน incentive acquisition + สร้าง welcome flow ที่มี CTA เดียว",
         "chapter": "13"
       },
       {
         "symptom": "ซื้อครั้งเดียวไม่กลับ",
-        "check": ["CM₁", "2nd purchase flow", "trigger timing", "review sentiment"],
+        "check": [
+          "CM₁",
+          "2nd purchase flow",
+          "trigger timing",
+          "review sentiment"
+        ],
         "primary_fix": "สร้าง F2 + ปรับ trigger ตามรอบใช้สินค้า",
         "chapter": "13"
       },
       {
         "symptom": "block rate พุ่ง",
-        "check": ["messages per month", "targeted ratio", "send time", "content relevance"],
+        "check": [
+          "messages per month",
+          "targeted ratio",
+          "send time",
+          "content relevance"
+        ],
         "primary_fix": "ลดความถี่ 50% + เปลี่ยนเป็น segmented broadcast",
         "chapter": "13"
       },
       {
         "symptom": "flow conversion ต่ำ",
-        "check": ["ข้อความยาว/CTA", "offer", "segment ของผู้รับ", "landing"],
+        "check": [
+          "ข้อความยาว/CTA",
+          "offer",
+          "segment ของผู้รับ",
+          "landing"
+        ],
         "primary_fix": "ปรับโครง 3 bubble + เพิ่ม proof + ตรวจหน้าปลายทาง",
         "chapter": "13"
       },
       {
         "symptom": "ยอด LINE ตกกะทันหัน",
-        "check": ["changes", "stock/price", "block spike", "quota", "competitor"],
+        "check": [
+          "changes",
+          "stock/price",
+          "block spike",
+          "quota",
+          "competitor"
+        ],
         "primary_fix": "ไล่ checklist 7 ข้อก่อนสรุปสาเหตุ",
         "chapter": "13"
       }
@@ -446,5 +523,6 @@
     "ยิง ads เข้า LINE โดยไม่มีคนตอบ",
     "ไม่มี change log",
     "ไม่เคยทดสอบ A/B"
-  ]
+  ],
+  "audit_warning": "Historical rules, numbers and platform guidance need account-specific validation; AGENTS.md and REPO-REVIEW-2026-11-07.md override conflicting heuristics. Stop immediately for safety, compliance, cash or tracking incidents."
 }

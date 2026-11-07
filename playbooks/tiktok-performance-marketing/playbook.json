@@ -3,50 +3,123 @@
   "playbook": "tiktok-performance-marketing",
   "version": "1.0.0",
   "updated": "2026-11-06",
-  "market_priority": ["TH", "SEA", "global"],
+  "market_priority": [
+    "TH",
+    "SEA",
+    "global"
+  ],
   "currency_primary": "THB",
   "intent": "Executable decision rules for an AI agent producing TikTok performance-marketing plans. Pair with benchmarks.json (numbers) and the prose chapters (reasoning).",
   "invocation": {
-    "required_context": ["business_model", "aov", "gross_margin_pct", "monthly_budget", "category", "market", "has_tiktok_shop", "has_live"],
+    "required_context": [
+      "business_model",
+      "aov",
+      "gross_margin_pct",
+      "monthly_budget",
+      "category",
+      "market",
+      "has_tiktok_shop",
+      "has_live"
+    ],
     "if_missing": "state_assumption_explicitly_and_continue",
-    "output_must_include": ["assumptions", "primary_kpi", "guardrail_kpis", "campaign_structure", "creative_plan", "measurement_plan", "kill_criteria"]
+    "output_must_include": [
+      "assumptions",
+      "primary_kpi",
+      "guardrail_kpis",
+      "campaign_structure",
+      "creative_plan",
+      "measurement_plan",
+      "kill_criteria"
+    ]
   },
   "stages": {
     "launch": {
       "trigger": "no historical CPA/ROAS, or new account, or new product",
-      "chapters": ["01", "02", "03", "07", "08", "10"],
+      "chapters": [
+        "01",
+        "02",
+        "03",
+        "07",
+        "08",
+        "10"
+      ],
       "structure": "manual_abo_lowest_cost",
-      "rules": ["R-001", "R-002", "R-005", "R-010", "R-020"]
+      "rules": [
+        "R-001",
+        "R-002",
+        "R-005",
+        "R-010",
+        "R-020"
+      ]
     },
     "scale": {
       "trigger": "CPA/ROAS at target for >=3 consecutive days and >=50 conversions in 7 days",
-      "chapters": ["02", "03", "07", "12"],
+      "chapters": [
+        "02",
+        "03",
+        "07",
+        "12"
+      ],
       "structure": "smart_plus_with_manual_control",
-      "rules": ["R-003", "R-004", "R-006", "R-011"]
+      "rules": [
+        "R-003",
+        "R-004",
+        "R-006",
+        "R-011"
+      ]
     },
     "fix": {
       "trigger": "CPA up >25% for 3 days, or ROAS below target for 2 weeks",
-      "chapters": ["13", "03", "08"],
+      "chapters": [
+        "13",
+        "03",
+        "08"
+      ],
       "structure": "diagnostic_ladder",
-      "rules": ["R-030", "R-031", "R-032", "R-033"]
+      "rules": [
+        "R-030",
+        "R-031",
+        "R-032",
+        "R-033"
+      ]
     },
     "shop": {
       "trigger": "has_tiktok_shop == true",
-      "chapters": ["04", "05", "07"],
+      "chapters": [
+        "04",
+        "05",
+        "07"
+      ],
       "structure": "catalog_then_affiliate_then_gmv_max_then_live",
-      "rules": ["R-040", "R-041", "R-042", "R-043"]
+      "rules": [
+        "R-040",
+        "R-041",
+        "R-042",
+        "R-043"
+      ]
     },
     "live": {
       "trigger": "has_live == true and shop_gmv_monthly >= 50000_usd_equivalent",
-      "chapters": ["05"],
+      "chapters": [
+        "05"
+      ],
       "structure": "weekly_live_plus_live_gmv_max",
-      "rules": ["R-044", "R-045"]
+      "rules": [
+        "R-044",
+        "R-045"
+      ]
     },
     "regulated": {
       "trigger": "category in [health_supplement, beauty_claims, finance, otc, alcohol]",
-      "chapters": ["10"],
+      "chapters": [
+        "10"
+      ],
       "structure": "pre_approval_plus_claim_preclearance",
-      "rules": ["R-050", "R-051", "R-052"]
+      "rules": [
+        "R-050",
+        "R-051",
+        "R-052"
+      ]
     }
   },
   "rules": [
@@ -268,17 +341,59 @@
     }
   ],
   "diagnostics": {
-    "order": ["tracking", "creative", "offer_landing", "structure_bid", "audience"],
+    "order": [
+      "tracking",
+      "creative",
+      "offer_landing",
+      "structure_bid",
+      "audience"
+    ],
     "symptom_map": [
-      { "symptom": "no_spend", "first_check": "ad status and bid/cost cap", "action": "switch to Lowest Cost temporarily, raise budget to >=10x CPA, broaden audience" },
-      { "symptom": "cpa_high_from_start", "first_check": "hook rate and offer competitiveness", "action": "add 5-8 creatives, revisit offer" },
-      { "symptom": "cpa_degrades_after_day_3", "first_check": "frequency and learning completion", "action": "add creatives, expand horizontally" },
-      { "symptom": "ctr_good_cvr_bad", "first_check": "landing page speed, price match, reviews", "action": "fix landing page, not bids" },
-      { "symptom": "roas_ok_profit_negative", "first_check": "unit economics incl. commission and returns", "action": "fix offer/margin, cut low-margin SKUs" },
-      { "symptom": "learning_limited", "first_check": "budget vs 10x CPA and event volume", "action": "consolidate groups, use a higher-volume event temporarily" },
-      { "symptom": "creative_fatigue", "first_check": "hook rate decline, frequency >2.5-3, concept age >10-14 days", "action": "new hooks on proven body, 3-5 new assets" },
-      { "symptom": "gmv_max_no_spend", "first_check": "target ROI and authorized creative count", "action": "lower ROI to 2x, authorize videos, clean feed" },
-      { "symptom": "pixel_overreports", "first_check": "attribution window and view-through", "action": "report blended, add incrementality test" }
+      {
+        "symptom": "no_spend",
+        "first_check": "ad status and bid/cost cap",
+        "action": "switch to Lowest Cost temporarily, raise budget to >=10x CPA, broaden audience"
+      },
+      {
+        "symptom": "cpa_high_from_start",
+        "first_check": "hook rate and offer competitiveness",
+        "action": "add 5-8 creatives, revisit offer"
+      },
+      {
+        "symptom": "cpa_degrades_after_day_3",
+        "first_check": "frequency and learning completion",
+        "action": "add creatives, expand horizontally"
+      },
+      {
+        "symptom": "ctr_good_cvr_bad",
+        "first_check": "landing page speed, price match, reviews",
+        "action": "fix landing page, not bids"
+      },
+      {
+        "symptom": "roas_ok_profit_negative",
+        "first_check": "unit economics incl. commission and returns",
+        "action": "fix offer/margin, cut low-margin SKUs"
+      },
+      {
+        "symptom": "learning_limited",
+        "first_check": "budget vs 10x CPA and event volume",
+        "action": "consolidate groups, use a higher-volume event temporarily"
+      },
+      {
+        "symptom": "creative_fatigue",
+        "first_check": "hook rate decline, frequency >2.5-3, concept age >10-14 days",
+        "action": "new hooks on proven body, 3-5 new assets"
+      },
+      {
+        "symptom": "gmv_max_no_spend",
+        "first_check": "target ROI and authorized creative count",
+        "action": "lower ROI to 2x, authorize videos, clean feed"
+      },
+      {
+        "symptom": "pixel_overreports",
+        "first_check": "attribution window and view-through",
+        "action": "report blended, add incrementality test"
+      }
     ]
   },
   "anti_patterns": [
@@ -302,5 +417,6 @@
     "using AI avatars in health or finance",
     "having no change log",
     "never running an incrementality test"
-  ]
+  ],
+  "audit_warning": "Historical rules, numbers and platform guidance need account-specific validation; AGENTS.md and REPO-REVIEW-2026-11-07.md override conflicting heuristics. Stop immediately for safety, compliance, cash or tracking incidents."
 }

@@ -1,5 +1,7 @@
 # 13 · Diagnostics & Anti-patterns
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 > **TL;DR** — เวลา performance ตก อย่าเริ่มจาก "ปรับ targeting" หรือ "ลด bid". ไล่ตามลำดับ: **tracking → creative → offer/หน้าเว็บ → structure/bid → audience**. 9 ใน 10 ครั้ง ปัญหาอยู่ใน 3 อย่างแรก
 
 ---

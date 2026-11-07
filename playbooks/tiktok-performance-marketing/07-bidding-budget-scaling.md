@@ -1,5 +1,7 @@
 # 07 · Bidding, Budget & Scaling
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 > **TL;DR** — งบไม่ใช่แค่ "เงินที่มี" แต่คือ **ตัวกำหนดว่า AI มีข้อมูลพอหรือไม่**. กฎหลัก: งบต่อ ad group ≥10× CPA, conversion campaign ต้องได้ ~50 conversions/7 วัน, scale +20–30% ทุก 3–5 วัน, และ **อย่าลด bid เพื่อแก้ CPA ที่แพง — ให้แก้ creative ก่อน**
 
 ---
@@ -8,8 +10,8 @@
 
 | ระดับ | platform minimum | งบที่ "พอเรียน" |
 |---|---|---|
-| Campaign | $50/วัน (฿500) | — |
-| Ad group | $20/วัน (฿50) | **≥10× CPA** (practical ≈ $50/วันขึ้นไป) |
+| Campaign | $50/วัน (ตรวจขั้นต่ำและสกุลเงินในบัญชี) | — |
+| Ad group | $20/วัน (ตรวจขั้นต่ำและสกุลเงินในบัญชี) | **≥10× CPA** (practical ≈ $50/วันขึ้นไป) |
 | Smart+ Web | ไม่มีขั้นต่ำเฉพาะ | ≥10× historical CPA (ideal 30× ถ้าใช้ target CPA/min ROAS) |
 | Smart+ App (Cost Cap) | — | ≥30× target CPA |
 | GMV Max | ไม่มีขั้นต่ำ | 2 × historical non-LIVE GMV ÷ ROI target |

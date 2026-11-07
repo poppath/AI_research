@@ -1,5 +1,7 @@
 # Profit & Unit Economics — Thailand 2026
 
+> **Review 7 พ.ย. 2026:** เอกสารเดิมเป็น research snapshot มีตัวเลข/heuristic และข้ออ้างที่ยังต้องตรวจรายกรณี ไม่ใช่กฎสากลหรือ rate ปัจจุบัน; ก่อนใช้ให้ดู [ข้อจำกัดและรายการแก้ไข](../../REPO-REVIEW-2026-11-07.md) และ `AGENTS.md` โดยเฉพาะก่อนตัดสินใจงบ กฎหมาย หรือ automation.
+
 > **เล่มที่ 3 ของชุด AI_research** · ฐานของทุกเล่ม
 > วันที่มีผล: 2026-11-07 · ตลาด: ประเทศไทย · สกุลเงิน: THB เป็นหลัก, USD เป็นรอง
 
@@ -44,20 +46,20 @@
 ## 🧮 สูตรหลัก 5 สูตร (quick reference)
 
 ```
-1) CM1 = Net revenue − COGS − fulfilment − platform fees − returns provision
+1) CM2 = Net revenue − COGS − fulfilment − platform fees − returns provision
    (ต่อออเดอร์ เป็นบาท ไม่ใช่ %)
 
-2) Breakeven ROAS = Net revenue ÷ CM1
-   Breakeven MER  = 1 ÷ CM1%(ก่อนการตลาด)
+2) Breakeven ROAS = Net revenue ÷ CM2
+   Breakeven MER  = 1 ÷ CM2%(ก่อนการตลาด)
 
-3) Breakeven CAC = CM1
-   Max CAC ที่รับได้ = CM1 × (1 + (repeat% × CM2 ซื้อซ้ำ))
-   ต้องคิดบน payback window ที่ธุรกิจรับได้ (ปกติ 60–90 วัน)
+3) Breakeven CAC = CM2 ของ first order + expected incremental repeat contribution
+   ต่อ acquired customer ภายใน window ที่กำหนด ก่อน CAC และไม่หัก CAC ซ้ำ
 
-4) Effective revenue (COD) = Price × (1 − refusal%) − (refusal% × cost ต่อการตีกลับ)
+4) Expected COD contribution = (1 − refusal rate) × CM2 ของออเดอร์สำเร็จ
+   − refusal rate × incremental loss ของออเดอร์ตีกลับ (ตรวจว่าไม่หักซ้ำ)
 
-5) Max discount depth = (CM1 − target CM1 ต่ำสุด) ÷ Net revenue
-   ห้ามลดเกินค่านี้ แม้แพลตฟอร์มจะกดดันให้เข้าร่วมแคมเปญ
+5) Discount cap: คำนวณ CM2 และ margin ใหม่จาก net revenue หลังลด
+   ตามสมมติฐานค่าใช้จ่ายและ fee ในบท 07; ห้ามใช้สูตรลบ margin ตรง ๆ
 ```
 
 **ตัวอย่างเร็ว ๆ** — เสื้อยืดราคา ฿590, COGS ฿180, ส่ง ฿45, Shopee commission 17.12%:
