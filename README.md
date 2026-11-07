@@ -25,6 +25,8 @@ Deep-research playbooks written so that **an AI agent can read, reason with, and
 | [`playbooks/brand-strategy-organic-content-2026/`](playbooks/brand-strategy-organic-content-2026/00-START-HERE.md) | Brand Strategy & Organic Content | ✅ Research guide (2026-11) |
 | [`playbooks/marketing-planning-budget-allocation-2026/`](playbooks/marketing-planning-budget-allocation-2026/00-START-HERE.md) | Marketing Planning & Budget Allocation | ✅ Research guide (2026-11) |
 
+| [`playbooks/sector-business-2026/`](playbooks/sector-business-2026/00-START-HERE.md) | 20 sector business starter guides · 7M, safety, measurement (TH) | ✅ Starter research (2026-11) |
+
 [Marketing Loop — ลำดับและการเชื่อมต่อ](playbooks/MARKETING-LOOP.md)
 
 ## How to use a playbook

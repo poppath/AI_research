@@ -20,3 +20,6 @@
 
 ## AI content & affiliate automation
 [7M AI Content & Affiliate Automation](7m-ai-content-affiliate-automation-2026/00-START-HERE.md) — ใช้ creative, measurement และ economics ร่วมกับ human approval และ platform-specific safety gates.
+
+## Sector business playbooks
+[สารบัญ 20 sector](sector-business-2026/00-START-HERE.md) — starter guides แบบ 7M สำหรับสินค้า บริการ และ B2B; ใช้หลาย sector ร่วมกันตามธุรกิจจริง.

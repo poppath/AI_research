@@ -1,0 +1,56 @@
+{
+  "sector": "finance-insurance",
+  "name_th": "การเงิน สินเชื่อ ประกัน และการลงทุน",
+  "market": "TH",
+  "as_of": "2026-11-07",
+  "status": "starter_research_not_verified_for_account",
+  "scope": "ผลิตภัณฑ์การเงินและ referral; แต่ละผลิตภัณฑ์กำกับต่างกัน",
+  "framework": [
+    "Market",
+    "Money",
+    "Man",
+    "Material",
+    "Machine",
+    "Method",
+    "Measurement"
+  ],
+  "inputs_required": [
+    "business_role",
+    "subcategory",
+    "market",
+    "eligibility",
+    "claims_evidence",
+    "rights",
+    "budget_cap",
+    "owner",
+    "baseline",
+    "measurement_window",
+    "stop_criteria"
+  ],
+  "primary_and_guardrails": "approved commissions หลัง clawbacks; guardrail complaints และ compliance",
+  "sector_specific_stop": "หยุดเมื่อ license/terms ไม่ชัด หรือ claim รับประกันผลตอบแทน",
+  "rules": [
+    {
+      "trigger": "sector_or_platform_eligibility_unknown",
+      "action": "hold_and_verify_before_launch"
+    },
+    {
+      "trigger": "claims_or_rights_missing",
+      "action": "hold_for_human_review"
+    },
+    {
+      "trigger": "regulated_product_or_service",
+      "action": "verify_regulator_and_specialist_approval"
+    },
+    {
+      "trigger": "spend_or_safety_gate_breached",
+      "action": "pause_and_escalate"
+    },
+    {
+      "trigger": "ai_generated_draft",
+      "action": "human_review_and_permitted_publish_only"
+    }
+  ],
+  "common": "../COMMON.md",
+  "sources": "../SOURCES.md"
+}
